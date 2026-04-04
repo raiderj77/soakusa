@@ -206,7 +206,7 @@ export default function TermsPage() {
         </p>
       </section>
 
-      <div style={disclaimerBoxStyles} style={{ marginTop: "2rem" }}>
+      <div style={{ ...disclaimerBoxStyles, marginTop: "2rem" }}>
         <strong>Remember:</strong> The responsibility for your safety when visiting
         hot springs lies with you. Always exercise caution, verify conditions with
         local authorities, and make informed decisions about your health and safety.
