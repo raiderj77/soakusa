@@ -173,16 +173,6 @@ export default function Home() {
             <div
               key={location.slug}
               style={cardStyles}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.transform = "translateY(-4px)";
-                el.style.boxShadow = "0 8px 16px rgba(0,0,0,0.1)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "none";
-              }}
             >
               <h3 style={cardTitleStyles}>{location.name}</h3>
               <p style={cardLocationStyles}>
@@ -201,14 +191,6 @@ export default function Home() {
               <a
                 href={`/${location.stateSlug}/${location.slug}`}
                 style={linkButtonStyles}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.backgroundColor =
-                    "#ff6b35";
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.backgroundColor =
-                    "#7d1a00";
-                }}
               >
                 View Details
               </a>

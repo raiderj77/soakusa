@@ -186,12 +186,6 @@ export default function RootLayout({
                   <a
                     href="/"
                     style={navLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#ff6b35")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#fff")
-                    }
                   >
                     Home
                   </a>
@@ -200,12 +194,6 @@ export default function RootLayout({
                   <a
                     href="/about"
                     style={navLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#ff6b35")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#fff")
-                    }
                   >
                     About
                   </a>
@@ -214,12 +202,6 @@ export default function RootLayout({
                   <a
                     href="/contact"
                     style={navLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#ff6b35")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#fff")
-                    }
                   >
                     Contact
                   </a>
@@ -240,12 +222,6 @@ export default function RootLayout({
                   <a
                     href="https://publicboatramps.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Public Boat Ramps
                   </a>
@@ -254,12 +230,6 @@ export default function RootLayout({
                   <a
                     href="https://findswimspots.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Find Swim Spots
                   </a>
@@ -268,12 +238,6 @@ export default function RootLayout({
                   <a
                     href="https://craftdistilleryfinder.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Craft Distillery Finder
                   </a>
@@ -282,12 +246,6 @@ export default function RootLayout({
                   <a
                     href="https://driveintonight.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Drive-In Tonight
                   </a>
@@ -296,12 +254,6 @@ export default function RootLayout({
                   <a
                     href="https://allskateparks.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     All Skate Parks
                   </a>
@@ -310,12 +262,6 @@ export default function RootLayout({
                   <a
                     href="https://rockhoundingfinder.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Rockhounding Finder
                   </a>
@@ -324,12 +270,6 @@ export default function RootLayout({
                   <a
                     href="https://nearbyescaperooms.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Nearby Escape Rooms
                   </a>
@@ -338,12 +278,6 @@ export default function RootLayout({
                   <a
                     href="https://allskatingrinks.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     All Skating Rinks
                   </a>
@@ -358,12 +292,6 @@ export default function RootLayout({
                   <a
                     href="https://fibertools.app"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Fiber Tools
                   </a>
@@ -372,12 +300,6 @@ export default function RootLayout({
                   <a
                     href="https://mindchecktools.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Mind Check Tools
                   </a>
@@ -386,12 +308,6 @@ export default function RootLayout({
                   <a
                     href="https://flipmycase.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Flip My Case
                   </a>
@@ -400,12 +316,6 @@ export default function RootLayout({
                   <a
                     href="https://creatorrevenuecalculator.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Creator Revenue Calculator
                   </a>
@@ -414,12 +324,6 @@ export default function RootLayout({
                   <a
                     href="https://contractextract.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Contract Extract
                   </a>
@@ -428,12 +332,6 @@ export default function RootLayout({
                   <a
                     href="https://medicalbillreader.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Medical Bill Reader
                   </a>
@@ -442,12 +340,6 @@ export default function RootLayout({
                   <a
                     href="https://taxbreaktools.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     Tax Break Tools
                   </a>
@@ -456,12 +348,6 @@ export default function RootLayout({
                   <a
                     href="https://524tracker.com"
                     style={footerLinkStyles}
-                    onMouseEnter={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#333")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.target as HTMLAnchorElement).style.color = "#666")
-                    }
                   >
                     524 Tracker
                   </a>
