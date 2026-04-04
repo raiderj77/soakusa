@@ -1,112 +1,707 @@
 [
   {
-    "name": "Strawberry Park Hot Springs",
-    "slug": "strawberry-park-hot-springs",
-    "state": "Colorado",
-    "stateSlug": "colorado",
-    "city": "Steamboat Springs",
-    "lat": 40.4788,
-    "lng": -106.8328,
-    "description": "Natural hot springs nestled in the mountains near Steamboat Springs. Multiple pools fed by natural geothermal springs with temperatures ranging from 86-102°F. Beautiful outdoor setting surrounded by forest.",
-    "amenities": ["Natural pools", "Admission fee", "Changing facilities", "Picnic area", "Year-round access", "Scenic views"]
-  },
-  {
-    "name": "Quinn's Hot Springs",
-    "slug": "quinns-hot-springs",
-    "state": "Montana",
-    "stateSlug": "montana",
-    "city": "Quinn",
-    "lat": 47.4683,
-    "lng": -113.9767,
-    "description": "Historic hot springs resort in western Montana offering naturally heated pools. Known for relaxation and therapeutic soaking in scenic mountain surroundings.",
-    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Restaurant on-site", "Lodging available", "Professional staff"]
-  },
-  {
-    "name": "Kirkham Hot Springs",
-    "slug": "kirkham-hot-springs",
-    "state": "Idaho",
-    "stateSlug": "idaho",
-    "city": "Stanley",
-    "lat": 44.2094,
-    "lng": -115.0564,
-    "description": "Pristine natural hot springs located along the Middle Fork of the Salmon River. Multiple small pools with temperatures between 95-107°F, accessible via hiking trail through scenic wilderness.",
-    "amenities": ["Natural pools", "Free access", "Hiking trail", "Remote location", "Temperature: 95-107°F", "Primitive setting"]
-  },
-  {
-    "name": "Boiling River",
-    "slug": "boiling-river",
-    "state": "Wyoming",
-    "stateSlug": "wyoming",
-    "city": "Mammoth Hot Springs",
-    "lat": 44.8799,
-    "lng": -110.7926,
-    "description": "Natural hot springs located within Yellowstone National Park. The river mixes with cold water creating comfortable soaking temperatures. Popular destination accessible via short walk from parking area.",
-    "amenities": ["Free access", "National Park location", "Paved parking", "Restroom facilities", "Temperature: 80-100°F", "Well-maintained trail"]
-  },
-  {
-    "name": "Jemez Springs",
-    "slug": "jemez-springs",
-    "state": "New Mexico",
-    "stateSlug": "new-mexico",
-    "city": "Jemez Springs",
-    "lat": 35.7697,
-    "lng": -106.6933,
-    "description": "Traditional hot springs village in northern New Mexico with multiple natural springs throughout the area. Known for spiritual and healing properties, with a bohemian community and outdoor soaking pools.",
-    "amenities": ["Natural springs", "Spa facilities", "Multiple pools", "Village amenities", "Admission fee varies", "Scenic canyon location"]
-  },
-  {
-    "name": "McCredie Hot Springs",
-    "slug": "mccredie-hot-springs",
-    "state": "Oregon",
-    "stateSlug": "oregon",
-    "city": "Springfield",
-    "lat": 43.5567,
-    "lng": -121.7267,
-    "description": "Undeveloped natural hot springs along Salt Creek in the Cascades. Multiple small pools with varying temperatures from warm to very hot. Popular with locals seeking a primitive soaking experience.",
-    "amenities": ["Free access", "Natural pools", "Hiking required", "Remote location", "Undeveloped setting", "Temperature varies: 70-115°F"]
-  },
-  {
-    "name": "Sykes Hot Springs",
-    "slug": "sykes-hot-springs",
+    "name": "Wilbur Hot Springs",
+    "slug": "wilbur-hot-springs",
     "state": "California",
     "stateSlug": "california",
-    "city": "Big Sur",
-    "lat": 36.2521,
-    "lng": -121.8186,
-    "description": "Secluded natural hot springs located in the Big Sur wilderness near the Lost Coast. Requires backpacking through coastal redwood forests. Multiple thermal pools with ocean views.",
-    "amenities": ["Free access", "Backpacking required", "Remote location", "Natural pools", "Coastal views", "Primitive conditions"]
+    "city": "",
+    "lat": 39.038791,
+    "lng": -122.421154,
+    "description": "Wilbur Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ],
+    "website": "https://www.wilburhotsprings.com/"
   },
   {
-    "name": "Gerlach Hot Springs",
-    "slug": "gerlach-hot-springs",
-    "state": "Nevada",
-    "stateSlug": "nevada",
-    "city": "Gerlach",
-    "lat": 40.6557,
-    "lng": -119.4012,
-    "description": "Natural hot springs in the Nevada high desert near the Black Rock Desert. Multiple pools with temperatures suitable for soaking. Popular destination for off-the-beaten-path adventures.",
-    "amenities": ["Free access", "Natural pools", "Desert setting", "Remote location", "Temperature: 95-105°F", "Basic facilities"]
+    "name": "Olympic Hot Springs",
+    "slug": "olympic-hot-springs",
+    "state": "Washington",
+    "stateSlug": "washington",
+    "city": "",
+    "lat": 47.976681,
+    "lng": -123.688209,
+    "description": "Olympic Hot Springs is a natural hot spring in Washington. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
   },
   {
-    "name": "Crystal Hot Springs",
-    "slug": "crystal-hot-springs",
+    "name": "Hot Springs",
+    "slug": "hot-springs",
+    "state": "Colorado",
+    "stateSlug": "colorado",
+    "city": "",
+    "lat": 38.168992,
+    "lng": -105.925736,
+    "description": "Hot Springs is a natural hot spring in Colorado. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ],
+    "website": "https://joyfuljourneyhotsprings.com/"
+  },
+  {
+    "name": "Turquoise Spring",
+    "slug": "turquoise-spring",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.526673,
+    "lng": -110.837682,
+    "description": "Turquoise Spring is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Chromatic Pool",
+    "slug": "chromatic-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.46858,
+    "lng": -110.839316,
+    "description": "Chromatic Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Seismograph Pool",
+    "slug": "seismograph-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.415844,
+    "lng": -110.571014,
+    "description": "Seismograph Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Perforated Pool",
+    "slug": "perforated-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.416725,
+    "lng": -110.571713,
+    "description": "Perforated Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Artists' Paintpots",
+    "slug": "artists-paintpots",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.69154,
+    "lng": -110.738248,
+    "description": "Artists' Paintpots is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Spence Hot Spring",
+    "slug": "spence-hot-spring",
+    "state": "New Mexico",
+    "stateSlug": "new-mexico",
+    "city": "",
+    "lat": 35.849528,
+    "lng": -106.62973,
+    "description": "Spence Hot Spring is a natural hot spring in New Mexico. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Gentian Pool",
+    "slug": "gentian-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.554721,
+    "lng": -110.809767,
+    "description": "Gentian Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Fountain Paint Pot",
+    "slug": "fountain-paint-pot",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.55061,
+    "lng": -110.80624,
+    "description": "Fountain Paint Pot is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Terminal Geyser",
+    "slug": "terminal-geyser",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 40.421272,
+    "lng": -121.377196,
+    "description": "Terminal Geyser is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Sol Duc Hot Springs",
+    "slug": "sol-duc-hot-springs",
+    "state": "Washington",
+    "stateSlug": "washington",
+    "city": "",
+    "lat": 47.968447,
+    "lng": -123.863118,
+    "description": "Sol Duc Hot Springs is a natural hot spring in Washington. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Sulphur Springs",
+    "slug": "sulphur-springs",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 41.409376,
+    "lng": -122.196066,
+    "description": "Sulphur Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Stinking Hot Springs",
+    "slug": "stinking-hot-springs",
     "state": "Utah",
     "stateSlug": "utah",
-    "city": "Salina",
-    "lat": 38.8697,
-    "lng": -111.8231,
-    "description": "Commercial hot springs resort in central Utah offering multiple heated pools and spa services. Developed facility with modern amenities and year-round operation.",
-    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Spa services", "Lodging available", "Restaurant and bar"]
+    "city": "",
+    "lat": 41.576343,
+    "lng": -112.233717,
+    "description": "Stinking Hot Springs is a natural hot spring in Utah. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
   },
   {
-    "name": "Chena Hot Springs",
-    "slug": "chena-hot-springs",
-    "state": "Alaska",
-    "stateSlug": "alaska",
-    "city": "Chena",
-    "lat": 64.8033,
-    "lng": -146.0544,
-    "description": "Alaska's premier hot springs resort located in the interior near Fairbanks. Natural geothermal springs provide year-round soaking in a pristine northern wilderness setting.",
-    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Lodging available", "Restaurant", "Aurora viewing in winter"]
+    "name": "Iva Bell Hot Springs",
+    "slug": "iva-bell-hot-springs",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 37.532977,
+    "lng": -119.024037,
+    "description": "Iva Bell Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Iva Bell Hot Springs",
+    "slug": "iva-bell-hot-springs-2",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 37.533388,
+    "lng": -119.01994,
+    "description": "Iva Bell Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Maiden's Grave Spring",
+    "slug": "maidens-grave-spring",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.571404,
+    "lng": -110.833511,
+    "description": "Maiden's Grave Spring is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Drakesbad Hot Springs",
+    "slug": "drakesbad-hot-springs",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 40.442446,
+    "lng": -121.403518,
+    "description": "Drakesbad Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Steep Ravine Hot Spring",
+    "slug": "steep-ravine-hot-spring",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 37.886478,
+    "lng": -122.630742,
+    "description": "Steep Ravine Hot Spring is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Blue Funnel Pool",
+    "slug": "blue-funnel-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.416807,
+    "lng": -110.571978,
+    "description": "Blue Funnel Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Ephedra Pool",
+    "slug": "ephedra-pool",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.416767,
+    "lng": -110.571827,
+    "description": "Ephedra Pool is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "San Antonio Hot Spring",
+    "slug": "san-antonio-hot-spring",
+    "state": "New Mexico",
+    "stateSlug": "new-mexico",
+    "city": "",
+    "lat": 35.939829,
+    "lng": -106.643386,
+    "description": "San Antonio Hot Spring is a natural hot spring in New Mexico. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Goldmyer Hot Springs",
+    "slug": "goldmyer-hot-springs",
+    "state": "Washington",
+    "stateSlug": "washington",
+    "city": "",
+    "lat": 47.482233,
+    "lng": -121.384239,
+    "description": "Goldmyer Hot Springs is a natural hot spring in Washington. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ],
+    "website": "http://www.goldmyer.org/"
+  },
+  {
+    "name": "Baker Hot Springs",
+    "slug": "baker-hot-springs",
+    "state": "Washington",
+    "stateSlug": "washington",
+    "city": "",
+    "lat": 48.761531,
+    "lng": -121.672714,
+    "description": "Baker Hot Springs is a natural hot spring in Washington. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Hot Spring",
+    "slug": "hot-spring",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 35.944688,
+    "lng": -114.732235,
+    "description": "Hot Spring is a natural hot spring in Arizona. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Hot Spring",
+    "slug": "hot-spring-2",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 35.960538,
+    "lng": -114.725538,
+    "description": "Hot Spring is a natural hot spring in Arizona. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Hot Spring",
+    "slug": "hot-spring-3",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 35.965317,
+    "lng": -114.743411,
+    "description": "Hot Spring is a natural hot spring in Arizona. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Hot Springs",
+    "slug": "hot-springs-2",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "",
+    "lat": 35.983168,
+    "lng": -114.748904,
+    "description": "Hot Springs is a natural hot spring in Nevada. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Lost Man Hot Spring",
+    "slug": "lost-man-hot-spring",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "",
+    "lat": 35.985529,
+    "lng": -114.741646,
+    "description": "Lost Man Hot Spring is a natural hot spring in Nevada. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Ringbolt Hot Spring",
+    "slug": "ringbolt-hot-spring",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 35.960541,
+    "lng": -114.725816,
+    "description": "Ringbolt Hot Spring is a natural hot spring in Arizona. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Two Mile Hot Spring",
+    "slug": "two-mile-hot-spring",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "",
+    "lat": 35.983311,
+    "lng": -114.748891,
+    "description": "Two Mile Hot Spring is a natural hot spring in Nevada. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Gillard Hot Spring",
+    "slug": "gillard-hot-spring",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 32.973055,
+    "lng": -109.350482,
+    "description": "Gillard Hot Spring is a natural hot spring in Arizona with water temperatures around 82°F. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal",
+      "~82°F water"
+    ]
+  },
+  {
+    "name": "Arizona Hot Springs",
+    "slug": "arizona-hot-springs",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "",
+    "lat": 35.960544,
+    "lng": -114.725732,
+    "description": "Arizona Hot Springs is a natural hot spring in Arizona. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Churning Caldron",
+    "slug": "churning-caldron",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.621263,
+    "lng": -110.434586,
+    "description": "Churning Caldron is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Grizzly Fumarole",
+    "slug": "grizzly-fumarole",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.62324,
+    "lng": -110.435729,
+    "description": "Grizzly Fumarole is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Garland Mineral Springs",
+    "slug": "garland-mineral-springs",
+    "state": "Washington",
+    "stateSlug": "washington",
+    "city": "",
+    "lat": 47.889176,
+    "lng": -121.34264,
+    "description": "Garland Mineral Springs is a natural hot spring in Washington. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Black Rock Hot Spring",
+    "slug": "black-rock-hot-spring",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "",
+    "lat": 40.973811,
+    "lng": -119.008089,
+    "description": "Black Rock Hot Spring is a natural hot spring in Nevada. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Wild Willy's Hot Springs",
+    "slug": "wild-willys-hot-springs",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 37.661042,
+    "lng": -118.768159,
+    "description": "Wild Willy's Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Wild Willy's Hot Springs",
+    "slug": "wild-willys-hot-springs-2",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 37.66116,
+    "lng": -118.767726,
+    "description": "Wild Willy's Hot Springs is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Children's Tub",
+    "slug": "childrens-tub",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 36.805304,
+    "lng": -117.773525,
+    "description": "Children's Tub is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Crystal Pool",
+    "slug": "crystal-pool",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 36.805558,
+    "lng": -117.773413,
+    "description": "Crystal Pool is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Sunrise Pool",
+    "slug": "sunrise-pool",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 36.805769,
+    "lng": -117.773107,
+    "description": "Sunrise Pool is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Volcano Pool",
+    "slug": "volcano-pool",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 36.81304,
+    "lng": -117.766421,
+    "description": "Volcano Pool is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Wizard Pool",
+    "slug": "wizard-pool",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 36.812648,
+    "lng": -117.765938,
+    "description": "Wizard Pool is a natural hot spring in California. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Montezuma Hot Springs",
+    "slug": "montezuma-hot-springs",
+    "state": "New Mexico",
+    "stateSlug": "new-mexico",
+    "city": "",
+    "lat": 35.654238,
+    "lng": -105.284138,
+    "description": "Montezuma Hot Springs is a natural hot spring in New Mexico. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Dakota Hot Springs",
+    "slug": "dakota-hot-springs",
+    "state": "Colorado",
+    "stateSlug": "colorado",
+    "city": "",
+    "lat": 38.418371,
+    "lng": -105.056579,
+    "description": "Dakota Hot Springs is a natural hot spring in Colorado. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ],
+    "website": "https://www.dakotahotsprings.com/"
+  },
+  {
+    "name": "Indigo Spring",
+    "slug": "indigo-spring",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "",
+    "lat": 44.525398,
+    "lng": -110.835392,
+    "description": "Indigo Spring is a natural hot spring in Montana. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "McCredie Hot Springs - North Bank",
+    "slug": "mccredie-hot-springs-north-bank",
+    "state": "Oregon",
+    "stateSlug": "oregon",
+    "city": "",
+    "lat": 43.705954,
+    "lng": -122.287982,
+    "description": "McCredie Hot Springs - North Bank is a natural hot spring in Oregon. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
+  },
+  {
+    "name": "Trego Hot Springs",
+    "slug": "trego-hot-springs",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "",
+    "lat": 40.771249,
+    "lng": -119.116043,
+    "description": "Trego Hot Springs is a natural hot spring in Nevada. Relax in geothermal waters surrounded by stunning natural scenery.",
+    "amenities": [
+      "Hot spring",
+      "Natural geothermal"
+    ]
   }
 ]
