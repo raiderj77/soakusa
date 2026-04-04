@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Strawberry Park Hot Springs",
+    "slug": "strawberry-park-hot-springs",
+    "state": "Colorado",
+    "stateSlug": "colorado",
+    "city": "Steamboat Springs",
+    "lat": 40.4788,
+    "lng": -106.8328,
+    "description": "Natural hot springs nestled in the mountains near Steamboat Springs. Multiple pools fed by natural geothermal springs with temperatures ranging from 86-102°F. Beautiful outdoor setting surrounded by forest.",
+    "amenities": ["Natural pools", "Admission fee", "Changing facilities", "Picnic area", "Year-round access", "Scenic views"]
+  },
+  {
+    "name": "Quinn's Hot Springs",
+    "slug": "quinns-hot-springs",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "Quinn",
+    "lat": 47.4683,
+    "lng": -113.9767,
+    "description": "Historic hot springs resort in western Montana offering naturally heated pools. Known for relaxation and therapeutic soaking in scenic mountain surroundings.",
+    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Restaurant on-site", "Lodging available", "Professional staff"]
+  },
+  {
+    "name": "Kirkham Hot Springs",
+    "slug": "kirkham-hot-springs",
+    "state": "Idaho",
+    "stateSlug": "idaho",
+    "city": "Stanley",
+    "lat": 44.2094,
+    "lng": -115.0564,
+    "description": "Pristine natural hot springs located along the Middle Fork of the Salmon River. Multiple small pools with temperatures between 95-107°F, accessible via hiking trail through scenic wilderness.",
+    "amenities": ["Natural pools", "Free access", "Hiking trail", "Remote location", "Temperature: 95-107°F", "Primitive setting"]
+  },
+  {
+    "name": "Boiling River",
+    "slug": "boiling-river",
+    "state": "Wyoming",
+    "stateSlug": "wyoming",
+    "city": "Mammoth Hot Springs",
+    "lat": 44.8799,
+    "lng": -110.7926,
+    "description": "Natural hot springs located within Yellowstone National Park. The river mixes with cold water creating comfortable soaking temperatures. Popular destination accessible via short walk from parking area.",
+    "amenities": ["Free access", "National Park location", "Paved parking", "Restroom facilities", "Temperature: 80-100°F", "Well-maintained trail"]
+  },
+  {
+    "name": "Jemez Springs",
+    "slug": "jemez-springs",
+    "state": "New Mexico",
+    "stateSlug": "new-mexico",
+    "city": "Jemez Springs",
+    "lat": 35.7697,
+    "lng": -106.6933,
+    "description": "Traditional hot springs village in northern New Mexico with multiple natural springs throughout the area. Known for spiritual and healing properties, with a bohemian community and outdoor soaking pools.",
+    "amenities": ["Natural springs", "Spa facilities", "Multiple pools", "Village amenities", "Admission fee varies", "Scenic canyon location"]
+  },
+  {
+    "name": "McCredie Hot Springs",
+    "slug": "mccredie-hot-springs",
+    "state": "Oregon",
+    "stateSlug": "oregon",
+    "city": "Springfield",
+    "lat": 43.5567,
+    "lng": -121.7267,
+    "description": "Undeveloped natural hot springs along Salt Creek in the Cascades. Multiple small pools with varying temperatures from warm to very hot. Popular with locals seeking a primitive soaking experience.",
+    "amenities": ["Free access", "Natural pools", "Hiking required", "Remote location", "Undeveloped setting", "Temperature varies: 70-115°F"]
+  },
+  {
+    "name": "Sykes Hot Springs",
+    "slug": "sykes-hot-springs",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "Big Sur",
+    "lat": 36.2521,
+    "lng": -121.8186,
+    "description": "Secluded natural hot springs located in the Big Sur wilderness near the Lost Coast. Requires backpacking through coastal redwood forests. Multiple thermal pools with ocean views.",
+    "amenities": ["Free access", "Backpacking required", "Remote location", "Natural pools", "Coastal views", "Primitive conditions"]
+  },
+  {
+    "name": "Gerlach Hot Springs",
+    "slug": "gerlach-hot-springs",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "Gerlach",
+    "lat": 40.6557,
+    "lng": -119.4012,
+    "description": "Natural hot springs in the Nevada high desert near the Black Rock Desert. Multiple pools with temperatures suitable for soaking. Popular destination for off-the-beaten-path adventures.",
+    "amenities": ["Free access", "Natural pools", "Desert setting", "Remote location", "Temperature: 95-105°F", "Basic facilities"]
+  },
+  {
+    "name": "Crystal Hot Springs",
+    "slug": "crystal-hot-springs",
+    "state": "Utah",
+    "stateSlug": "utah",
+    "city": "Salina",
+    "lat": 38.8697,
+    "lng": -111.8231,
+    "description": "Commercial hot springs resort in central Utah offering multiple heated pools and spa services. Developed facility with modern amenities and year-round operation.",
+    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Spa services", "Lodging available", "Restaurant and bar"]
+  },
+  {
+    "name": "Chena Hot Springs",
+    "slug": "chena-hot-springs",
+    "state": "Alaska",
+    "stateSlug": "alaska",
+    "city": "Chena",
+    "lat": 64.8033,
+    "lng": -146.0544,
+    "description": "Alaska's premier hot springs resort located in the interior near Fairbanks. Natural geothermal springs provide year-round soaking in a pristine northern wilderness setting.",
+    "amenities": ["Resort facilities", "Heated pools", "Admission fee", "Lodging available", "Restaurant", "Aurora viewing in winter"]
+  }
+]
