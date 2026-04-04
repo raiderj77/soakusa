@@ -11,9 +11,7 @@ export const metadata: Metadata = {
   creator: "Soak USA",
   publisher: "Soak USA",
   metadataBase: new URL("https://soakusa.net"),
-  alternates: {
-    canonical: "https://soakusa.net",
-  },
+  alternates: { canonical: "https://soakusa.net" },
   openGraph: {
     type: "website",
     url: "https://soakusa.net",
