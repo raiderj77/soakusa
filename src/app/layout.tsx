@@ -1,382 +1,89 @@
-import type { Metadata } from "next";
-import Script from "next/script";
+import type { Metadata } from 'next';
+import Script from 'next/script';
+import { Cormorant_Garamond, Lato } from 'next/font/google';
+import './globals.css';
+
+const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-display', display: 'swap', weight: ['400','500','600','700'] });
+const lato = Lato({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','700'] });
 
 export const metadata: Metadata = {
-  title: "Soak USA - Find Hot Springs & Natural Thermal Pools Directory",
-  description:
-    "Discover hot springs and natural thermal pools across the USA. Browse our directory of geothermal hot springs by state with detailed information, amenities, and safety guidelines.",
-  keywords:
-    "hot springs, thermal pools, geothermal springs, USA hot springs directory, natural hot springs, relaxation, mineral pools",
-  authors: [{ name: "Soak USA" }],
-  creator: "Soak USA",
-  publisher: "Soak USA",
-  metadataBase: new URL("https://soakusa.net"),
-  alternates: { canonical: "https://soakusa.net" },
-  openGraph: {
-    type: "website",
-    url: "https://soakusa.net",
-    title: "Soak USA - Find Hot Springs & Natural Thermal Pools Directory",
-    description:
-      "Discover hot springs and natural thermal pools across the USA. Browse our directory of geothermal hot springs by state.",
-    siteName: "Soak USA",
-    images: [
-      {
-        url: "https://soakusa.net/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Soak USA - Hot Springs Directory",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Soak USA - Find Hot Springs & Natural Thermal Pools Directory",
-    description:
-      "Discover hot springs and natural thermal pools across the USA.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+  title: { template: '%s | Soak USA', default: 'Soak USA — Find Hot Springs & Natural Thermal Pools Across America' },
+  description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the USA. Browse by state with amenities, temperatures, and access details.',
+  keywords: 'hot springs, thermal pools, geothermal springs, natural hot springs, soaking pools, USA hot springs',
+  metadataBase: new URL('https://soakusa.net'),
+  alternates: { canonical: 'https://soakusa.net' },
+  robots: 'index, follow, max-snippet:-1',
   verification: {
-    google: "KEh7iMoUzXk4VMvfFsF4wXenvufyiijnvijgxDUsdaQ",
-    other: {
-      "msvalidate.01": "C4C9B6256BDEDED169E4DE01CA953390",
-    },
+    google: 'KEh7iMoUzXk4VMvfFsF4wXenvufyiijnvijgxDUsdaQ',
+    other: { 'msvalidate.01': 'C4C9B6256BDEDED169E4DE01CA953390' },
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const headerStyles: React.CSSProperties = {
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-    backgroundColor: "#7d1a00",
-    padding: "1rem 0",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-  };
+const toolSites = [
+  { name: 'Fiber Tools', href: 'https://fibertools.app' }, { name: 'Mind Check Tools', href: 'https://mindchecktools.com' },
+  { name: 'Flip My Case', href: 'https://flipmycase.com' }, { name: 'Creator Revenue Calculator', href: 'https://creatorrevenuecalculator.com' },
+  { name: 'Contract Extract', href: 'https://contractextract.com' }, { name: 'Medical Bill Reader', href: 'https://medicalbillreader.com' },
+  { name: 'Tax Break Tools', href: 'https://taxbreaktools.com' }, { name: '524 Tracker', href: 'https://524tracker.com' },
+];
+const directorySites = [
+  { name: 'Public Boat Ramps', href: 'https://publicboatramps.com' }, { name: 'Find Swim Spots', href: 'https://findswimspots.com' },
+  { name: 'Craft Distillery Finder', href: 'https://craftdistilleryfinder.com' }, { name: 'Drive-In Tonight', href: 'https://driveintonight.com' },
+  { name: 'All Skate Parks', href: 'https://allskateparks.com' }, { name: 'Nearby Escape Rooms', href: 'https://nearbyescaperooms.com' },
+  { name: 'Rockhounding Finder', href: 'https://rockhoundingfinder.com' }, { name: 'All Skating Rinks', href: 'https://allskatingrinks.com' },
+];
 
-  const headerContainerStyles: React.CSSProperties = {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "0 1rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  };
-
-  const logoStyles: React.CSSProperties = {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    color: "#fff",
-    textDecoration: "none",
-    margin: 0,
-  };
-
-  const navStyles: React.CSSProperties = {
-    display: "flex",
-    gap: "1.5rem",
-    margin: 0,
-    padding: 0,
-    listStyle: "none",
-  };
-
-  const navLinkStyles: React.CSSProperties = {
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "0.95rem",
-    transition: "color 0.2s",
-  };
-
-  const footerStyles: React.CSSProperties = {
-    backgroundColor: "#f5f5f5",
-    padding: "2rem",
-    marginTop: "3rem",
-    borderTop: "1px solid #ddd",
-  };
-
-  const footerContainerStyles: React.CSSProperties = {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "2rem",
-  };
-
-  const footerSectionStyles: React.CSSProperties = {
-    display: "flex",
-    flexDirection: "column",
-  };
-
-  const footerTitleStyles: React.CSSProperties = {
-    fontWeight: "bold",
-    fontSize: "0.9rem",
-    textTransform: "uppercase",
-    color: "#333",
-    marginBottom: "1rem",
-  };
-
-  const footerLinksStyles: React.CSSProperties = {
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.5rem",
-    padding: 0,
-    margin: 0,
-    listStyle: "none",
-  };
-
-  const footerLinkStyles: React.CSSProperties = {
-    color: "#666",
-    textDecoration: "none",
-    fontSize: "0.9rem",
-    transition: "color 0.2s",
-  };
-
-  const contentStyles: React.CSSProperties = {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "2rem 1rem",
-  };
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${lato.variable}`}>
       <head>
-        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932" strategy="afterInteractive" />
       </head>
-      <body style={{ margin: 0, fontFamily: "system-ui, sans-serif" }}>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          strategy="afterInteractive"
-          async
-          crossOrigin="anonymous"
-        />
-        <Script
-          id="adsense-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-7171402107622932",
-              enable_page_level_ads: true
-            });`,
-          }}
-        />
-
-        <header style={headerStyles}>
-          <div style={headerContainerStyles}>
-            <h1 style={logoStyles}>
-              <a href="/" style={{ color: "inherit", textDecoration: "none" }}>
-                Soak USA
-              </a>
-            </h1>
-            <nav>
-              <ul style={navStyles}>
-                <li>
-                  <a
-                    href="/"
-                    style={navLinkStyles}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/about"
-                    style={navLinkStyles}
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/contact"
-                    style={navLinkStyles}
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
+      <body>
+        <header style={{ background: 'linear-gradient(to right, #3d2010, #2a3d20)', borderBottom: '2px solid var(--terra)', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 16px rgba(42,32,26,0.25)' }}>
+          <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
+            <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>♨️</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.3rem', color: 'var(--sand)', letterSpacing: '0.06em' }}>Soak USA</span>
+            </a>
+            <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+              <a href="/" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Home</a>
+              <a href="/browse-states" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Browse</a>
+              <a href="/about" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>About</a>
             </nav>
           </div>
         </header>
 
-        <main style={contentStyles}>{children}</main>
+        <main style={{ minHeight: 'calc(100vh - 340px)' }}>{children}</main>
 
-        <footer style={footerStyles}>
-          <div style={footerContainerStyles}>
-            <section style={footerSectionStyles}>
-              <h3 style={footerTitleStyles}>Directory Sites</h3>
-              <ul style={footerLinksStyles}>
-                <li>
-                  <a
-                    href="https://publicboatramps.com"
-                    style={footerLinkStyles}
-                  >
-                    Public Boat Ramps
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://findswimspots.com"
-                    style={footerLinkStyles}
-                  >
-                    Find Swim Spots
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://craftdistilleryfinder.com"
-                    style={footerLinkStyles}
-                  >
-                    Craft Distillery Finder
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://driveintonight.com"
-                    style={footerLinkStyles}
-                  >
-                    Drive-In Tonight
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://allskateparks.com"
-                    style={footerLinkStyles}
-                  >
-                    All Skate Parks
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://rockhoundingfinder.com"
-                    style={footerLinkStyles}
-                  >
-                    Rockhounding Finder
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://nearbyescaperooms.com"
-                    style={footerLinkStyles}
-                  >
-                    Nearby Escape Rooms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://allskatingrinks.com"
-                    style={footerLinkStyles}
-                  >
-                    All Skating Rinks
-                  </a>
-                </li>
-              </ul>
-            </section>
-
-            <section style={footerSectionStyles}>
-              <h3 style={footerTitleStyles}>Tool Sites</h3>
-              <ul style={footerLinksStyles}>
-                <li>
-                  <a
-                    href="https://fibertools.app"
-                    style={footerLinkStyles}
-                  >
-                    Fiber Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://mindchecktools.com"
-                    style={footerLinkStyles}
-                  >
-                    Mind Check Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://flipmycase.com"
-                    style={footerLinkStyles}
-                  >
-                    Flip My Case
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://creatorrevenuecalculator.com"
-                    style={footerLinkStyles}
-                  >
-                    Creator Revenue Calculator
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://contractextract.com"
-                    style={footerLinkStyles}
-                  >
-                    Contract Extract
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://medicalbillreader.com"
-                    style={footerLinkStyles}
-                  >
-                    Medical Bill Reader
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://taxbreaktools.com"
-                    style={footerLinkStyles}
-                  >
-                    Tax Break Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://524tracker.com"
-                    style={footerLinkStyles}
-                  >
-                    524 Tracker
-                  </a>
-                </li>
-              </ul>
-            </section>
-          </div>
-
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "2rem auto 0",
-              paddingTop: "2rem",
-              borderTop: "1px solid #ddd",
-              textAlign: "center",
-              fontSize: "0.85rem",
-              color: "#999",
-            }}
-          >
-            <p style={{ margin: "0.5rem 0" }}>
-              © 2026 Soak USA. All rights reserved.
-            </p>
-            <p style={{ margin: "0.5rem 0" }}>
-              <a href="/privacy" style={footerLinkStyles}>
-                Privacy Policy
-              </a>
-              {" | "}
-              <a href="/terms" style={footerLinkStyles}>
-                Terms of Service
-              </a>
-            </p>
+        <footer style={{ background: 'linear-gradient(to right, #3d2010, #2a3d20)', borderTop: '2px solid rgba(196,82,26,0.3)', marginTop: '5rem', padding: '3rem 0 2rem' }}>
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-display)', color: 'var(--sand)', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>♨️ Soak USA</p>
+                <p style={{ color: 'rgba(232,221,208,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>Free directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.</p>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--terra-lt)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1rem', fontFamily: 'var(--font-body)', fontWeight: 700 }}>Directory Sites</h4>
+                <ul style={{ listStyle: 'none' }}>
+                  {directorySites.map((s) => <li key={s.href} style={{ marginBottom: '0.4rem' }}><a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(232,221,208,0.55)', fontSize: '0.875rem', textDecoration: 'none' }}>{s.name}</a></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--terra-lt)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1rem', fontFamily: 'var(--font-body)', fontWeight: 700 }}>Tools</h4>
+                <ul style={{ listStyle: 'none' }}>
+                  {toolSites.map((s) => <li key={s.href} style={{ marginBottom: '0.4rem' }}><a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(232,221,208,0.55)', fontSize: '0.875rem', textDecoration: 'none' }}>{s.name}</a></li>)}
+                </ul>
+              </div>
+            </div>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <p style={{ color: 'rgba(232,221,208,0.4)', fontSize: '0.85rem' }}>© 2026 Soak USA. All rights reserved.</p>
+              <div style={{ display: 'flex', gap: '1.5rem' }}>
+                {[['Privacy', '/privacy'], ['Terms', '/terms'], ['Contact', '/contact'], ['About', '/about']].map(([l, h]) => (
+                  <a key={h} href={h} style={{ color: 'rgba(232,221,208,0.4)', fontSize: '0.85rem', textDecoration: 'none', fontFamily: 'var(--font-body)' }}>{l}</a>
+                ))}
+              </div>
+            </div>
           </div>
         </footer>
       </body>

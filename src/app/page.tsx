@@ -1,479 +1,192 @@
-import type { Metadata } from "next";
-import locations from "@/data/locations.json";
+/* eslint-disable @next/next/no-img-element */
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import locations from '@/data/locations.json';
 
-export const dynamic = "force-static";
-export const revalidate = 3600;
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: "Soak USA - Find Hot Springs Across the USA",
-  description:
-    "Discover hot springs and natural thermal pools across the USA. Browse our directory of geothermal hot springs by state with detailed information, amenities, and safety guidelines.",
-  openGraph: {
-    title: "Soak USA - Find Hot Springs Across the USA",
-    description:
-      "Discover hot springs and natural thermal pools across the USA.",
-    type: "website",
-  },
+  title: 'Soak USA — Find Hot Springs & Natural Thermal Pools Across America',
+  description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across all 50 states. GPS coordinates, temperatures, and access info.',
 };
 
+const ALL_STATES = [
+  'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware',
+  'Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky',
+  'Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi',
+  'Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico',
+  'New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania',
+  'Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont',
+  'Virginia','Washington','West Virginia','Wisconsin','Wyoming',
+];
+
+const IMG_KEYWORDS = ['hot+springs','thermal+pool','geothermal+pool','natural+hot+spring','mineral+spring','soaking+pool','steam+pool','mountain+hot+spring'];
+
 export default function Home() {
-  const heroStyles: React.CSSProperties = {
-    textAlign: "center",
-    padding: "3rem 0 2rem",
-    borderBottom: "3px solid #7d1a00",
-    marginBottom: "3rem",
-  };
-
-  const heroTitleStyles: React.CSSProperties = {
-    fontSize: "2.5rem",
-    color: "#7d1a00",
-    margin: "0 0 0.5rem 0",
-  };
-
-  const heroSubtitleStyles: React.CSSProperties = {
-    fontSize: "1.1rem",
-    color: "#666",
-    margin: "0",
-  };
-
-  const featuredGridStyles: React.CSSProperties = {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-    gap: "2rem",
-    marginBottom: "3rem",
-  };
-
-  const cardStyles: React.CSSProperties = {
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    padding: "1.5rem",
-    transition: "transform 0.2s, box-shadow 0.2s",
-    cursor: "pointer",
-    backgroundColor: "#fff",
-  };
-
-  const cardTitleStyles: React.CSSProperties = {
-    fontSize: "1.2rem",
-    color: "#7d1a00",
-    marginTop: 0,
-    marginBottom: "0.5rem",
-  };
-
-  const cardLocationStyles: React.CSSProperties = {
-    fontSize: "0.9rem",
-    color: "#ff6b35",
-    fontWeight: "600",
-    marginBottom: "0.5rem",
-  };
-
-  const cardDescriptionStyles: React.CSSProperties = {
-    fontSize: "0.95rem",
-    color: "#555",
-    lineHeight: "1.5",
-    marginBottom: "1rem",
-  };
-
-  const amenitiesStyles: React.CSSProperties = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "0.5rem",
-    marginTop: "1rem",
-  };
-
-  const amenityBadgeStyles: React.CSSProperties = {
-    backgroundColor: "#f0f0f0",
-    color: "#333",
-    padding: "0.3rem 0.6rem",
-    borderRadius: "4px",
-    fontSize: "0.8rem",
-  };
-
-  const linkButtonStyles: React.CSSProperties = {
-    display: "inline-block",
-    marginTop: "1rem",
-    padding: "0.6rem 1.2rem",
-    backgroundColor: "#7d1a00",
-    color: "#fff",
-    textDecoration: "none",
-    borderRadius: "4px",
-    transition: "background-color 0.2s",
-    fontSize: "0.9rem",
-  };
-
-  const contentSectionStyles: React.CSSProperties = {
-    lineHeight: "1.7",
-    color: "#333",
-    marginBottom: "3rem",
-  };
-
-  const sectionTitleStyles: React.CSSProperties = {
-    fontSize: "1.8rem",
-    color: "#7d1a00",
-    marginTop: "2rem",
-    marginBottom: "1rem",
-  };
-
-  const textContentStyles: React.CSSProperties = {
-    fontSize: "0.95rem",
-    color: "#555",
-    lineHeight: "1.7",
-    marginBottom: "1.2rem",
-  };
-
-  const faqStyles: React.CSSProperties = {
-    marginTop: "2rem",
-  };
-
-  const faqItemStyles: React.CSSProperties = {
-    marginBottom: "1.5rem",
-    paddingBottom: "1rem",
-    borderBottom: "1px solid #eee",
-  };
-
-  const faqQuestionStyles: React.CSSProperties = {
-    fontSize: "1rem",
-    fontWeight: "600",
-    color: "#7d1a00",
-    marginBottom: "0.5rem",
-  };
-
-  const faqAnswerStyles: React.CSSProperties = {
-    fontSize: "0.95rem",
-    color: "#555",
-    lineHeight: "1.6",
-  };
-
-  const disclaimerStyles: React.CSSProperties = {
-    backgroundColor: "#fff3cd",
-    border: "1px solid #ffc107",
-    borderRadius: "4px",
-    padding: "1rem",
-    marginTop: "2rem",
-    fontSize: "0.9rem",
-    color: "#333",
-  };
-
-  const featuredLocations = locations.slice(0, 6);
+  const featured = locations.slice(0, 6);
+  const statesWithData = Array.from(new Set(locations.map((l) => l.state))).length;
 
   return (
     <>
-      <section style={heroStyles}>
-        <h1 style={heroTitleStyles}>Find Hot Springs Across the USA</h1>
-        <p style={heroSubtitleStyles}>
-          Discover natural thermal pools and geothermal hot springs by state
-        </p>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context':'https://schema.org','@type':'WebSite',url:'https://soakusa.net',
+        name:'Soak USA',
+        potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:'https://soakusa.net/search?q={search_term_string}'},'query-input':'required name=search_term_string'},
+      }) }} />
+
+      {/* Hero */}
+      <section style={{ position: 'relative', background: 'linear-gradient(160deg, #3d2010 0%, #2a3018 50%, #1a2a10 100%)', overflow: 'hidden', padding: '7rem 1.5rem 8rem' }}>
+        {/* Steam mist layers */}
+        <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(ellipse 700px 300px at 50% 80%, rgba(232,221,208,0.06) 0%, transparent 60%), radial-gradient(ellipse 400px 200px at 20% 50%, rgba(196,82,26,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <p className="anim-fade-up" style={{ display: 'inline-block', color: 'var(--sand)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.18em', marginBottom: '1rem', fontFamily: 'var(--font-body)', background: 'rgba(232,221,208,0.08)', padding: '0.4rem 1.2rem', borderRadius: '50px', border: '1px solid rgba(232,221,208,0.2)' }}>
+            ♨️ Hot Springs Directory
+          </p>
+          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5.5vw,4.2rem)', color: 'var(--sand)', fontWeight: 600, marginBottom: '0.5rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
+            Find Your Perfect
+          </h1>
+          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5.5vw,4.2rem)', color: 'var(--terra-lt)', fontWeight: 600, marginBottom: '1.25rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
+            Hot Spring
+          </h1>
+          <div className="divider anim-fade-up anim-delay-2" style={{ maxWidth: '280px', margin: '0 auto 1.5rem' }}>♨</div>
+          <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: 'rgba(232,221,208,0.7)', marginBottom: '2.75rem', maxWidth: '480px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
+            Natural hot springs, thermal pools &amp; geothermal soaking spots — {locations.length}+ locations across {statesWithData} states.
+          </p>
+          <form method="GET" action="/search" className="anim-fade-up anim-delay-3">
+            <div className="search-wrap">
+              <input type="text" name="q" placeholder="Search by state, city, or spring type…" className="search-input" />
+              <button type="submit" className="search-btn">Find Springs</button>
+            </div>
+          </form>
+        </div>
+        <svg aria-hidden viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', display: 'block' }} preserveAspectRatio="none">
+          <path d="M0,28 C360,55 1080,0 1440,28 L1440,55 L0,55 Z" fill="var(--ivory)" />
+        </svg>
       </section>
 
-      <section style={{ marginBottom: "3rem" }}>
-        <h2 style={{ fontSize: "1.5rem", color: "#7d1a00", marginBottom: "1.5rem" }}>
-          Featured Hot Springs
-        </h2>
-        <div style={featuredGridStyles}>
-          {featuredLocations.map((location) => (
-            <div
-              key={location.slug}
-              style={cardStyles}
-            >
-              <h3 style={cardTitleStyles}>{location.name}</h3>
-              <p style={cardLocationStyles}>
-                {location.city}, {location.state}
-              </p>
-              <p style={cardDescriptionStyles}>
-                {location.description.substring(0, 120)}...
-              </p>
-              <div style={amenitiesStyles}>
-                {location.amenities.slice(0, 3).map((amenity, idx) => (
-                  <span key={idx} style={amenityBadgeStyles}>
-                    {amenity}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={`/${location.stateSlug}/${location.slug}`}
-                style={linkButtonStyles}
-              >
-                View Details
-              </a>
+      {/* Stats */}
+      <section style={{ background: 'var(--white)', borderBottom: '1px solid rgba(196,82,26,0.08)' }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          {[
+            { n:`${locations.length}+`, l:'Hot Springs' },
+            { n:`${statesWithData}`, l:'States Covered' },
+            { n:'Thermal', l:'& Mineral Pools' },
+            { n:'GPS', l:'Coordinates' },
+          ].map(({n,l}) => (
+            <div key={l} className="stat-item">
+              <div className="stat-number">{n}</div>
+              <div className="stat-label">{l}</div>
             </div>
           ))}
         </div>
       </section>
 
-      <section style={contentSectionStyles}>
-        <h2 style={sectionTitleStyles}>What Are Hot Springs?</h2>
-        <p style={textContentStyles}>
-          Hot springs are natural thermal pools heated by geothermal energy deep
-          within the Earth. Water from underground reservoirs is heated by the
-          Earth's internal heat and rises to the surface, creating these unique
-          natural wonders. Hot springs form in areas with active or recent
-          volcanic and geothermal activity, where the Earth's crust is thinner
-          and allows heat to reach the surface more easily. The water in these
-          springs contains dissolved minerals and rocks, which gives many hot
-          springs their distinctive properties and potential therapeutic
-          benefits.
-        </p>
-
-        <h2 style={sectionTitleStyles}>Types of Hot Springs</h2>
-        <p style={textContentStyles}>
-          <strong>Developed Hot Springs:</strong> These are commercial or resort-style hot
-          springs with infrastructure like changing facilities, admission fees,
-          and amenities such as dining and lodging. Examples include spas and
-          wellness resorts that harness natural geothermal resources to provide
-          luxury experiences.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Semi-Developed Hot Springs:</strong> These springs have some basic
-          infrastructure like parking areas and marked trails but remain more
-          natural. They typically allow free or low-cost access while maintaining
-          the wild character of the location.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Primitive and Wild Hot Springs:</strong> These undeveloped thermal
-          pools remain in their natural state, often requiring hiking or
-          backcountry travel to access. They offer an authentic experience for
-          adventurous visitors seeking solitude and natural beauty.
-        </p>
-
-        <h2 style={sectionTitleStyles}>Health Benefits of Soaking</h2>
-        <p style={textContentStyles}>
-          Many people visit hot springs for the therapeutic and relaxation
-          benefits associated with soaking in warm mineral water. The heat itself
-          promotes relaxation and can help ease muscle tension and stress. The
-          minerals found in hot spring water—including sulfur, silica, iron, and
-          magnesium—are believed to offer various health benefits such as
-          improved skin health, better circulation, and pain relief.
-        </p>
-        <p style={textContentStyles}>
-          Soaking in hot springs has been valued across cultures for centuries
-          as a wellness practice. However, it's important to note that while
-          many people report feeling better after soaking, individual experiences
-          vary, and hot springs should not be used as a substitute for medical
-          treatment.
-        </p>
-
-        <h2 style={sectionTitleStyles}>How to Visit Hot Springs Safely</h2>
-        <p style={textContentStyles}>
-          <strong>Check Water Temperature:</strong> Hot spring water can reach
-          scalding temperatures. Always test the temperature before entering and
-          be cautious around very hot areas. Some springs have temperature
-          warnings posted.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Verify Water Quality:</strong> Check with local authorities or
-          park management about water quality and any advisories. Some hot springs
-          may have mineral content or conditions that make them unsuitable for
-          soaking.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Start Gradually:</strong> Enter hot water slowly, allowing your
-          body to acclimate. Start with shorter soaking times, especially if
-          you're new to hot springs.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Stay Hydrated:</strong> Soaking in warm water can cause
-          dehydration. Bring plenty of water and drink regularly while soaking.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Know Your Health Status:</strong> Consult with a healthcare
-          provider if you have heart conditions, high blood pressure, or
-          pregnancy concerns before soaking in hot springs.
-        </p>
-
-        <h2 style={sectionTitleStyles}>
-          Best Regions for Hot Springs in the USA
-        </h2>
-        <p style={textContentStyles}>
-          <strong>Pacific Northwest:</strong> Oregon, Washington, and northern
-          California offer numerous hot springs ranging from developed resorts to
-          remote wilderness pools. The region's volcanic geology creates abundant
-          geothermal activity.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Rocky Mountains:</strong> Colorado, Wyoming, and Montana host
-          some of America's most famous hot springs, including those near
-          Steamboat Springs and in Yellowstone National Park. These areas offer a
-          mix of developed and primitive options.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Southwest:</strong> New Mexico and Arizona have long traditions
-          of hot spring use, with both developed spas and rustic natural pools.
-          The desert landscape offers stunning scenic backdrops.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Northern California:</strong> The Sierra Nevada region contains
-          many hot springs accessible for day trips and backpacking adventures,
-          with varying levels of development.
-        </p>
-        <p style={textContentStyles}>
-          <strong>Alaska:</strong> Remote Alaskan hot springs offer pristine
-          natural experiences, though they typically require significant travel
-          and wilderness skills to access.
-        </p>
-
-        <h2 style={sectionTitleStyles}>Frequently Asked Questions</h2>
-        <div style={faqStyles}>
-          <div style={faqItemStyles}>
-            <div style={faqQuestionStyles}>
-              Q: Are hot springs safe to soak in?
-            </div>
-            <div style={faqAnswerStyles}>
-              A: Most hot springs are safe when approached with caution. Always
-              check water temperature before entering, verify water quality with
-              local authorities, and avoid soaking if you have certain health
-              conditions. Never soak alone in remote locations.
-            </div>
+      {/* Featured */}
+      <section style={{ padding: '5rem 1.5rem 4rem' }}>
+        <div className="container">
+          <p className="section-label">♨️ Top Soaks</p>
+          <h2 className="section-title">Featured Hot Springs</h2>
+          <p className="section-sub" style={{ marginBottom: '3rem' }}>Beloved geothermal soaking destinations from the Rockies to the Pacific Coast.</p>
+          <div className="grid-3">
+            {featured.map((loc, i) => (
+              <Link key={loc.slug} href={`/${loc.stateSlug}/${loc.slug}`} style={{ textDecoration: 'none' }}>
+                <article className="card">
+                  <img src={`https://source.unsplash.com/800x500/?${IMG_KEYWORDS[i%IMG_KEYWORDS.length]}&sig=${i+1}`} alt={loc.name} className="card-img" loading="lazy" width={800} height={500} />
+                  <div className="card-body">
+                    <div className="card-meta"><span>📍</span><span>{loc.city ? `${loc.city}, ` : ''}{loc.state}</span></div>
+                    <h3 className="card-title">{loc.name}</h3>
+                    <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem' }}>{loc.description.slice(0,110)}…</p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                      {loc.amenities.slice(0,3).map((a) => <span key={a} className="chip">{a}</span>)}
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))}
           </div>
-
-          <div style={faqItemStyles}>
-            <div style={faqQuestionStyles}>
-              Q: What should I bring when visiting a hot spring?
-            </div>
-            <div style={faqAnswerStyles}>
-              A: Bring a towel, swimsuit, water shoes (especially for rocky
-              springs), plenty of drinking water, sun protection, and any
-              personal items you'll need. For remote springs, bring a headlamp,
-              first aid kit, and emergency supplies.
-            </div>
-          </div>
-
-          <div style={faqItemStyles}>
-            <div style={faqQuestionStyles}>
-              Q: Can children and pets visit hot springs?
-            </div>
-            <div style={faqAnswerStyles}>
-              A: Many hot springs allow children and pets, but rules vary by
-              location. Always verify policies with the specific hot spring.
-              Keep close supervision of children due to temperature and safety
-              risks. Some springs prohibit pets entirely.
-            </div>
-          </div>
-
-          <div style={faqItemStyles}>
-            <div style={faqQuestionStyles}>
-              Q: How long should I soak in a hot spring?
-            </div>
-            <div style={faqAnswerStyles}>
-              A: Start with 10-15 minute soaks, especially if you're new to hot
-              springs. Most people find 20-30 minutes comfortable. Listen to your
-              body and exit if you feel dizzy, overheated, or uncomfortable. Break
-              between soaks to cool down and rehydrate.
-            </div>
-          </div>
-
-          <div style={faqItemStyles}>
-            <div style={faqQuestionStyles}>
-              Q: What is the best season to visit hot springs?
-            </div>
-            <div style={faqAnswerStyles}>
-              A: Most hot springs can be visited year-round. Winter visits offer
-              the unique experience of soaking in warm water while surrounded by
-              snow and cold air. Summer provides easier access to remote springs.
-              Check seasonal road closures and weather conditions before planning
-              your trip.
-            </div>
-          </div>
-        </div>
-
-        <div style={disclaimerStyles}>
-          <strong>Safety Disclaimer:</strong> Always check water temperature
-          before entering hot springs, as some can cause serious burns. Never
-          soak if you have health conditions that may be negatively affected by
-          heat or mineral-rich water. Do not soak if you're ill. Always verify
-          current conditions and any health advisories with local authorities
-          before visiting. Soaking in natural hot springs is at your own risk.
         </div>
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Are hot springs safe to soak in?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Most hot springs are safe when approached with caution. Always check water temperature before entering, verify water quality with local authorities, and avoid soaking if you have certain health conditions.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What should I bring when visiting a hot spring?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Bring a towel, swimsuit, water shoes, plenty of drinking water, sun protection, and personal items you'll need.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How long should I soak in a hot spring?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Start with 10-15 minute soaks. Most people find 20-30 minutes comfortable. Listen to your body and exit if you feel dizzy or overheated.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Can children and pets visit hot springs?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Many hot springs allow children and pets, but rules vary by location. Always verify policies with the specific hot spring.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is the best season to visit hot springs?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Most hot springs can be visited year-round. Winter offers unique soaking experiences while summer provides easier access to remote springs.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
+      {/* How it works */}
+      <section style={{ background: 'linear-gradient(160deg, #3d2010 0%, #2a3018 100%)', padding: '5rem 1.5rem' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <p style={{ color: 'var(--terra-lt)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.16em', marginBottom: '0.75rem', fontFamily: 'var(--font-body)' }}>How It Works</p>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: 'var(--sand)', letterSpacing: '0.04em' }}>Plan Your Soak</h2>
+          </div>
+          <div className="grid-3">
+            {[
+              { icon:'🗺️', title:'Find a Spring', desc:'Browse by state to discover every hot spring — with temperatures, access details, and GPS coordinates.' },
+              { icon:'♨️', title:'Check Conditions', desc:'Review water temperature, access type (primitive vs. developed), permit requirements, and seasonal closures.' },
+              { icon:'🌿', title:'Soak In Nature', desc:'Pack a towel, water, and sun protection. Find your spot and let the mineral-rich waters do the rest.' },
+            ].map(({icon,title,desc}) => (
+              <div key={title} style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(196,82,26,0.2)' }}>
+                <div className="step-icon">{icon}</div>
+                <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--terra-lt)', fontSize: '1.4rem', marginBottom: '0.75rem' }}>{title}</h3>
+                <p style={{ color: 'rgba(232,221,208,0.65)', lineHeight: 1.7, fontSize: '0.95rem', fontFamily: 'var(--font-body)' }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Soak USA",
-            url: "https://soakusa.net",
-            logo: "https://soakusa.net/logo.png",
-            sameAs: [],
-            contactPoint: {
-              "@type": "ContactPoint",
-              contactType: "Customer Support",
-              email: "contact@soakusa.net",
-            },
-          }),
-        }}
-      />
+      {/* Content */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div className="container" style={{ maxWidth: '860px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '1.25rem' }}>The Healing Power of Hot Springs</h2>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>Hot springs have drawn people for millennia. From the ancient Roman baths to the traditional Japanese onsen culture, soaking in naturally heated, mineral-rich water is one of humanity's oldest wellness practices. The United States, with its geologically active western states, has an extraordinary concentration of hot springs accessible to the public.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>The minerals found in thermal waters — magnesium, sulfur, calcium, and silica — are thought to support muscle relaxation, skin health, and circulation. Whether or not you subscribe to the therapeutic claims, the combination of warm water, natural scenery, and stillness is undeniably restorative.</p>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Safety First</h3>
+          <p style={{ lineHeight: 1.85 }}>Water temperatures vary widely — from pleasant 100°F to dangerously scalding 200°F+. Always test the water before entering and never soak in springs over 104°F. Avoid submerging your head. Pregnant women and people with heart conditions should consult a doctor. Stay hydrated, limit sessions to 15–20 minutes, and shower after soaking in sulfur springs.</p>
+        </div>
+      </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Soak USA",
-            url: "https://soakusa.net",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: {
-                "@type": "EntryPoint",
-                urlTemplate: "https://soakusa.net/search?q={search_term_string}",
-              },
-              query_input: "required name=search_term_string",
-            },
-          }),
-        }}
-      />
+      {/* FAQ */}
+      <section style={{ background: 'var(--cream)', borderTop: '1px solid rgba(196,82,26,0.08)', padding: '5rem 1.5rem' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p className="section-label">FAQ</p>
+            <h2 className="section-title">Common Questions</h2>
+          </div>
+          {[
+            { q:'Are hot springs free to visit?', a:'It depends on the location. Primitive hot springs on BLM land are typically free, though some require a day-use fee or parking pass. Developed hot springs at resorts or state parks usually charge admission. Always check current access details before visiting.' },
+            { q:'What should I bring to a hot spring?', a:'Bring water (you\'ll get dehydrated), a towel, sandals for rocky pools, sunscreen, and a change of clothes. A waterproof bag for electronics is useful. For primitive springs, bring a headlamp if visiting at dusk, and pack out all trash.' },
+            { q:'What\'s the ideal soaking temperature?', a:'Most people find 100–104°F most comfortable for extended soaking. Above 104°F can stress the cardiovascular system. Water above 112°F is generally unsafe for prolonged immersion. Many springs mix with cold stream water naturally, so you can find comfortable spots.' },
+            { q:'Are hot springs open year-round?', a:'Many primitive hot springs are accessible year-round, though roads may close in winter. Developed resorts typically operate year-round. Summer brings higher crowds; winter soaking in snowy landscapes is spectacular but requires careful road and weather assessment.' },
+            { q:'Can children use hot springs?', a:'Children can enjoy hot springs, but exercise extra caution. Keep young children in cooler, shallower areas. Never leave children unattended near hot water, and avoid springs where the temperature is difficult to control. Some developed facilities have age restrictions.' },
+          ].map(({q,a}) => (
+            <details key={q} className="faq-item">
+              <summary>{q}</summary>
+              <div className="faq-answer">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Browse States */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <p className="section-label">All 50 States</p>
+            <h2 className="section-title">Browse Springs by State</h2>
+          </div>
+          <div className="grid-states">
+            {ALL_STATES.map((s) => (
+              <Link key={s} href={`/${s.toLowerCase().replace(/\s+/g,'-')}`} className="state-link">{s}</Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ background: 'linear-gradient(160deg, #3d2010 0%, #2a3018 100%)', padding: '4rem 1.5rem', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '600px' }}>
+          <p style={{ color: 'var(--terra-lt)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.18em', fontFamily: 'var(--font-body)', fontWeight: 700, marginBottom: '0.75rem' }}>♨️ The Water Awaits</p>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: 'var(--sand)', marginBottom: '1rem' }}>Find Your Soak</h2>
+          <p style={{ color: 'rgba(232,221,208,0.6)', marginBottom: '2rem', lineHeight: 1.7 }}>{locations.length}+ hot springs across {statesWithData} states. Discover your next retreat.</p>
+          <Link href="/browse-states" className="btn btn-terra" style={{ padding: '0.9rem 2.25rem' }}>Explore Springs →</Link>
+        </div>
+      </section>
     </>
   );
 }
