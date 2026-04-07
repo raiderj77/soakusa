@@ -141,10 +141,23 @@ export default function PrivacyPage() {
           their privacy practices.
         </p>
         <p style={textStyles}>
+          We work with third-party advertising partners, including Google, who
+          may use cookies to serve ads based on your prior visits to this
+          website or other websites.
+        </p>
+        <p style={textStyles}>
           We use Google AdSense to display advertisements. Google may use
           cookies and similar technologies to serve ads based on your prior
-          visits to our website or other websites. You can opt out of
-          personalized advertising by visiting Google's Ads Settings.
+          visits to our website or other websites. To opt out of personalized
+          advertising, you may visit{" "}
+          <a href="https://ads.google.com/settings" target="_blank" rel="noopener noreferrer" style={{ color: "#7d1a00" }}>
+            Google's Ads Settings
+          </a>{" "}
+          or{" "}
+          <a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer" style={{ color: "#7d1a00" }}>
+            optout.aboutads.info
+          </a>
+          .
         </p>
       </section>
 
