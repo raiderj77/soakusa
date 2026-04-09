@@ -90,6 +90,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
             </div>
+
+            {/* Etsy product callout */}
+            <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(196,82,26,0.35)', borderRadius: '10px', padding: '1.5rem 2rem', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.25rem' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-display)', color: 'var(--sand)', fontWeight: 600, fontSize: '1.1rem', marginBottom: '0.4rem', letterSpacing: '0.02em' }}>Plan Your Hot Springs Road Trip</p>
+                <p style={{ color: 'rgba(232,221,208,0.65)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '56ch', margin: 0 }}>Our USA Hot Springs Visit Journal has 40 real springs pre-loaded with map links, ratings, and a bucket list tracker — all in free Google Sheets.</p>
+              </div>
+              <a href="https://www.etsy.com/shop/DevelopVault" target="_blank" rel="nofollow sponsored noopener noreferrer" style={{ display: 'inline-block', background: 'var(--terra)', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.875rem', padding: '0.65rem 1.35rem', borderRadius: '6px', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>Get It on Etsy →</a>
+            </div>
+
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
               <p style={{ color: 'rgba(232,221,208,0.4)', fontSize: '0.85rem' }}>© 2026 Soak USA. All rights reserved.</p>
               <div style={{ display: 'flex', gap: '1.5rem' }}>
