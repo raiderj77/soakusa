@@ -4,6 +4,21 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import locations from '@/data/locations.json';
 
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
+  return `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${lng},${lat},13,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
+
+function getSoakPreview(d: { name: string; state: string; city: string; amenities: string[]; description: string }): string {
+  const amenityCount = d.amenities.length;
+  const location = d.city ? `${d.city}, ${d.state}` : d.state;
+  if (amenityCount >= 2) {
+    return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+  }
+  return `Natural hot spring or soaking spot in ${location}. Open for public access.`;
+}
+
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
@@ -29,15 +44,12 @@ const AMENITY_ICONS: Record<string, string> = {
   'Towels provided': '🛁', 'Private pools': '🔐', 'Pet friendly': '🐕',
 };
 
-const HERO_KEYWORDS = ['hot+springs','thermal+pool','geothermal+pool','natural+hot+spring','mineral+spring','soaking+pool','steam+pool','mountain+hot+spring'];
-
 export default async function SpringPage({ params }: { params: Promise<{ state: string; slug: string }> }) {
   const { state, slug } = await params;
   const loc = locations.find((l) => l.slug === slug && l.stateSlug === state);
   if (!loc) notFound();
 
   const related = locations.filter((l) => l.stateSlug === state && l.slug !== slug).slice(0, 3);
-  const heroKw = HERO_KEYWORDS[Math.abs(slug.charCodeAt(0) - 97) % HERO_KEYWORDS.length];
 
   return (
     <>
@@ -51,8 +63,8 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
       }) }} />
 
       {/* Hero */}
-      <section style={{ position: 'relative', height: '440px', overflow: 'hidden' }}>
-        <img src={`https://picsum.photos/seed/${slug}/1400/600`} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} width={1400} height={600} />
+      <section style={{ position: 'relative', height: '440px', overflow: 'hidden', background: 'linear-gradient(160deg, #2a1a0e 0%, #3d2a1a 100%)' }}>
+        <img src={getMapboxImage(loc.lat, loc.lng, 1400, 600)} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.85 }} width={1400} height={600} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(42,32,26,0.9) 0%, rgba(42,32,26,0.5) 50%, rgba(42,32,26,0.15) 100%)' }} />
         <div className="container" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%' }}>
           <Link href={`/${state}`} style={{ color: 'var(--terra-lt)', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem', fontWeight: 700, fontFamily: 'var(--font-body)', textDecoration: 'none' }}>← {loc.state}</Link>
@@ -75,7 +87,11 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
             {/* Left */}
             <div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', color: 'var(--text)', marginBottom: '1rem' }}>About This Spring</h2>
-              <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>{loc.description}</p>
+              <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>
+                {loc.name} is a natural soaking spot located in {loc.city ? `${loc.city}, ` : ''}{loc.state}.{' '}
+                {loc.amenities.length > 0 ? `This spot features ${loc.amenities.slice(0, 2).join(' and ').toLowerCase()}.` : 'Free public access to natural thermal waters.'}{' '}
+                Always check current conditions and access rules before visiting.
+              </p>
 
               {loc.amenities.length > 0 && (
                 <div style={{ marginBottom: '2rem' }}>
@@ -154,11 +170,11 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
               {related.map((r, i) => (
                 <Link key={r.slug} href={`/${r.stateSlug}/${r.slug}`} style={{ textDecoration: 'none' }}>
                   <article className="card">
-                    <img src={`https://picsum.photos/seed/${r.slug}/800/500`} alt={r.name} className="card-img" loading="lazy" width={800} height={500} />
+                    <img src={getMapboxImage(r.lat, r.lng)} alt={r.name} className="card-img" loading="lazy" width={800} height={500} />
                     <div className="card-body">
                       <div className="card-meta"><span>📍</span><span>{r.city ? `${r.city}, ` : ''}{r.state}</span></div>
                       <h3 className="card-title">{r.name}</h3>
-                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '0.75rem' }}>{r.description.slice(0,90)}…</p>
+                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '0.75rem' }}>{getSoakPreview(r)}</p>
                     </div>
                   </article>
                 </Link>
