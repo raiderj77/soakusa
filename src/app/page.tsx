@@ -93,6 +93,17 @@ export default function Home() {
           },
         ],
       }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Your Friendly Developer Editorial Team',
+        url: 'https://soakusa.net/editorial',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Soak USA',
+          url: 'https://soakusa.net',
+        },
+      }) }} />
 
       {/* Hero */}
       <section style={{ position: 'relative', background: 'linear-gradient(160deg, #3d2010 0%, #2a3018 50%, #1a2a10 100%)', overflow: 'hidden', padding: '7rem 1.5rem 8rem' }}>

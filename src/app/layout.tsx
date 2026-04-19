@@ -25,12 +25,10 @@ const toolSites = [
   { name: 'Flip My Case', href: 'https://flipmycase.com' }, { name: 'Creator Revenue Calculator', href: 'https://creatorrevenuecalculator.com' },
   { name: 'Contract Extract', href: 'https://contractextract.com' }, { name: 'Medical Bill Reader', href: 'https://medicalbillreader.com' },
   { name: 'Tax Break Tools', href: 'https://taxbreaktools.com' }, { name: '524 Tracker', href: 'https://524tracker.com' },
+  { name: 'AI Business Alternative', href: 'https://aibusinessalternative.com' },
 ];
 const directorySites = [
-  { name: 'Public Boat Ramps', href: 'https://publicboatramps.com' }, { name: 'Find Swim Spots', href: 'https://findswimspots.com' },
-  { name: 'Craft Distillery Finder', href: 'https://craftdistilleryfinder.com' }, { name: 'Drive-In Tonight', href: 'https://driveintonight.com' },
-  { name: 'All Skate Parks', href: 'https://allskateparks.com' }, { name: 'Nearby Escape Rooms', href: 'https://nearbyescaperooms.com' },
-  { name: 'Rockhounding Finder', href: 'https://rockhoundingfinder.com' }, { name: 'All Skating Rinks', href: 'https://allskatingrinks.com' },
+  { name: 'Public Boat Ramps', href: 'https://publicboatramps.com' },
 ];
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -78,6 +76,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
               <a href="/" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Home</a>
               <a href="/browse-states" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Browse</a>
+              <a href="/editorial" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Editorial</a>
               <a href="/about" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>About</a>
             </nav>
           </div>

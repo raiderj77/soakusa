@@ -1,49 +1,25 @@
-# LLM Friendly Information - Soak USA
+# Soak USA — LLM-Friendly Site Summary
 
-## About Soak USA
-Soak USA is a comprehensive directory of hot springs and natural thermal pools across the United States. Our mission is to help people discover, explore, and safely visit these natural wonders.
+> Soak USA is a directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.
 
-## Website Information
+## About
 - Domain: soakusa.net
-- Primary Purpose: Hot Springs Directory
-- Content: Information about hot springs locations, amenities, access information, and safety guidelines
+- Type: Location directory
+- Coverage: All 50 US states, 1,476+ hot spring locations
+- Data: GPS coordinates, water temperatures, amenities, access requirements
 
-## Featured Content
-Our directory includes 10+ hot springs across different US states with detailed information including:
-- Location and coordinates
-- Description and geological information
-- Amenities and features
-- Safety information and best practices
+## Key Pages
+- [Home](https://soakusa.net): Browse featured hot springs and search by state
+- [Editorial](https://soakusa.net/editorial): In-depth guides and safety information
+- [Privacy Policy](https://soakusa.net/privacy): MODPA/GDPR/CCPA compliant, honors GPC signals
+- [About](https://soakusa.net/about): Mission and editorial standards
+- [Contact](https://soakusa.net/contact): Get in touch
 
-## States Covered
-- Colorado
-- Montana
-- Idaho
-- Wyoming
-- New Mexico
-- Oregon
-- California
-- Nevada
-- Utah
-- Alaska
+## Data Coverage
+Hot springs are listed with: name, state, city, GPS coordinates, description, water temperature, amenities (pool, changing rooms, camping, wheelchair accessible), access type (free/fee), and safety notes.
 
-## Key Information for Users
-- Always verify water temperature before soaking
-- Check with local authorities for current conditions
-- Don't soak if ill or with certain health conditions
-- Bring plenty of water and stay hydrated
-- Respect private property and Leave No Trace principles
+## Safety Information
+This site includes safety guidance for hot spring visitors: temperature checking, hydration, health conditions, and Leave No Trace principles.
 
-## Contact
-Email: contact@soakusa.net
-
-## Main Sections
-- Home: Featured hot springs and general information
-- State Pages: Browse hot springs by state
-- Individual Location Pages: Detailed information about each hot spring
-- About: Mission and values
-- Contact: Get in touch
-- Privacy Policy: Data privacy information
-- Terms of Service: Legal terms and safety disclaimers
-
-For more information, visit https://soakusa.net
+## Sitemap
+https://soakusa.net/sitemap.xml
