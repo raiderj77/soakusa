@@ -1,0 +1,23 @@
+# Soak USA — Full LLM Content Index
+
+> Soak USA is a directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.
+
+## About
+- Domain: soakusa.net
+- Type: Location directory — 1,476+ hot spring and natural soaking locations
+- Coverage: All 50 US states
+- Data: GPS coordinates, water temperatures, amenities, access requirements, safety information
+
+## Navigation
+- [Home](https://soakusa.net)
+- [Editorial](https://soakusa.net/editorial)
+- [About](https://soakusa.net/about)
+- [Contact](https://soakusa.net/contact)
+- [Privacy Policy](https://soakusa.net/privacy)
+- [Terms of Service](https://soakusa.net/terms)
+
+## State Directories
+[Alabama](https://soakusa.net/alabama) | [Alaska](https://soakusa.net/alaska) | [Arizona](https://soakusa.net/arizona) | [Arkansas](https://soakusa.net/arkansas) | [California](https://soakusa.net/california) | [Colorado](https://soakusa.net/colorado) | [Connecticut](https://soakusa.net/connecticut) | [Delaware](https://soakusa.net/delaware) | [Florida](https://soakusa.net/florida) | [Georgia](https://soakusa.net/georgia) | [Hawaii](https://soakusa.net/hawaii) | [Idaho](https://soakusa.net/idaho) | [Illinois](https://soakusa.net/illinois) | [Indiana](https://soakusa.net/indiana) | [Iowa](https://soakusa.net/iowa) | [Kansas](https://soakusa.net/kansas) | [Kentucky](https://soakusa.net/kentucky) | [Louisiana](https://soakusa.net/louisiana) | [Maine](https://soakusa.net/maine) | [Maryland](https://soakusa.net/maryland) | [Massachusetts](https://soakusa.net/massachusetts) | [Michigan](https://soakusa.net/michigan) | [Minnesota](https://soakusa.net/minnesota) | [Mississippi](https://soakusa.net/mississippi) | [Missouri](https://soakusa.net/missouri) | [Montana](https://soakusa.net/montana) | [Nebraska](https://soakusa.net/nebraska) | [Nevada](https://soakusa.net/nevada) | [New Hampshire](https://soakusa.net/new-hampshire) | [New Jersey](https://soakusa.net/new-jersey) | [New Mexico](https://soakusa.net/new-mexico) | [New York](https://soakusa.net/new-york) | [North Carolina](https://soakusa.net/north-carolina) | [North Dakota](https://soakusa.net/north-dakota) | [Ohio](https://soakusa.net/ohio) | [Oklahoma](https://soakusa.net/oklahoma) | [Oregon](https://soakusa.net/oregon) | [Pennsylvania](https://soakusa.net/pennsylvania) | [Rhode Island](https://soakusa.net/rhode-island) | [South Carolina](https://soakusa.net/south-carolina) | [South Dakota](https://soakusa.net/south-dakota) | [Tennessee](https://soakusa.net/tennessee) | [Texas](https://soakusa.net/texas) | [Utah](https://soakusa.net/utah) | [Vermont](https://soakusa.net/vermont) | [Virginia](https://soakusa.net/virginia) | [Washington](https://soakusa.net/washington) | [West Virginia](https://soakusa.net/west-virginia) | [Wisconsin](https://soakusa.net/wisconsin) | [Wyoming](https://soakusa.net/wyoming)
+
+## Sitemap
+https://soakusa.net/sitemap.xml
