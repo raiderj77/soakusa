@@ -133,6 +133,59 @@ export default function PrivacyPage() {
       </section>
 
       <section>
+        <h2 style={sectionTitleStyles}>Your Privacy Rights (MODPA Compliance)</h2>
+        <p style={textStyles}>
+          As of April 1, 2026, Soak USA complies with the Maryland Online Data Privacy Act (MODPA) and recognizes your consumer privacy rights.
+        </p>
+
+        <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
+          Your Consumer Rights:
+        </h3>
+        <ul style={textStyles}>
+          <li>
+            <strong>Right to Access:</strong> You have the right to confirm whether we collect personal data about you and to access that data.
+          </li>
+          <li>
+            <strong>Right to Correct:</strong> You have the right to correct any inaccurate personal data we hold about you.
+          </li>
+          <li>
+            <strong>Right to Delete:</strong> You have the right to request deletion of your personal data, subject to certain exceptions.
+          </li>
+          <li>
+            <strong>Right to Opt-Out:</strong> You have the right to opt out of the sale or targeted advertising of your personal data.
+          </li>
+          <li>
+            <strong>Right to Data Portability:</strong> You have the right to obtain a copy of your personal data in a portable format.
+          </li>
+        </ul>
+
+        <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
+          Global Privacy Control (GPC):
+        </h3>
+        <p style={textStyles}>
+          Soak USA honors Global Privacy Control (GPC) signals sent through your browser or privacy tool. When you enable GPC, we treat it as a universal opt-out signal and will not serve targeted advertising or use your data for personalized purposes.
+        </p>
+
+        <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
+          Data Sale Notice:
+        </h3>
+        <p style={textStyles}>
+          Soak USA does not sell or share personal data for monetary consideration. We do not participate in the sale of personal information as defined under privacy laws.
+        </p>
+
+        <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
+          How to Exercise Your Rights:
+        </h3>
+        <p style={textStyles}>
+          To submit a consumer rights request, please contact us at{" "}
+          <a href="mailto:privacy@soakusa.net" style={{ color: "#7d1a00" }}>
+            privacy@soakusa.net
+          </a>
+          . We will respond to verified requests within 45 days of receipt. You may also designate an authorized agent to make requests on your behalf.
+        </p>
+      </section>
+
+      <section>
         <h2 style={sectionTitleStyles}>Third-Party Services</h2>
         <p style={textStyles}>
           Our Service may contain links to other websites and services that are

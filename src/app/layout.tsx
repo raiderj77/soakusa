@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Script from 'next/script';
 import { Cormorant_Garamond, Lato } from 'next/font/google';
 import './globals.css';
@@ -32,7 +33,10 @@ const directorySites = [
   { name: 'Rockhounding Finder', href: 'https://rockhoundingfinder.com' }, { name: 'All Skating Rinks', href: 'https://allskatingrinks.com' },
 ];
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const gpcHeader = headersList.get('sec-gpc') === '1'
+
   return (
     <html lang="en" className={`${cormorant.variable} ${lato.variable}`}>
       <head>
@@ -50,12 +54,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             wait_for_update: 500
           });
         `}</Script>
-        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932" strategy="afterInteractive" />
-        <Script id="microsoft-clarity" strategy="afterInteractive">{`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vsqobt7va0");`}</Script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-SPJKLYCFF6" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SPJKLYCFF6');`}
-        </Script>
+        {!gpcHeader && (
+          <>
+            <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932" strategy="afterInteractive" />
+            <Script id="microsoft-clarity" strategy="afterInteractive">{`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vsqobt7va0");`}</Script>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-SPJKLYCFF6" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SPJKLYCFF6');`}
+            </Script>
+          </>
+        )}
+        <Script id="gpc-client-check" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `(function(){var g=typeof navigator!=='undefined'&&!!navigator.globalPrivacyControl;var c=document.cookie.indexOf('empire_gpc=1')!==-1;if(g||c){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'denied',personalization_storage:'denied'});}})();`
+        }} />
       </head>
       <body>
         <header style={{ background: 'linear-gradient(to right, #3d2010, #2a3d20)', borderBottom: '2px solid var(--terra)', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 16px rgba(42,32,26,0.25)' }}>
