@@ -63,6 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `Hot Springs in ${stateName}`,
     description: `Find the best hot springs and thermal pools in ${stateName}. GPS coordinates, temperatures, access details, and soaking tips.`,
     alternates: { canonical: `https://soakusa.net/${state}` },
+    robots: { index: false, follow: true },
   };
 }
 

@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `${loc.name} — Hot Spring in ${loc.state}`,
     description: `${loc.description.slice(0, 155)}`,
     alternates: { canonical: `https://soakusa.net/${loc.stateSlug}/${loc.slug}` },
+    robots: { index: false, follow: true },
   };
 }
 
