@@ -1167,7 +1167,17 @@
     "description": "Strawberry Park Hot Springs is a hot spring in Colorado.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Strawberry Park Hot Springs sits seven miles north of downtown Steamboat Springs, Colorado, in the Routt National Forest. It is one of the most photographed natural hot springs in the United States, known for its rock-walled pools, surrounding pine forest, and after-dark clothing-optional policy. Water flows from a single source at the top of the property and cascades through four to six pools at progressively cooler temperatures, ending in a creek-fed cold plunge. Strawberry Park has been operated as a private natural hot springs resort since the 1960s and remains family-owned.",
+      "access": "From Steamboat Springs, take 7th Street north onto Park Road, which becomes County Road 36. The first five miles are paved; the final two miles are dirt road that becomes rough in wet conditions and may require four-wheel drive in winter. The springs operate a paid shuttle from downtown Steamboat for visitors who do not want to drive the dirt road. Parking is on-site for those who do drive in. The road is plowed but can ice over from November through April.",
+      "bestTime": "Summer (June through September) is peak season with longest daylight hours, easiest access, and fullest amenities. Winter visits are popular for the soaking-in-snow experience but require careful drive planning. Weekday afternoons are quieter than weekends. After dark (typically 9 PM onward) the property switches to adults-only with a clothing-optional policy; reservations are strongly recommended for that window and walk-ins are often turned away.",
+      "fees": "Day passes are approximately $20 per adult and $10 per child as of 2026, payable at the gatehouse. Cash and card both accepted. Camping (around $30 per site) and rustic cabin rentals (from approximately $90 per night) are available on-site through advance reservation. Massage appointments book separately. Rates change annually; verify on the official site before driving out.",
+      "safety": "Pool temperatures range from approximately 95\u00b0F at the cool end to 104\u00b0F at the upper source. The hottest pool is at the top and water cools as it flows down. Limit individual soaks to 15 to 20 minutes and hydrate between sessions. The dirt access road has tight turns; do not attempt the final two miles in a low-clearance vehicle when wet or snow-covered. After-dark adults-only policy means no children on-site after 9 PM. Photography is restricted on the property.",
+      "nearby": "Steamboat Springs town has the Old Town Hot Springs (urban developed) for a contrast experience. Routt National Forest offers extensive hiking, biking, and fishing within a 20-minute drive. Other notable Colorado springs within day-trip range include Glenwood Hot Springs (about three hours south) and Conundrum Hot Springs (a four-hour drive plus 8.5-mile hike from Aspen). Lodging in Steamboat ranges from the historic Hotel Bristol to ski-season condos.",
+      "visitJournalNote": "Track temperatures, dates, road conditions, and your impressions of every hot spring you visit with the USA Hot Springs Visit Journal \u2014 a printable tracker built specifically for hot springs explorers. Includes pages for primitive and developed springs, fee logs, and visit memories.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "The Mother Spring",

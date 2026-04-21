@@ -31,9 +31,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!loc) return {};
   return {
     title: `${loc.name} — Hot Spring in ${loc.state}`,
-    description: `${loc.description.slice(0, 155)}`,
+    description: ((loc as any).guide?.overview ?? loc.description).slice(0, 155),
     alternates: { canonical: `https://soakusa.net/${loc.stateSlug}/${loc.slug}` },
-    robots: { index: false, follow: true },
+    robots: { index: !!(loc as any).guide, follow: true },
   };
 }
 
@@ -93,6 +93,28 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
                 {loc.amenities.length > 0 ? `This spot features ${loc.amenities.slice(0, 2).join(' and ').toLowerCase()}.` : 'Free public access to natural thermal waters.'}{' '}
                 Always check current conditions and access rules before visiting.
               </p>
+
+              {/* GUIDE BLOCK — long-form enriched content for selected springs */}
+              {(loc as any).guide && (
+                <div style={{ marginBottom: '2rem' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Getting There</h3>
+                  <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.access}</p>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginBottom: '0.75rem' }}>When to Visit</h3>
+                  <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.bestTime}</p>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginBottom: '0.75rem' }}>Fees & Permits</h3>
+                  <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.fees}</p>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginBottom: '0.75rem' }}>Safety & Etiquette</h3>
+                  <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.safety}</p>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginBottom: '0.75rem' }}>Nearby</h3>
+                  <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.nearby}</p>
+                  <div style={{ background: 'var(--cream)', border: '1px solid var(--terra)', borderRadius: 'var(--radius)', padding: '1.5rem', marginBottom: '1rem' }}>
+                    <p style={{ fontFamily: 'var(--font-display)', color: 'var(--terra)', fontSize: '1.1rem', marginBottom: '0.5rem' }}>Plan Your Hot Springs Trip</p>
+                    <p style={{ fontSize: '0.9rem', color: '#445', lineHeight: 1.7, marginBottom: '0.75rem' }}>{(loc as any).guide.visitJournalNote}</p>
+                    <a href="https://www.etsy.com/shop/DevelopVault" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '0.6rem 1.2rem', background: 'var(--terra)', color: 'white', textDecoration: 'none', fontFamily: 'var(--font-body)', fontWeight: 700, borderRadius: 'var(--radius-sm)', fontSize: '0.875rem' }}>Get the Visit Journal →</a>
+                  </div>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--pebble)', fontStyle: 'italic' }}>Last updated: {(loc as any).guide.lastUpdated}</p>
+                </div>
+              )}
 
               {loc.amenities.length > 0 && (
                 <div style={{ marginBottom: '2rem' }}>
