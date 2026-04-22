@@ -738,7 +738,17 @@
     "description": "Sykes Hot Spring is a hot spring in California.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Sykes Hot Spring is a primitive backcountry hot spring on the Pine Ridge Trail in the Ventana Wilderness, accessed from Big Sur, California. Three small natural pools sit beside the Big Sur River. Reaching them requires a strenuous 10-mile round-trip hike through redwoods and exposed ridgelines. The trail and area suffered extensive damage in the 2016 Soberanes Fire and subsequent storms; current access status varies and should always be verified before a trip.",
+      "access": "Trailhead is at Big Sur Station, off CA-1 in Big Sur. Pine Ridge Trail is the standard route. As of recent seasons, day-use permits are required and overnight permits at Sykes Camp itself are limited. Always check the current Los Padres National Forest status before planning.",
+      "bestTime": "Spring (March through May) offers blooming wildflowers and reliable creek crossings. Fall (October to early November) has cooler hiking weather. Summer can be hot and exposed; winter rains can flood the trail and make creek crossings dangerous.",
+      "fees": "Approximately $5 trailhead permit plus $10 parking at Big Sur Station. Reservations may be required during peak seasons; check recreation.gov. No fees at the springs themselves.",
+      "safety": "Strenuous hike with significant elevation gain (2,000+ feet). Carry plenty of water; on-trail water sources can be unreliable in dry years. The trail traverses areas with poison oak; long pants and long sleeves help. Cell service is essentially nonexistent. Tell someone your itinerary.",
+      "nearby": "Big Sur itself offers Pfeiffer Beach (purple sand), McWay Falls (80-foot waterfall onto a beach), and Bixby Bridge photo stops. The Henry Miller Library is a Big Sur cultural anchor. Carmel-by-the-Sea is 30 minutes north; San Simeon and Hearst Castle are 60 minutes south.",
+      "visitJournalNote": "Sykes is a hike-in destination that changes year to year with fire and storm damage. Logging your visit conditions in the USA Hot Springs Visit Journal helps you remember what was true the season you were there.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Terminal Geyser",
@@ -842,7 +852,17 @@
     "description": "Wild Willy's Hot Springs is a hot spring in California.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Wild Willy's Hot Springs (also called Crowley Hot Springs) is a free, undeveloped hot spring on BLM land in the Long Valley caldera near Mammoth Lakes, California. A wooden boardwalk crosses a meadow to two natural soaking pools fed by a thermal source. The larger pool seats roughly a dozen people at approximately 99 to 102\u00b0F, with views across the Sierra Nevada eastern slope. It is one of the most popular springs in the Eastern Sierra, drawing climbers, skiers, and road trippers year-round.",
+      "access": "From US-395 south of Mammoth Lakes, take Benton Crossing Road east. Drive approximately 3 miles to a dirt road on the right and follow it to a small parking area at the boardwalk trailhead. The dirt road can be rough; high-clearance is helpful but not required in dry conditions. The boardwalk is a quarter-mile flat walk.",
+      "bestTime": "Year-round access. Spring and fall offer the most comfortable conditions. Winter soaks are spectacular with snow surrounding the pools, but the dirt access road can be muddy or icy. Sunrise and sunset bring the best light and fewest people. Holiday weekends are crowded; expect to wait or share the pool.",
+      "fees": "Free. No permits or fees. BLM-managed land with no facilities; pack out all trash. There are no restrooms, no trash cans, and no on-site supervision.",
+      "safety": "The pool floor is silty and uneven; watch your footing on entry and exit. Glass is prohibited and dangerous; bring soft-sided containers only. Cell service is patchy. Etiquette in the pool is communal and clothing-optional is common but not universal; respect other soakers. Do not bathe with soap or shampoo as it damages the spring ecology.",
+      "nearby": "Mammoth Lakes is 20 minutes northwest with skiing, hiking, and full-service amenities. Hot Creek Geological Site is a viewing-only thermal area 10 minutes east. Other Long Valley springs include Hilltop, Crab Cooker, and Shepherd Hot Springs, all within a short drive on the same dirt road network. Mono Lake is 45 minutes north on US-395.",
+      "visitJournalNote": "The Long Valley spring network is best explored as a multi-spring loop. Track which pools you visited, the temperatures, and the road conditions in the USA Hot Springs Visit Journal so you can build a return-trip plan.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Wild Willy's Hot Springs",
@@ -894,7 +914,17 @@
     "description": "Conundrum Hot Springs is a hot spring in Colorado.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Conundrum Hot Springs is a backcountry destination in the Maroon Bells-Snowmass Wilderness near Aspen, Colorado. The springs sit at 11,200 feet elevation, reached only by an 8.5-mile one-way hike with 2,500 feet of elevation gain. Multiple natural rock-walled pools ranging from approximately 95 to 102\u00b0F overlook a high alpine basin with views of surrounding 14,000-foot peaks. A USFS overnight permit system has been in effect since 2018 to limit use and protect the fragile alpine environment.",
+      "access": "Trailhead is at the end of Conundrum Creek Road, off Castle Creek Road south of Aspen. Limited parking; arrive early. Day hikes are permitted but most visitors backpack overnight. Permits must be reserved in advance through recreation.gov; they sell out within minutes when released for the season.",
+      "bestTime": "July through September only. Snow blocks the upper trail outside this window and the access road may be closed in winter. Permits are released in early spring for the entire season; book the moment they drop. Mid-week dates have slightly better availability than weekends.",
+      "fees": "Wilderness permit fee is approximately $10 plus a recreation.gov reservation fee. No on-site fees at the springs themselves. Permit-required parking at the trailhead. Bring cash for any emergency lodging or shuttle services in Aspen.",
+      "safety": "Altitude sickness is a real risk at 11,200 feet; spend a night in Aspen first to acclimate. The trail crosses Conundrum Creek multiple times \u2014 high water in early summer can require rerouting. Bear country demands proper food storage in approved canisters. Carry the Ten Essentials and check weather; afternoon thunderstorms are common.",
+      "nearby": "Aspen is the gateway town with shuttles and gear rental. Maroon Bells Scenic Area (the famous twin peaks) is a 30-minute drive. Independence Pass crosses the Continental Divide east of Aspen with its own dayhikes. Crystal Mill near Marble is a popular pho to destination for jeep tours.",
+      "visitJournalNote": "A backcountry hot spring like Conundrum is the kind of trip that deserves its own page in your soak log. Track conditions, permit details, and your route notes in the USA Hot Springs Visit Journal so future you remembers what worked.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Dakota Hot Springs",
@@ -933,7 +963,17 @@
     "description": "Glenwood Hot Springs Grand Pool is a hot spring in Colorado.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Glenwood Hot Springs Pool in Glenwood Springs, Colorado, is the world's largest mineral hot springs pool. The main pool stretches 405 feet long and holds nearly a million gallons of water at a comfortable 90 to 93\u00b0F. A separate therapy pool sits beside it at a hotter 104\u00b0F. Water comes from the Yampah Spring, which produces 3.5 million gallons per day at the source temperature of 122\u00b0F. The resort has operated continuously since 1888 and is the historic centerpiece of downtown Glenwood Springs.",
+      "access": "Take I-70 exit 116 in Glenwood Springs. The pool sits on the north side of the Colorado River next to the historic Hotel Colorado. On-site parking garage charges separately from pool admission. Open year-round, including holidays. Easily reached as a day trip from Aspen (40 miles), Vail (60 miles), or Denver (160 miles).",
+      "bestTime": "Year-round operation. Weekday mornings before 11 AM are noticeably quieter than weekends and afternoons. Summer brings peak crowds when families visit alongside the adjacent water park add-ons. Winter evenings, with steam rising off the pool against snow, are the most atmospheric. Resort guests get early access on most days.",
+      "fees": "Day pass rates as of 2026 are approximately $28 adult and $20 child, with discounts for evening admission and multi-day passes. Resort lodging and pool packages bundle accommodations with pool access. Annual passes are available for locals. Towel and locker rental costs extra. Verify current pricing on the official site before driving.",
+      "safety": "Lifeguards are on duty during all open hours. Children must be accompanied by an adult in the main pool. The therapy pool at 104\u00b0F is restricted to adults and limits soaking sessions to 15 minutes for safety. Hydrate well before and during your visit. Avoid alcohol before soaking. The pool is sanitized but mineral water can stain swimsuits over time.",
+      "nearby": "Iron Mountain Hot Springs sits 2 miles east with smaller, more intimate pools. Glenwood Caverns Adventure Park is a quarter-mile tram ride away. The Roaring Fork River and Glenwood Canyon offer rafting, fishing, and biking on the paved Glenwood Canyon Trail. Aspen is a 45-minute drive on Highway 82.",
+      "visitJournalNote": "Track every spring you visit, the temperatures you encountered, and the dates with the USA Hot Springs Visit Journal \u2014 a printable tracker designed for hot springs explorers building a lifetime soak log.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Hartsel Hot Springs",
@@ -998,7 +1038,17 @@
     "description": "Pagosa Hot Spring is a hot spring in Colorado.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "The Mother Spring in Pagosa Springs, Colorado, is the deepest measured geothermal spring in the world. Drilling has reached over 1,000 feet without finding the bottom. The source water emerges at 144\u00b0F and feeds three commercial soaking facilities in town: The Springs Resort, Healing Waters Resort, and the Overlook Hot Springs Spa. The spring has been sacred to the Ute people for centuries; the town name comes from the Ute word pagosah, meaning healing waters.",
+      "access": "Pagosa Springs sits on US-160, 65 miles east of Durango and about 4 hours southwest of Denver. The Mother Spring itself is a viewing area in downtown Pagosa Springs near the river; it is too hot to enter. The three commercial facilities are within walking distance of one another in the town center.",
+      "bestTime": "Year-round, but winter brings the iconic experience of soaking with snow falling around outdoor pools. The Springs Resort is open 24 hours; midnight soaking under stars is a signature offering. Weekday afternoons are quietest. Avoid peak ski-season weekends when Wolf Creek Ski Area drives crowds through town.",
+      "fees": "Day pass at The Springs Resort is approximately $59 (premium experience with 25+ pools). Healing Waters Resort is older and more affordable at approximately $15. The Overlook Hot Springs Spa charges around $25. Each facility has its own amenities and atmosphere. Resort lodging packages bundle pool access overnight.",
+      "safety": "The Mother Spring source temperature of 144\u00b0F can scald instantly; viewing only, no entry. Soaking pools are blended down to safe ranges (95 to 110\u00b0F). Limit soaks in the hottest pools to 15 minutes. Hydrate between sessions. The mineral content is high; remove silver jewelry before soaking to prevent tarnishing.",
+      "nearby": "Wolf Creek Ski Area is a 20-mile drive east on US-160 (one of Colorado's snowiest mountains). Chimney Rock National Monument preserves Ancestral Puebloan ruins 17 miles west. Treasure Falls is a roadside waterfall stop. Mesa Verde National Park is a 2-hour drive south.",
+      "visitJournalNote": "Pagosa is one of those places worth tracking across multiple visits \u2014 different facility, different season, different vibe. The USA Hot Springs Visit Journal gives you space to log what worked and what to try next time.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Paradise",
@@ -1398,7 +1448,17 @@
     "description": "Kirkham Hot Springs is a hot spring in Idaho.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Kirkham Hot Springs is a USFS-managed primitive hot spring along the South Fork Payette River in Idaho. Multiple natural rock-walled pools cascade down a hillside into the river, allowing soakers to mix hot spring water with cold river flow for their preferred temperature. The springs are free for day use and easily reached from a campground trailhead, making them one of Idaho's most popular hot springs.",
+      "access": "Located along Idaho Highway 21, approximately 30 miles northeast of Lowman. Park at the Kirkham Campground trailhead and walk a short distance to the springs. The road is paved but winding; allow extra time in winter when ice can be a hazard. Roughly 90 minutes from Boise.",
+      "bestTime": "Late summer and early fall (August through October) offer the best conditions: the river is lower, exposing more soaking pools at comfortable temperatures. Spring runoff floods many of the pools. Winter access is possible but the highway can be icy and the campground is closed.",
+      "fees": "Free for day use. Camping at Kirkham Campground costs approximately $20 per site (first-come, first-served). No reservations. Pack out all trash; the area is heavily used and overflow trash damages the experience for everyone.",
+      "safety": "Source water emerges scalding hot, well above 150\u00b0F. Only the river-blended pools at the bottom are safe to enter. Test water temperature with your hand before stepping in. Keep children close and supervised; cliff edges and slippery rocks are real hazards. The river itself runs cold and swift, so never swim it during high water.",
+      "nearby": "Other Idaho 21 hot springs include Bonneville Hot Springs (8 miles east, also USFS) and Sacajawea Hot Springs (15 miles east). The Stanley Basin and Sawtooth Mountains are an hour further northeast with abundant hiking and additional springs.",
+      "visitJournalNote": "Idaho's primitive hot springs are best appreciated with notes on which pool was at which temperature on which date. The USA Hot Springs Visit Journal gives you a structured place to record those details for return trips.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Kirkham Hot Springs",
@@ -4271,7 +4331,17 @@
     "description": "Mystic Hot Springs is a hot spring in Utah.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Mystic Hot Springs is a small, quirky hot springs resort in Monroe, Utah, known for its mineral-encrusted soaking tubs that have built up calcium deposits over decades. Two cast-iron bathtubs perched on a travertine hillside collect spring water at approximately 99 to 110\u00b0F, and two larger concrete pools at the base offer cooler soaks. The property doubles as a music venue and pioneer-cabin lodging spot, giving it a distinctive desert hippie atmosphere unlike anywhere else in the state.",
+      "access": "Mystic sits in Monroe, Utah, about 3.5 hours south of Salt Lake City off I-15. Take exit 158 for SR-118 and follow signs through Monroe town to the resort. Roads are paved and accessible year-round. The springs are roughly 30 minutes from Richfield, the nearest mid-size town.",
+      "bestTime": "Open year-round. Spring and fall offer comfortable air temperatures for the climb up to the tub pools. Summer can be hot during the day; soaking after sunset is the move. Winter brings the iconic experience of soaking in the hilltop tubs while snow falls. Live music nights are scheduled regularly; check the calendar before booking.",
+      "fees": "Day-use soaking is approximately $20 per adult and $10 per child as of 2026. Pioneer cabin lodging starts around $95 per night and includes pool access. Tipi rentals and converted school bus stays are also offered. Cash and card both accepted at the front office.",
+      "safety": "The hilltop tubs sit on uneven travertine; wear sturdy footwear up the path and watch for slick spots near the source. Tub temperatures vary between the two; check both before settling in. The hot water is high in iron and minerals, which can stain swimsuits and jewelry. Standard 15 to 20 minute soak limits apply for the hotter tub.",
+      "nearby": "Fremont Indian State Park is 30 minutes south with rock art panels and a small museum. Capitol Reef National Park is roughly 90 minutes east. Big Rock Candy Mountain (the actual sherbet-colored hillside from the song) is 20 minutes south on US-89. Richfield offers the closest full-service lodging and dining.",
+      "visitJournalNote": "Mystic is one of those places that rewards repeat visits across seasons and music nights. The USA Hot Springs Visit Journal gives you space to track which tub was at which temperature on which trip.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Red Hill Hot Springs",
@@ -4583,7 +4653,17 @@
     "description": "Sol Duc Hot Springs is a hot spring in Washington.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Sol Duc Hot Springs Resort sits inside Olympic National Park on the Olympic Peninsula in Washington. Three mineral soaking pools (approximately 101 to 104\u00b0F) and a freshwater swimming pool draw water from natural springs that have surfaced through the Olympic Mountains for thousands of years. The Quileute people regarded these waters as healing. The resort operates as a National Park Service concession with a lodge, cabins, restaurant, and campground on-site.",
+      "access": "From Port Angeles, drive 40 miles west on US-101 to Sol Duc Hot Springs Road and follow it 12 miles south to the resort. The road closes seasonally in winter due to snow. Olympic NP entrance fee applies. The resort is most easily combined with a multi-day Olympic Peninsula trip rather than a same-day visit from Seattle (about 4 hours each way).",
+      "bestTime": "Open mid-March through October; closed in winter. May and September offer fewer crowds than summer peak. Mornings before 10 AM and evenings after 7 PM are quieter than midday. Reserve cabins months in advance for summer dates.",
+      "fees": "Olympic NP entrance is $30 per vehicle (or America the Beautiful pass). Springs day pass is approximately $18 adult and $13 child. Cabin rentals run from approximately $250 per night and include pool access for guests. Camping at the adjacent campground is approximately $35 per site.",
+      "safety": "Pool temperatures from 101 to 104\u00b0F are within safe ranges; standard soaking limits of 15 to 20 minutes apply. Black bears are common in the area; store food properly and never leave it in cabins or campsites. The Sol Duc River runs cold and swift adjacent to the resort; supervise children near the water.",
+      "nearby": "Sol Duc Falls is a 1.6-mile loop hike from a trailhead just past the resort. Lake Crescent (10 miles north) has some of the clearest water in the Pacific Northwest. Hurricane Ridge offers alpine views and summer wildflowers. The Hoh Rainforest is a 90-minute drive south on US-101.",
+      "visitJournalNote": "Olympic NP rewards multiple visits across seasons. Use the USA Hot Springs Visit Journal to track the springs alongside the falls, lakes, and ridges you pair with each trip.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Sulphur Creek Hot Springs",
@@ -4622,7 +4702,17 @@
     "description": "Huckleberry Hot Spring is a hot spring in Wyoming.",
     "amenities": [
       "Natural hot spring"
-    ]
+    ],
+    "guide": {
+      "overview": "Huckleberry Hot Spring is a primitive backcountry hot spring in the John D. Rockefeller Memorial Parkway, just south of Yellowstone National Park in Wyoming. A short hike crosses Polecat Creek to reach the spring, where mineral water blends with creek flow to create soakable temperatures along the bank. The spring is undeveloped, free, and beloved by locals as an alternative to the more famous Yellowstone area soaks (most of which are off-limits to bathing).",
+      "access": "From Flagg Ranch (between Grand Teton and Yellowstone on US-89/191/287), drive a short distance south to the unmarked Huckleberry trailhead pullout. The trail is roughly half a mile each way and crosses Polecat Creek; expect wet feet. The road and trailhead are typically accessible May through October.",
+      "bestTime": "Late spring through early fall (May through September). Snow blocks the road and trail outside this window. Mornings are quietest; the spring sees more visitors in afternoons during peak Yellowstone season. Visit on weekdays if possible to avoid crowds.",
+      "fees": "Free. No permits required for day use. The spring sits in the John D. Rockefeller Memorial Parkway, which has no entrance fee, though the adjacent Yellowstone and Grand Teton parks do charge.",
+      "safety": "The spring source is hot enough to scald; only soak where the spring water has blended with the cold creek. Test temperature carefully before entry. This is grizzly and black bear country; carry bear spray, make noise on the trail, and never leave food unattended. Polecat Creek runs cold and swift in early summer; cross with care.",
+      "nearby": "Grand Teton National Park is 20 minutes south with iconic peaks and Jackson Lake. Yellowstone's South Entrance is 10 minutes north; Old Faithful is roughly an hour into the park. Jackson, Wyoming, is 90 minutes south for full-service amenities. Flagg Ranch offers basic lodging and a restaurant near the trailhead.",
+      "visitJournalNote": "Backcountry springs near major parks are best logged with the conditions you found on the day. Use the USA Hot Springs Visit Journal to record water level, blend temperature, and the wildlife you encountered.",
+      "lastUpdated": "2026-04-20"
+    }
   },
   {
     "name": "Kelly Warm Springs",
