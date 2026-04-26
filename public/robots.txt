@@ -1,11 +1,4 @@
-# Robots.txt for Soak USA
-# Allow all major crawlers including AI bots
-
-User-agent: *
-Allow: /
-Disallow: /private/
-
-# Specific rules for search engines
+# Standard search engines
 User-agent: Googlebot
 Allow: /
 
@@ -13,42 +6,47 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 10
 
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baidu
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-User-agent: Sogou
-Allow: /
-
-User-agent: Exabot
-Allow: /
-
-User-agent: ia_archiver
-Allow: /
-
-# AI and LLM crawlers
-User-agent: GPTBot
+# AI search crawlers (ALLOW for visibility in AI answers)
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# AI training crawlers (allow for maximum parametric knowledge)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block aggressive/low-value crawlers
 User-agent: CCBot
 Disallow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
 
 User-agent: Meta-ExternalAgent
 Disallow: /
@@ -56,20 +54,11 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-User-agent: AdsBot-Google
+# Default
+User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
-User-agent: MJ12bot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: DotBot
-Allow: /
-
-# Sitemap
 Sitemap: https://soakusa.net/sitemap.xml
