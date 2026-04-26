@@ -8,7 +8,7 @@ const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-dis
 const lato = Lato({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','700'] });
 
 export const metadata: Metadata = {
-  title: { template: '%s | Soak USA', default: 'Soak USA — Find Hot Springs & Natural Thermal Pools Across America' },
+  title: { template: '%s | Soak USA', default: 'Soak USA — Hot Springs & Thermal Pools Directory' },
   description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the USA. Browse by state with amenities, temperatures, and access details.',
   keywords: 'hot springs, thermal pools, geothermal springs, natural hot springs, soaking pools, USA hot springs',
   metadataBase: new URL('https://soakusa.net'),
