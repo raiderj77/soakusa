@@ -44,7 +44,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebSite',url:'https://soakusa.net',
         name:'Soak USA',
-        dateModified:'2026-04-07',
+        dateModified:new Date().toISOString().substring(0,10),
         potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:'https://soakusa.net/search?q={search_term_string}'},'query-input':'required name=search_term_string'},
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -52,7 +52,7 @@ export default function Home() {
         name:'Soak USA',
         url:'https://soakusa.net',
         description:'Directory of hot springs and natural soaking spots across the United States',
-        dateModified:'2026-04-07',
+        dateModified:new Date().toISOString().substring(0,10),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'LocalBusiness',
@@ -60,11 +60,11 @@ export default function Home() {
         url:'https://soakusa.net',
         description:'Find hot springs, natural pools, and soaking spots near you across the United States',
         areaServed:'United States',
-        dateModified:'2026-04-07',
+        dateModified:new Date().toISOString().substring(0,10),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
-        dateModified:'2026-04-07',
+        dateModified:new Date().toISOString().substring(0,10),
         mainEntity:[
           {
             '@type':'Question',
