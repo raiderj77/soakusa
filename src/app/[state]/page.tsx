@@ -1,9 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { marked } from 'marked';
 import locations from '@/data/locations.json';
+import stateGuidesRaw from '@/data/state_guides.json';
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+type StateGuide = {
+  state_name: string;
+  noun_plural: string;
+  guide_md: string;
+  faq_md: string;
+  faq_pairs: { question: string; answer: string }[];
+};
+
+const stateGuides = stateGuidesRaw as Record<string, StateGuide>;
 
 function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
   return `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${lng},${lat},13,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
@@ -63,7 +75,6 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `Hot Springs in ${stateName}`,
     description: `Find the best hot springs and thermal pools in ${stateName}. GPS coordinates, temperatures, access details, and soaking tips.`,
     alternates: { canonical: `https://soakusa.net/${state}` },
-    robots: { index: false, follow: true },
   };
 }
 
@@ -71,6 +82,20 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const { state } = await params;
   const stateName = getStateName(state);
   const spots = locations.filter((l) => l.stateSlug === state);
+  const guide = stateGuides[stateName] as StateGuide | undefined;
+
+  const guideHtml = guide ? await marked.parse(guide.guide_md) : null;
+  const faqHtml = guide ? await marked.parse(guide.faq_md) : null;
+
+  const faqJsonLd = guide && guide.faq_pairs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: guide.faq_pairs.map((p) => ({
+      '@type': 'Question',
+      name: p.question,
+      acceptedAnswer: { '@type': 'Answer', text: p.answer },
+    })),
+  } : null;
 
   return (
     <>
@@ -81,6 +106,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           { '@type':'ListItem',position:2,name:`Hot Springs in ${stateName}`,item:`https://soakusa.net/${state}`},
         ],
       }) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
 
       {/* Hero */}
       <section style={{ position: 'relative', background: 'linear-gradient(160deg, #3d2010 0%, #2a3018 60%, #1a2a10 100%)', overflow: 'hidden', padding: '4rem 1.5rem 3.5rem' }}>
@@ -100,12 +128,19 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </svg>
       </section>
 
+      {/* Guide content */}
+      {guideHtml && (
+        <section style={{ background: 'var(--ivory)', padding: '3rem 1.5rem 2rem', borderBottom: '1px solid rgba(196,82,26,0.08)' }}>
+          <div className="container prose-guide" style={{ maxWidth: '760px' }} dangerouslySetInnerHTML={{ __html: guideHtml }} />
+        </section>
+      )}
+
       {/* Grid */}
       <section style={{ padding: '4rem 1.5rem' }}>
         <div className="container">
           {spots.length > 0 ? (
             <div className="grid-3">
-              {spots.map((spot, i) => (
+              {spots.map((spot) => (
                 <Link key={spot.slug} href={`/${state}/${spot.slug}`} style={{ textDecoration: 'none' }}>
                   <article className="card">
                     <img src={getMapboxImage(spot.lat, spot.lng)} alt={spot.name} className="card-img" loading="lazy" width={800} height={500} />
@@ -132,16 +167,22 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
       </section>
 
-      {/* State info */}
+      {/* FAQ / State info */}
       <section style={{ background: 'var(--cream)', borderTop: '1px solid rgba(196,82,26,0.08)', padding: '4rem 1.5rem' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--text)', marginBottom: '1rem' }}>Soaking in {stateName}</h2>
-          <p style={{ lineHeight: 1.85, marginBottom: '1.1rem', color: '#445' }}>
-            {stateName}&#39;s geological history has created a range of geothermal features, from primitive undeveloped soaking pools to commercial hot spring resorts. Water temperatures, mineral content, and accessibility vary significantly across sites.
-          </p>
-          <p style={{ lineHeight: 1.85, color: '#445' }}>
-            Always verify current access and conditions before visiting. Some springs are seasonal, and water temperatures can fluctuate. Respect any posted rules, pack out your trash, and leave each site as pristine as you found it for future visitors.
-          </p>
+          {faqHtml ? (
+            <div className="prose-guide" dangerouslySetInnerHTML={{ __html: faqHtml }} />
+          ) : (
+            <>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--text)', marginBottom: '1rem' }}>Soaking in {stateName}</h2>
+              <p style={{ lineHeight: 1.85, marginBottom: '1.1rem', color: '#445' }}>
+                {stateName}&#39;s geological history has created a range of geothermal features, from primitive undeveloped soaking pools to commercial hot spring resorts. Water temperatures, mineral content, and accessibility vary significantly across sites.
+              </p>
+              <p style={{ lineHeight: 1.85, color: '#445' }}>
+                Always verify current access and conditions before visiting. Some springs are seasonal, and water temperatures can fluctuate. Respect any posted rules, pack out your trash, and leave each site as pristine as you found it for future visitors.
+              </p>
+            </>
+          )}
         </div>
       </section>
     </>
