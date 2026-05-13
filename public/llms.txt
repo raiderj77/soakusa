@@ -5,7 +5,7 @@
 ## About
 - Domain: soakusa.net
 - Type: Location directory
-- Coverage: All 50 US states, 1,476+ hot spring locations
+- Coverage: All 50 US states, 360+ hot spring locations
 - Data: GPS coordinates, water temperatures, amenities, access requirements
 
 ## Key Pages
