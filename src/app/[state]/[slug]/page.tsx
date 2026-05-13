@@ -55,7 +55,8 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'NaturalPlace',
+        '@context':'https://schema.org','@type':'Place',
+        additionalType: 'https://schema.org/TouristAttraction',
         name: loc.name,
         description: loc.description,
         address: { '@type':'PostalAddress', addressLocality: loc.city || '', addressRegion: loc.state, addressCountry:'US' },
