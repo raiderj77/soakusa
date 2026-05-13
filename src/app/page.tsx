@@ -22,7 +22,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Soak USA — Find Hot Springs & Natural Thermal Pools Across America',
-  description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across all 50 states. GPS coordinates, temperatures, and access info.',
+  description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the United States. GPS coordinates, temperatures, and access info.',
 };
 
 const ALL_STATES = [
@@ -236,7 +236,7 @@ export default function Home() {
       <section style={{ padding: '5rem 1.5rem' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <p className="section-label">All 50 States</p>
+            <p className="section-label">Browse by State</p>
             <h2 className="section-title">Browse Springs by State</h2>
           </div>
           <div className="grid-states">

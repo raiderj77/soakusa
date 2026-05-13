@@ -5,7 +5,7 @@
 ## About
 - Domain: soakusa.net
 - Type: Location directory — 360+ hot spring and natural soaking locations
-- Coverage: All 50 US states
+- Coverage: 14 US states with active listings, expanding nationwide
 - Data: GPS coordinates, water temperatures, amenities, access requirements, safety information
 
 ## Navigation
