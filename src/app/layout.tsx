@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     google: 'KEh7iMoUzXk4VMvfFsF4wXenvufyiijnvijgxDUsdaQ',
     other: { 'msvalidate.01': 'C4C9B6256BDEDED169E4DE01CA953390' },
   },
+  other: {
+    'impact-site-verification': '33743021-50c0-44e5-88b2-fdfb122eb051',
+  },
 };
 
 const toolSites = [
