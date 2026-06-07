@@ -81,7 +81,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
               <a href="/" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Home</a>
               <a href="/browse-states" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Browse</a>
-              <a href="/editorial" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Editorial</a>
+              {/* re-add when editorial content exists: <a href="/editorial" ...>Editorial</a> */}
               <a href="/about" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>About</a>
             </nav>
           </div>
@@ -113,6 +113,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             {/* Etsy product callout */}
             <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(196,82,26,0.35)', borderRadius: '10px', padding: '1.5rem 2rem', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.25rem' }}>
               <div>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(232,221,208,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.35rem' }}>Sponsored</span>
                 <p style={{ fontFamily: 'var(--font-display)', color: 'var(--sand)', fontWeight: 600, fontSize: '1.1rem', marginBottom: '0.4rem', letterSpacing: '0.02em' }}>Plan Your Hot Springs Road Trip</p>
                 <p style={{ color: 'rgba(232,221,208,0.65)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '56ch', margin: 0 }}>Our USA Hot Springs Visit Journal has 40 real springs pre-loaded with map links, ratings, and a bucket list tracker — all in free Google Sheets.</p>
               </div>
