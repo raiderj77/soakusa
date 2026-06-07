@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Editorial | Soak USA',
   description: 'In-depth guides, safety tips, and expert content about hot springs and natural soaking spots across the USA.',
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function EditorialPage() {
