@@ -119,6 +119,11 @@ export default function AboutPage() {
           consulting with healthcare providers if you have health conditions that
           may be affected by heat or mineral-rich water.
         </p>
+        <p style={textStyles}>
+          Soak USA is supported by advertising and may include sponsored or
+          affiliate links. These never influence which locations we list or how
+          we describe them.
+        </p>
       </section>
 
       <section style={sectionStyles}>
