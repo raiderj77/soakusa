@@ -123,7 +123,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
               <p style={{ color: 'rgba(232,221,208,0.4)', fontSize: '0.85rem' }}>© 2026 Soak USA. All rights reserved.</p>
               <div style={{ display: 'flex', gap: '1.5rem' }}>
-                {[['Privacy', '/privacy'], ['Terms', '/terms'], ['Contact', '/contact'], ['About', '/about']].map(([l, h]) => (
+                {[['Privacy', '/privacy'], ['Terms', '/terms'], ['Contact', '/contact'], ['About', '/about'], ['Disclosure', '/disclosure']].map(([l, h]) => (
                   <a key={h} href={h} style={{ color: 'rgba(232,221,208,0.4)', fontSize: '0.85rem', textDecoration: 'none', fontFamily: 'var(--font-body)' }}>{l}</a>
                 ))}
               </div>
