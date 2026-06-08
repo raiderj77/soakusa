@@ -125,6 +125,11 @@ jobs:
         env:
           REPO: ${{ github.repository }}
         run: |
+          if [ "$REPO" != "raiderj77/mhsud" ]; then
+            echo "ℹ Non-YMYL site ($REPO) — byline check does not apply"
+            exit 0
+          fi
+
           SEARCH_DIRS=()
           for DIR in src app components lib hooks types config public content; do
             [ -d "$DIR" ] && SEARCH_DIRS+=("$DIR")
