@@ -8,7 +8,7 @@ const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-dis
 const lato = Lato({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','700'] });
 
 export const metadata: Metadata = {
-  title: { template: '%s | Soak USA', default: 'Soak USA — Hot Springs & Thermal Pools Directory' },
+  title: { template: '%s | Soak USA', default: 'Soak USA ,  Hot Springs & Thermal Pools Directory' },
   description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the USA. Browse by state with amenities, temperatures, and access details.',
   keywords: 'hot springs, thermal pools, geothermal springs, natural hot springs, soaking pools, USA hot springs',
   metadataBase: new URL('https://soakusa.net'),
@@ -115,7 +115,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <div>
                 <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(232,221,208,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.35rem' }}>Sponsored</span>
                 <p style={{ fontFamily: 'var(--font-display)', color: 'var(--sand)', fontWeight: 600, fontSize: '1.1rem', marginBottom: '0.4rem', letterSpacing: '0.02em' }}>Plan Your Hot Springs Road Trip</p>
-                <p style={{ color: 'rgba(232,221,208,0.65)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '56ch', margin: 0 }}>Our USA Hot Springs Visit Journal has 40 real springs pre-loaded with map links, ratings, and a bucket list tracker — all in free Google Sheets.</p>
+                <p style={{ color: 'rgba(232,221,208,0.65)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '56ch', margin: 0 }}>Our USA Hot Springs Visit Journal has 40 real springs pre-loaded with map links, ratings, and a bucket list tracker ,  all in free Google Sheets.</p>
               </div>
               <a href="https://www.etsy.com/shop/DevelopVault" target="_blank" rel="nofollow sponsored noopener noreferrer" style={{ display: 'inline-block', background: 'var(--terra)', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.875rem', padding: '0.65rem 1.35rem', borderRadius: '6px', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>Get It on Etsy →</a>
             </div>

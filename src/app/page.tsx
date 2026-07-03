@@ -21,7 +21,7 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Soak USA — Find Hot Springs & Natural Thermal Pools Across America',
+  title: 'Soak USA ,  Find Hot Springs & Natural Thermal Pools Across America',
   description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the United States. GPS coordinates, temperatures, and access info.',
 };
 
@@ -79,12 +79,12 @@ export default function Home() {
           {
             '@type':'Question',
             name:'Is it safe to soak in natural hot springs?',
-            acceptedAnswer:{'@type':'Answer',text:'Most natural hot springs are safe for healthy adults when water temperatures are comfortable — typically 95 to 104 degrees Fahrenheit. Avoid springs that are scalding hot, have strong sulfur odors indicating dangerous gas levels, or are posted with health warnings. Pregnant women, people with heart conditions, and young children should consult a doctor before soaking. Never soak alone in remote locations.'},
+            acceptedAnswer:{'@type':'Answer',text:'Most natural hot springs are safe for healthy adults when water temperatures are comfortable ,  typically 95 to 104 degrees Fahrenheit. Avoid springs that are scalding hot, have strong sulfur odors indicating dangerous gas levels, or are posted with health warnings. Pregnant women, people with heart conditions, and young children should consult a doctor before soaking. Never soak alone in remote locations.'},
           },
           {
             '@type':'Question',
             name:'What should I bring to a hot spring?',
-            acceptedAnswer:{'@type':'Answer',text:'Bring water to stay hydrated — heat causes rapid dehydration. Pack a towel, sandals or water shoes for rocky terrain, sunscreen, and snacks for longer visits. Many primitive springs require a short hike, so bring appropriate footwear and a trail map. Leave no trace — pack out all trash.'},
+            acceptedAnswer:{'@type':'Answer',text:'Bring water to stay hydrated ,  heat causes rapid dehydration. Pack a towel, sandals or water shoes for rocky terrain, sunscreen, and snacks for longer visits. Many primitive springs require a short hike, so bring appropriate footwear and a trail map. Leave no trace ,  pack out all trash.'},
           },
           {
             '@type':'Question',
@@ -121,7 +121,7 @@ export default function Home() {
           </h1>
           <div className="divider anim-fade-up anim-delay-2" style={{ maxWidth: '280px', margin: '0 auto 1.5rem' }}>♨</div>
           <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: 'rgba(232,221,208,0.7)', marginBottom: '2.75rem', maxWidth: '480px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
-            Natural hot springs, thermal pools &amp; geothermal soaking spots — {locations.length}+ locations across {statesWithData} states.
+            Natural hot springs, thermal pools &amp; geothermal soaking spots ,  {locations.length}+ locations across {statesWithData} states.
           </p>
           <div className="anim-fade-up anim-delay-3" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
             <a href="/colorado" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.95rem', background: 'var(--terra)', color: 'white', textDecoration: 'none', transition: 'background 0.2s' }}>Find Hot Springs →</a>
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
           <div className="grid-3">
             {[
-              { icon:'🗺️', title:'Find a Spring', desc:'Browse by state to discover every hot spring — with temperatures, access details, and GPS coordinates.' },
+              { icon:'🗺️', title:'Find a Spring', desc:'Browse by state to discover every hot spring ,  with temperatures, access details, and GPS coordinates.' },
               { icon:'♨️', title:'Check Conditions', desc:'Review water temperature, access type (primitive vs. developed), permit requirements, and seasonal closures.' },
               { icon:'🌿', title:'Soak In Nature', desc:'Pack a towel, water, and sun protection. Find your spot and let the mineral-rich waters do the rest.' },
             ].map(({icon,title,desc}) => (
@@ -204,9 +204,9 @@ export default function Home() {
         <div className="container" style={{ maxWidth: '860px' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '1.25rem' }}>The Healing Power of Hot Springs</h2>
           <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>Hot springs have drawn people for millennia. From the ancient Roman baths to the traditional Japanese onsen culture, soaking in naturally heated, mineral-rich water is one of humanity's oldest wellness practices. The United States, with its geologically active western states, has an extraordinary concentration of hot springs accessible to the public.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>The minerals found in thermal waters — magnesium, sulfur, calcium, and silica — are thought to support muscle relaxation, skin health, and circulation. Whether or not you subscribe to the therapeutic claims, the combination of warm water, natural scenery, and stillness is undeniably restorative.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>The minerals found in thermal waters ,  magnesium, sulfur, calcium, and silica ,  are thought to support muscle relaxation, skin health, and circulation. Whether or not you subscribe to the therapeutic claims, the combination of warm water, natural scenery, and stillness is undeniably restorative.</p>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Safety First</h3>
-          <p style={{ lineHeight: 1.85 }}>Water temperatures vary widely — from pleasant 100°F to dangerously scalding 200°F+. Always test the water before entering and never soak in springs over 104°F. Avoid submerging your head. Pregnant women and people with heart conditions should consult a doctor. Stay hydrated, limit sessions to 15–20 minutes, and shower after soaking in sulfur springs.</p>
+          <p style={{ lineHeight: 1.85 }}>Water temperatures vary widely ,  from pleasant 100°F to dangerously scalding 200°F+. Always test the water before entering and never soak in springs over 104°F. Avoid submerging your head. Pregnant women and people with heart conditions should consult a doctor. Stay hydrated, limit sessions to 15–20 minutes, and shower after soaking in sulfur springs.</p>
         </div>
       </section>
 
@@ -252,26 +252,26 @@ export default function Home() {
         <div className="container" style={{ maxWidth: '860px' }}>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '0.75rem' }}>How to find the best hot spring for your trip</h2>
-          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Search by state and filter by development level — resort hot springs offer amenities and reliable access, while primitive springs require more planning but offer a more natural experience.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Matching the right spring to your group starts with honestly assessing experience level and logistics. Families with young children or first-time visitors often do best at developed resorts where temperatures are regulated and facilities are on-site. Experienced hikers and backcountry visitors will find primitive springs more rewarding despite the added preparation. There are over 1,000 documented natural hot springs across the United States, with the highest concentrations in Idaho, Montana, Colorado, Oregon, and California — giving every trip style a wide range of options.</p>
+          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Search by state and filter by development level ,  resort hot springs offer amenities and reliable access, while primitive springs require more planning but offer a more natural experience.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Matching the right spring to your group starts with honestly assessing experience level and logistics. Families with young children or first-time visitors often do best at developed resorts where temperatures are regulated and facilities are on-site. Experienced hikers and backcountry visitors will find primitive springs more rewarding despite the added preparation. There are over 1,000 documented natural hot springs across the United States, with the highest concentrations in Idaho, Montana, Colorado, Oregon, and California ,  giving every trip style a wide range of options.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What are the health benefits of soaking in hot springs?</h2>
           <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Soaking in hot springs may help relax muscles, improve circulation, and reduce stress. Many hot springs contain minerals like sulfur, calcium, and magnesium that some visitors find beneficial.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>While many visitors report genuine therapeutic benefits — particularly relief from sore muscles and joint stiffness — scientific evidence is mixed and individual results vary widely. Always consult a healthcare provider before soaking if you have any underlying medical conditions, cardiovascular issues, or are pregnant. Hot spring tourism generates over $500 million annually in the United States, reflecting how deeply this tradition is woven into American outdoor culture and rural economies across the Mountain West.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>While many visitors report genuine therapeutic benefits ,  particularly relief from sore muscles and joint stiffness ,  scientific evidence is mixed and individual results vary widely. Always consult a healthcare provider before soaking if you have any underlying medical conditions, cardiovascular issues, or are pregnant. Hot spring tourism generates over $500 million annually in the United States, reflecting how deeply this tradition is woven into American outdoor culture and rural economies across the Mountain West.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What is the difference between developed and primitive hot springs?</h2>
-          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Developed hot springs have constructed pools, changing facilities, and regulated water temperatures. Primitive springs are natural pools with no infrastructure — water temperatures and conditions vary naturally.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Developed resorts trade spontaneity for comfort and consistency — you know what temperature to expect and facilities will be clean and staffed. Primitive springs offer a more authentic connection to the landscape, but conditions change seasonally and after storms. Before visiting a primitive spring, check recent visitor reports for water quality, access road conditions, and any temporary closures — what was passable in September may be snowed in by November. The United States has more geothermal features than any other country, with Yellowstone National Park alone hosting over 10,000 hydrothermal features.</p>
+          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Developed hot springs have constructed pools, changing facilities, and regulated water temperatures. Primitive springs are natural pools with no infrastructure ,  water temperatures and conditions vary naturally.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Developed resorts trade spontaneity for comfort and consistency ,  you know what temperature to expect and facilities will be clean and staffed. Primitive springs offer a more authentic connection to the landscape, but conditions change seasonally and after storms. Before visiting a primitive spring, check recent visitor reports for water quality, access road conditions, and any temporary closures ,  what was passable in September may be snowed in by November. The United States has more geothermal features than any other country, with Yellowstone National Park alone hosting over 10,000 hydrothermal features.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What hot spring etiquette should I follow?</h2>
           <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Keep noise low, limit soak time to 20 to 30 minutes when others are waiting, pack out all trash, and leave the area exactly as you found it. Hot springs are shared natural resources.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '2rem' }}>Leave No Trace principles apply everywhere but matter especially at hot springs, where concentrated visitor use can degrade fragile ecosystems quickly. Soap, shampoo, and detergents — even biodegradable varieties — are prohibited at most natural springs because they disrupt the delicate microbial communities that give spring water its character and can harm downstream aquatic life. Respect clothing customs at each location: research ahead of time rather than assuming, and follow posted signage without question.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '2rem' }}>Leave No Trace principles apply everywhere but matter especially at hot springs, where concentrated visitor use can degrade fragile ecosystems quickly. Soap, shampoo, and detergents ,  even biodegradable varieties ,  are prohibited at most natural springs because they disrupt the delicate microbial communities that give spring water its character and can harm downstream aquatic life. Respect clothing customs at each location: research ahead of time rather than assuming, and follow posted signage without question.</p>
 
           <div style={{ borderTop: '1px solid rgba(196,82,26,0.12)', paddingTop: '2rem' }}>
             <p style={{ fontSize: '0.875rem', color: '#888', marginBottom: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Further Reading</p>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <li><a href="https://www.usgs.gov/science/science-explorer/water/geothermal-resources-and-hot-springs" target="_blank" rel="noopener noreferrer nofollow" style={{ color: 'var(--terra)', fontSize: '0.9rem' }}>USGS — Geothermal resources and hot springs</a></li>
-              <li><a href="https://www.blm.gov/programs/recreation" target="_blank" rel="noopener noreferrer nofollow" style={{ color: 'var(--terra)', fontSize: '0.9rem' }}>Bureau of Land Management — Recreation on public lands</a></li>
+              <li><a href="https://www.usgs.gov/science/science-explorer/water/geothermal-resources-and-hot-springs" target="_blank" rel="noopener noreferrer nofollow" style={{ color: 'var(--terra)', fontSize: '0.9rem' }}>USGS ,  Geothermal resources and hot springs</a></li>
+              <li><a href="https://www.blm.gov/programs/recreation" target="_blank" rel="noopener noreferrer nofollow" style={{ color: 'var(--terra)', fontSize: '0.9rem' }}>Bureau of Land Management ,  Recreation on public lands</a></li>
               <li><a href="https://lnt.org" target="_blank" rel="noopener noreferrer nofollow" style={{ color: 'var(--terra)', fontSize: '0.9rem' }}>Leave No Trace Center for Outdoor Ethics</a></li>
             </ul>
           </div>

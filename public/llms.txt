@@ -1,4 +1,4 @@
-# Soak USA — LLM-Friendly Site Summary
+# Soak USA ,  LLM-Friendly Site Summary
 
 > Soak USA is a directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.
 

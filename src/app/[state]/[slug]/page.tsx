@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const loc = locations.find((l) => l.slug === slug);
   if (!loc) return {};
   return {
-    title: `${loc.name} — Hot Spring in ${loc.state}`,
+    title: `${loc.name} ,  Hot Spring in ${loc.state}`,
     description: ((loc as any).guide?.overview ?? loc.description).slice(0, 155),
     alternates: { canonical: `https://soakusa.net/${loc.stateSlug}/${loc.slug}` },
     robots: { index: !!(loc as any).guide, follow: true },
@@ -95,7 +95,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
                 Always check current conditions and access rules before visiting.
               </p>
 
-              {/* GUIDE BLOCK — long-form enriched content for selected springs */}
+              {/* GUIDE BLOCK ,  long-form enriched content for selected springs */}
               {(loc as any).guide && (
                 <div style={{ marginBottom: '2rem' }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Getting There</h3>
@@ -155,7 +155,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
               </div>
             </div>
 
-            {/* Right — sticky panel */}
+            {/* Right ,  sticky panel */}
             <aside style={{ position: 'sticky', top: '5.5rem' }}>
               <div style={{ background: 'var(--white)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-card)', overflow: 'hidden', border: '1px solid rgba(196,82,26,0.12)' }}>
                 <div style={{ background: 'linear-gradient(135deg, #3d2010, #2a3018)', padding: '1.25rem 1.5rem', borderBottom: '2px solid var(--terra)' }}>

@@ -1,4 +1,4 @@
-﻿# Soak USA — CLAUDE.md
+﻿# Soak USA ,  CLAUDE.md
 
 > Source of truth for Claude Code on this project. Last updated: 2026-04-30
 
@@ -8,7 +8,7 @@
 - **Domain**: soakusa.net
 - **Purpose**: Location finder for hot springs, soaking pools, and thermal baths across the United States
 - **Type**: utility-site (ad-supported location directory)
-- **Compliance Tier**: Standard — NOTE: Hot spring safety content requires extra care
+- **Compliance Tier**: Standard ,  NOTE: Hot spring safety content requires extra care
 
 ## Tech Stack
 
@@ -18,13 +18,13 @@
 
 - **Publisher ID**: `ca-pub-7171402107622932`
 - **ads.txt**: `google.com, pub-7171402107622932, DIRECT, f08c47fec0942fa0`
-- Amazon Associates (ytearnings-20) for relevant gear recs — use rel="nofollow sponsored"
+- Amazon Associates (ytearnings-20) for relevant gear recs ,  use rel="nofollow sponsored"
 
 ## 2. SEO
 
 - SSR/SSG required
 - Each location page: name, address/GPS, water temp range, fee (if any), clothing optional status, hours, seasonal access, nearest town
-- Include "clothing optional" or "swimwear required" clearly — this affects search intent and content moderation
+- Include "clothing optional" or "swimwear required" clearly ,  this affects search intent and content moderation
 
 ## 3. Core Web Vitals
 
@@ -32,8 +32,8 @@
 
 ## 4. E-E-A-T
 
-- Attribution: "Built by an experienced web developer" — no personal name
-- IMPORTANT: Hot springs carry real health risks (high temps, bacteria, unstable ground). Every location page must include: "Consult a healthcare provider before soaking if you have heart conditions, are pregnant, or have compromised immune function. Water temperatures and conditions vary — assess conditions before entering."
+- Attribution: "Built by an experienced web developer" ,  no personal name
+- IMPORTANT: Hot springs carry real health risks (high temps, bacteria, unstable ground). Every location page must include: "Consult a healthcare provider before soaking if you have heart conditions, are pregnant, or have compromised immune function. Water temperatures and conditions vary ,  assess conditions before entering."
 - Never minimize safety considerations
 
 ## 5. Structured Data
@@ -80,4 +80,4 @@ Vercel | main | `npm run build` | Env: AMAZON_ASSOCIATES_ID=ytearnings-20, INDEX
 
 ## Warnings
 
-Standard Empire warnings + NEVER minimize hot spring safety. Soaking in extreme temps without disclaimers is a liability risk. Health safety disclaimer required on every location page. Never present wild hot spring access as guaranteed — conditions and access change seasonally.
+Standard Empire warnings + NEVER minimize hot spring safety. Soaking in extreme temps without disclaimers is a liability risk. Health safety disclaimer required on every location page. Never present wild hot spring access as guaranteed ,  conditions and access change seasonally.

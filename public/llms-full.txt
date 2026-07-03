@@ -1,10 +1,10 @@
-# Soak USA — Full LLM Content Index
+# Soak USA ,  Full LLM Content Index
 
 > Soak USA is a directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.
 
 ## About
 - Domain: soakusa.net
-- Type: Location directory — 360+ hot spring and natural soaking locations
+- Type: Location directory ,  360+ hot spring and natural soaking locations
 - Coverage: 14 US states with active listings, expanding nationwide
 - Data: GPS coordinates, water temperatures, amenities, access requirements, safety information
 
