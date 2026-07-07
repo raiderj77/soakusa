@@ -214,7 +214,14 @@ export default function PrivacyPage() {
         </p>
       </section>
 
-      <section>
+            <section>
+        <h2 style={sectionTitleStyles}>Affiliate Relationships</h2>
+        <p style={textStyles}>
+          Soak USA earns compensation from affiliate links on the site, including links to an affiliated Etsy shop. These relationships do not affect editorial content or hot spring listings. For more information, see our <a href="/disclosure" style={{ color: "#7d1a00" }}>Disclosure page</a>.
+        </p>
+      </section>
+
+<section>
         <h2 style={sectionTitleStyles}>Children's Privacy</h2>
         <p style={textStyles}>
           Our Service does not address anyone under the age of 13 ("Children").
