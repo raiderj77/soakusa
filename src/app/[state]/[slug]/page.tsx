@@ -111,7 +111,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
                   <div style={{ background: 'var(--cream)', border: '1px solid var(--terra)', borderRadius: 'var(--radius)', padding: '1.5rem', marginBottom: '1rem' }}>
                     <p style={{ fontFamily: 'var(--font-display)', color: 'var(--terra)', fontSize: '1.1rem', marginBottom: '0.5rem' }}>Plan Your Hot Springs Trip</p>
                     <p style={{ fontSize: '0.9rem', color: '#445', lineHeight: 1.7, marginBottom: '0.75rem' }}>{(loc as any).guide.visitJournalNote}</p>
-                    <a href="https://www.etsy.com/shop/DevelopVault" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '0.6rem 1.2rem', background: 'var(--terra)', color: 'white', textDecoration: 'none', fontFamily: 'var(--font-body)', fontWeight: 700, borderRadius: 'var(--radius-sm)', fontSize: '0.875rem' }}>Get the Visit Journal →</a>
+                    <a href="https://www.etsy.com/shop/DevelopVault" target="_blank" rel="noopener noreferrer sponsored nofollow" style={{ display: 'inline-block', padding: '0.6rem 1.2rem', background: 'var(--terra)', color: 'white', textDecoration: 'none', fontFamily: 'var(--font-body)', fontWeight: 700, borderRadius: 'var(--radius-sm)', fontSize: '0.875rem' }}>Get the Visit Journal →</a>
                   </div>
                   <p style={{ fontSize: '0.75rem', color: 'var(--pebble)', fontStyle: 'italic' }}>Last updated: {(loc as any).guide.lastUpdated}</p>
                 </div>
