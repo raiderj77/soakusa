@@ -36,7 +36,7 @@ export default function PrivacyPage() {
   return (
     <>
       <h1 style={titleStyles}>Privacy Policy</h1>
-      <div style={lastUpdatedStyles}>Last updated: April 2026</div>
+      <div style={lastUpdatedStyles}>Last updated: July 13, 2026</div>
 
       <section>
         <h2 style={sectionTitleStyles}>Introduction</h2>
@@ -68,14 +68,13 @@ export default function PrivacyPage() {
             message.
           </li>
           <li>
-            <strong>Usage Data:</strong> We automatically collect information
-            such as your device type, browser type, IP address, pages visited,
-            and referring/exit pages.
+            <strong>Service and Security Data:</strong> Hosting and security
+            providers may process request metadata such as IP address, browser
+            type, requested page, and timestamp to deliver and protect the Site.
           </li>
           <li>
-            <strong>Cookies and Similar Technologies:</strong> We use cookies and
-            similar tracking technologies to track activity and store certain
-            information.
+            <strong>Optional Tracking:</strong> Google AdSense, Google Analytics,
+            and Microsoft Clarity are not currently enabled.
           </li>
         </ul>
       </section>
@@ -89,10 +88,7 @@ export default function PrivacyPage() {
           <li>To provide and maintain our Service</li>
           <li>To notify you about changes to our Service</li>
           <li>To provide customer support and respond to your inquiries</li>
-          <li>To gather analysis or valuable information to improve our Service</li>
-          <li>To monitor the usage of our Service</li>
           <li>To detect, prevent and address technical and security issues</li>
-          <li>To provide you with news, special offers, and general information</li>
         </ul>
       </section>
 
@@ -163,7 +159,7 @@ export default function PrivacyPage() {
           Global Privacy Control (GPC):
         </h3>
         <p style={textStyles}>
-          Soak USA honors Global Privacy Control (GPC) signals sent through your browser or privacy tool. When you enable GPC, we treat it as a universal opt-out signal and will not serve targeted advertising or use your data for personalized purposes.
+          The Site does not currently sell personal data or run targeted advertising. If processing subject to an opt-out is introduced later, we will honor applicable Global Privacy Control signals.
         </p>
 
         <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
@@ -194,23 +190,15 @@ export default function PrivacyPage() {
           their privacy practices.
         </p>
         <p style={textStyles}>
-          We work with third-party advertising partners, including Google, who
-          may use cookies to serve ads based on your prior visits to this
-          website or other websites.
+          Google AdSense, Google Analytics, and Microsoft Clarity are not
+          currently enabled. The Site does not load their scripts or set their
+          advertising or analytics cookies.
         </p>
         <p style={textStyles}>
-          We use Google AdSense to display advertisements. Google may use
-          cookies and similar technologies to serve ads based on your prior
-          visits to our website or other websites. To opt out of personalized
-          advertising, you may visit{" "}
-          <a href="https://ads.google.com/settings" target="_blank" rel="noopener noreferrer" style={{ color: "#7d1a00" }}>
-            Google's Ads Settings
-          </a>{" "}
-          or{" "}
-          <a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer" style={{ color: "#7d1a00" }}>
-            optout.aboutads.info
-          </a>
-          .
+          A publisher identifier may remain in ads.txt or public metadata solely
+          for ownership verification. If optional advertising or analytics is
+          enabled later, this policy and any required consent and opt-out
+          controls will be updated first.
         </p>
       </section>
 
