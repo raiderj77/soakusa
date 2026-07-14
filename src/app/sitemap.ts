@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import locations from '@/data/locations.json';
 import stateGuidesRaw from '@/data/state_guides.json';
 
 const stateList = [
@@ -53,5 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  return [...staticPages, ...statePages];
+  const locationGuidePages: MetadataRoute.Sitemap = locations
+    .filter((location) => !!(location as { guide?: unknown }).guide)
+    .map((location) => ({
+      url: `${base}/${location.stateSlug}/${location.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
+
+  return [...staticPages, ...statePages, ...locationGuidePages];
 }

@@ -71,10 +71,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state } = await params;
   const stateName = getStateName(state);
+  const hasEditorialGuide = !!stateGuides[stateName];
   return {
     title: `Hot Springs in ${stateName}`,
     description: `Find the best hot springs and thermal pools in ${stateName}. GPS coordinates, temperatures, access details, and soaking tips.`,
     alternates: { canonical: `https://soakusa.net/${state}` },
+    robots: { index: hasEditorialGuide, follow: true },
   };
 }
 
