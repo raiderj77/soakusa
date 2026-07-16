@@ -16,7 +16,7 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
   if (amenityCount >= 2) {
     return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
   }
-  return `Natural hot spring or soaking spot in ${location}. Open for public access.`;
+  return `Mapped hot spring or soaking spot in ${location}. Verify current access and conditions before visiting.`;
 }
 
 export const revalidate = 86400;
@@ -29,11 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { slug } = await params;
   const loc = locations.find((l) => l.slug === slug);
   if (!loc) return {};
+  const hasVerifiedSources = Array.isArray((loc as any).sources) && (loc as any).sources.length > 0;
   return {
     title: `${loc.name} ,  Hot Spring in ${loc.state}`,
     description: ((loc as any).guide?.overview ?? loc.description).slice(0, 155),
     alternates: { canonical: `https://soakusa.net/${loc.stateSlug}/${loc.slug}` },
-    robots: { index: !!(loc as any).guide, follow: true },
+    robots: { index: hasVerifiedSources, follow: true },
   };
 }
 
@@ -49,6 +50,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
   const { state, slug } = await params;
   const loc = locations.find((l) => l.slug === slug && l.stateSlug === state);
   if (!loc) notFound();
+  const hasVerifiedSources = Array.isArray((loc as any).sources) && (loc as any).sources.length > 0;
 
   const related = locations.filter((l) => l.stateSlug === state && l.slug !== slug).slice(0, 3);
 
@@ -96,7 +98,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
               </p>
 
               {/* GUIDE BLOCK ,  long-form enriched content for selected springs */}
-              {(loc as any).guide && (
+              {hasVerifiedSources && (loc as any).guide && (
                 <div style={{ marginBottom: '2rem' }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Getting There</h3>
                   <p style={{ lineHeight: 1.75, color: '#445', marginBottom: '1.5rem' }}>{(loc as any).guide.access}</p>

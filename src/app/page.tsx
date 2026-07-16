@@ -15,7 +15,7 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
   if (amenityCount >= 2) {
     return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
   }
-  return `Natural hot spring or soaking spot in ${location}. Open for public access.`;
+  return `Mapped hot spring or soaking spot in ${location}. Verify current access and conditions before visiting.`;
 }
 
 export const dynamic = 'force-static';
@@ -187,7 +187,7 @@ export default function Home() {
             {[
               { icon:'🗺️', title:'Find a Spring', desc:'Browse by state to discover every hot spring ,  with temperatures, access details, and GPS coordinates.' },
               { icon:'♨️', title:'Check Conditions', desc:'Review water temperature, access type (primitive vs. developed), permit requirements, and seasonal closures.' },
-              { icon:'🌿', title:'Soak In Nature', desc:'Pack a towel, water, and sun protection. Find your spot and let the mineral-rich waters do the rest.' },
+              { icon:'🌿', title:'Verify Before You Go', desc:'Check the current land-manager or operator page for access, closures, rules, fees, and water conditions.' },
             ].map(({icon,title,desc}) => (
               <div key={title} style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(196,82,26,0.2)' }}>
                 <div className="step-icon">{icon}</div>
@@ -202,11 +202,10 @@ export default function Home() {
       {/* Content */}
       <section style={{ padding: '5rem 1.5rem' }}>
         <div className="container" style={{ maxWidth: '860px' }}>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '1.25rem' }}>The Healing Power of Hot Springs</h2>
-          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>Hot springs have drawn people for millennia. From the ancient Roman baths to the traditional Japanese onsen culture, soaking in naturally heated, mineral-rich water is one of humanity's oldest wellness practices. The United States, with its geologically active western states, has an extraordinary concentration of hot springs accessible to the public.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>The minerals found in thermal waters ,  magnesium, sulfur, calcium, and silica ,  are thought to support muscle relaxation, skin health, and circulation. Whether or not you subscribe to the therapeutic claims, the combination of warm water, natural scenery, and stillness is undeniably restorative.</p>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '1.25rem' }}>Plan Around Current Conditions</h2>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>Hot-spring access, road conditions, fees, closures, and water conditions can change. Treat this directory as a starting point and verify each trip with the responsible land manager or facility operator.</p>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--text)', marginTop: '2rem', marginBottom: '0.75rem' }}>Safety First</h3>
-          <p style={{ lineHeight: 1.85 }}>Water temperatures vary widely ,  from pleasant 100°F to dangerously scalding 200°F+. Always test the water before entering and never soak in springs over 104°F. Avoid submerging your head. Pregnant women and people with heart conditions should consult a doctor. Stay hydrated, limit sessions to 15–20 minutes, and shower after soaking in sulfur springs.</p>
+          <p style={{ lineHeight: 1.85 }}>For managed hot tubs, the CDC says water temperature should not exceed 104°F (40°C), children under 5 should not use hot tubs, and pregnant visitors should speak with a healthcare provider first. Natural thermal areas can have different and uncontrolled hazards; obey closures and posted rules. <a href="https://www.cdc.gov/healthy-swimming/safety/what-you-can-do-to-stay-healthy-in-hot-tubs.html" target="_blank" rel="noopener noreferrer nofollow">Read the CDC hot-tub safety guidance</a>.</p>
         </div>
       </section>
 
@@ -253,11 +252,11 @@ export default function Home() {
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginBottom: '0.75rem' }}>How to find the best hot spring for your trip</h2>
           <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Search by state and filter by development level ,  resort hot springs offer amenities and reliable access, while primitive springs require more planning but offer a more natural experience.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Matching the right spring to your group starts with honestly assessing experience level and logistics. Families with young children or first-time visitors often do best at developed resorts where temperatures are regulated and facilities are on-site. Experienced hikers and backcountry visitors will find primitive springs more rewarding despite the added preparation. There are over 1,000 documented natural hot springs across the United States, with the highest concentrations in Idaho, Montana, Colorado, Oregon, and California ,  giving every trip style a wide range of options.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Matching a spring to your group starts with access, supervision, current rules, and the experience required to reach it. Developed facilities may publish operating details, while primitive sites require independent verification with the relevant land manager.</p>
 
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What are the health benefits of soaking in hot springs?</h2>
-          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Soaking in hot springs may help relax muscles, improve circulation, and reduce stress. Many hot springs contain minerals like sulfur, calcium, and magnesium that some visitors find beneficial.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>While many visitors report genuine therapeutic benefits ,  particularly relief from sore muscles and joint stiffness ,  scientific evidence is mixed and individual results vary widely. Always consult a healthcare provider before soaking if you have any underlying medical conditions, cardiovascular issues, or are pregnant. Hot spring tourism generates over $500 million annually in the United States, reflecting how deeply this tradition is woven into American outdoor culture and rural economies across the Mountain West.</p>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>Does SoakUSA provide medical advice?</h2>
+          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>No. SoakUSA is a trip-planning directory and does not claim that a spring or its minerals prevent, treat, or cure a health condition.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>People with health concerns should ask a qualified healthcare professional whether hot-water exposure is appropriate for them. Follow the current rules and warnings published by the facility operator or land manager.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What is the difference between developed and primitive hot springs?</h2>
           <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Developed hot springs have constructed pools, changing facilities, and regulated water temperatures. Primitive springs are natural pools with no infrastructure ,  water temperatures and conditions vary naturally.</p>
