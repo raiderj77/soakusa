@@ -13,7 +13,7 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
   const amenityCount = d.amenities.length;
   const location = d.city ? `${d.city}, ${d.state}` : d.state;
   if (amenityCount >= 2) {
-    return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+    return `Directory record in ${location} listing ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}. Verify current details before visiting.`;
   }
   return `Mapped hot spring or soaking spot in ${location}. Verify current access and conditions before visiting.`;
 }

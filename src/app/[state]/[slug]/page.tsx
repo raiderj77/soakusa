@@ -14,9 +14,19 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
   const amenityCount = d.amenities.length;
   const location = d.city ? `${d.city}, ${d.state}` : d.state;
   if (amenityCount >= 2) {
-    return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+    return `Directory record in ${location} listing ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}. Verify current details before visiting.`;
   }
   return `Mapped hot spring or soaking spot in ${location}. Verify current access and conditions before visiting.`;
+}
+
+function buildLocationTitle(name: string, state: string): string {
+  const suffix = `, ${state}`;
+  const label = /hot spring|thermal|pool/i.test(name) ? name : `${name} Hot Spring`;
+  const available = 60 - suffix.length;
+  const clipped = label.length > available
+    ? `${label.slice(0, Math.max(1, available - 1)).trimEnd()}…`
+    : label;
+  return `${clipped}${suffix}`;
 }
 
 export const revalidate = 86400;
@@ -31,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!loc) return {};
   const hasVerifiedSources = Array.isArray((loc as any).sources) && (loc as any).sources.length > 0;
   return {
-    title: `${loc.name} ,  Hot Spring in ${loc.state}`,
+    title: { absolute: buildLocationTitle(loc.name, loc.state) },
     description: ((loc as any).guide?.overview ?? loc.description).slice(0, 155),
     alternates: { canonical: `https://soakusa.net/${loc.stateSlug}/${loc.slug}` },
     robots: { index: hasVerifiedSources, follow: true },
@@ -58,12 +68,12 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'Place',
-        additionalType: 'https://schema.org/TouristAttraction',
         name: loc.name,
-        description: loc.description,
+        description: getSoakPreview(loc),
         address: { '@type':'PostalAddress', addressLocality: loc.city || '', addressRegion: loc.state, addressCountry:'US' },
         ...(loc.lat && loc.lng ? { geo: { '@type':'GeoCoordinates', latitude: loc.lat, longitude: loc.lng } } : {}),
         url: `https://soakusa.net/${loc.stateSlug}/${loc.slug}`,
+        dateModified: '2026-08-01',
       }) }} />
 
       {/* Hero */}
@@ -92,8 +102,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
             <div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', color: 'var(--text)', marginBottom: '1rem' }}>About This Spring</h2>
               <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>
-                {loc.name} is a natural soaking spot located in {loc.city ? `${loc.city}, ` : ''}{loc.state}.{' '}
-                {loc.amenities.length > 0 ? `This spot features ${loc.amenities.slice(0, 2).join(' and ').toLowerCase()}.` : 'Free public access to natural thermal waters.'}{' '}
+                {getSoakPreview(loc)}{' '}
                 Always check current conditions and access rules before visiting.
               </p>
 
@@ -144,7 +153,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
                   )}
                 </div>
                 {loc.lat && loc.lng && (
-                  <a href={`https://www.google.com/maps?q=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.85rem', background: 'var(--terra)', color: 'var(--white)', fontWeight: 700, fontSize: '0.875rem', fontFamily: 'var(--font-body)', textDecoration: 'none' }}>
+                  <a href={`https://www.google.com/maps?q=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minHeight: '48px', padding: '0.85rem', background: 'var(--terra)', color: 'var(--white)', fontWeight: 700, fontSize: '0.875rem', fontFamily: 'var(--font-body)', textDecoration: 'none' }}>
                     Open in Google Maps →
                   </a>
                 )}
@@ -153,7 +162,7 @@ export default async function SpringPage({ params }: { params: Promise<{ state: 
               {/* Safety */}
               <div style={{ background: 'var(--sage-pale)', border: '1px solid rgba(90,122,90,0.25)', borderRadius: 'var(--radius)', padding: '1.25rem 1.5rem' }}>
                 <p style={{ fontFamily: 'var(--font-display)', color: 'var(--sage)', fontSize: '1.1rem', marginBottom: '0.5rem' }}>🌿 Safety Reminder</p>
-                <p style={{ fontSize: '0.875rem', color: '#445', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>Always test water temperature before entering. Avoid springs above 104°F for extended soaking. Stay hydrated, limit sessions to 15–20 minutes, and never soak alone in remote locations.</p>
+                <p style={{ fontSize: '0.875rem', color: '#445', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>Always test water temperature before entering, obey closures and posted warnings, stay hydrated, and never soak alone in remote locations. Consult a healthcare provider before soaking if you have heart conditions, are pregnant, or have compromised immune function. Water temperatures and conditions vary; assess conditions before entering.</p>
               </div>
             </div>
 

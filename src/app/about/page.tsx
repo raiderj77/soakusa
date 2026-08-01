@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Soak USA - Hot Springs Directory",
+  title: "About",
   description:
     "Learn about Soak USA's mission to help people discover hot springs and natural thermal pools across the United States.",
+  alternates: { canonical: "https://soakusa.net/about" },
 };
 
 export default function AboutPage() {
@@ -32,7 +33,7 @@ export default function AboutPage() {
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>About Soak USA</h1>
 
       <section style={sectionStyles}>
@@ -133,6 +134,6 @@ export default function AboutPage() {
           contact page to get in touch.
         </p>
       </section>
-    </>
+    </div>
   );
 }

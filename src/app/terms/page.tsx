@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Soak USA",
+  title: "Terms of Service",
   description: "Terms of service and legal disclaimers for Soak USA.",
+  alternates: { canonical: "https://soakusa.net/terms" },
 };
 
 export default function TermsPage() {
@@ -45,7 +46,7 @@ export default function TermsPage() {
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Terms of Service</h1>
       <div style={lastUpdatedStyles}>Last updated: April 2026</div>
 
@@ -211,6 +212,6 @@ export default function TermsPage() {
         hot springs lies with you. Always exercise caution, verify conditions with
         local authorities, and make informed decisions about your health and safety.
       </div>
-    </>
+    </div>
   );
 }

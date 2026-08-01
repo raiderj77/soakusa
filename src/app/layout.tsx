@@ -6,7 +6,7 @@ const cormorant = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-dis
 const lato = Lato({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','700'] });
 
 export const metadata: Metadata = {
-  title: { template: '%s | Soak USA', default: 'Soak USA ,  Hot Springs & Thermal Pools Directory' },
+  title: { template: '%s | Soak USA', default: 'Hot Springs Directory | Soak USA' },
   description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the USA. Browse by state with amenities, temperatures, and access details.',
   keywords: 'hot springs, thermal pools, geothermal springs, natural hot springs, soaking pools, USA hot springs',
   metadataBase: new URL('https://soakusa.net'),
@@ -39,13 +39,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <header style={{ background: 'linear-gradient(to right, #3d2010, #2a3d20)', borderBottom: '2px solid var(--terra)', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 16px rgba(42,32,26,0.25)' }}>
           <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
             <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>♨️</span>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.3rem', color: 'var(--sand)', letterSpacing: '0.06em' }}>Soak USA</span>
             </a>
-            <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            <nav aria-label="Primary navigation" style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
               <a href="/" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Home</a>
               <a href="/browse-states" style={{ color: 'rgba(232,221,208,0.85)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Browse</a>
               {/* re-add when editorial content exists: <a href="/editorial" ...>Editorial</a> */}
@@ -54,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        <main style={{ minHeight: 'calc(100vh - 340px)' }}>{children}</main>
+        <main id="main-content" style={{ minHeight: 'calc(100vh - 340px)' }}>{children}</main>
 
         <footer style={{ background: 'linear-gradient(to right, #3d2010, #2a3d20)', borderTop: '2px solid rgba(196,82,26,0.3)', marginTop: '5rem', padding: '3rem 0 2rem' }}>
           <div className="container">

@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Editorial | Soak USA',
+  title: 'Editorial',
   description: 'In-depth guides, safety tips, and expert content about hot springs and natural soaking spots across the USA.',
   robots: { index: false, follow: true },
+  alternates: { canonical: 'https://soakusa.net/editorial' },
 };
 
 export default function EditorialPage() {
   return (
-    <main style={{ maxWidth: '800px', margin: '0 auto', padding: '4rem 1.5rem' }}>
+    <div className="content-page">
       <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Editorial Content</h1>
       <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#666' }}>
         In-depth guides, safety information, and expert content about hot springs and natural
@@ -22,6 +23,6 @@ export default function EditorialPage() {
         </a>{' '}
         to find locations near you.
       </p>
-    </main>
+    </div>
   );
 }

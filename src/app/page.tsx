@@ -13,7 +13,7 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
   const amenityCount = d.amenities.length;
   const location = d.city ? `${d.city}, ${d.state}` : d.state;
   if (amenityCount >= 2) {
-    return `Natural soaking spot in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+    return `Directory record in ${location} listing ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}. Verify current details before visiting.`;
   }
   return `Mapped hot spring or soaking spot in ${location}. Verify current access and conditions before visiting.`;
 }
@@ -21,8 +21,16 @@ function getSoakPreview(d: { name: string; state: string; city: string; amenitie
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Soak USA ,  Find Hot Springs & Natural Thermal Pools Across America',
+  title: 'Hot Springs Directory Across the USA',
   description: 'Discover hot springs, natural thermal pools, and geothermal soaking spots across the United States. GPS coordinates, temperatures, and access info.',
+  alternates: { canonical: 'https://soakusa.net' },
+  openGraph: {
+    title: 'Hot Springs Directory Across the USA',
+    description: 'Browse mapped hot-spring and thermal-pool records by state, then verify current access and conditions with the responsible operator or land manager.',
+    url: 'https://soakusa.net',
+    siteName: 'Soak USA',
+    type: 'website',
+  },
 };
 
 const ALL_STATES = [
@@ -35,6 +43,29 @@ const ALL_STATES = [
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming',
 ];
 
+const FAQS = [
+  {
+    q: 'How do I find a hot spring near me?',
+    a: 'Browse the Soak USA directory by state. Records may include coordinates, temperature information, amenities, and access notes, but conditions change and critical details should be confirmed with the responsible operator or land manager.',
+  },
+  {
+    q: 'Are hot springs free to visit?',
+    a: 'Fees, permits, parking charges, and access rules vary by location. A directory record may show a source-reported fee status, but always verify current charges and requirements directly with the operator or land manager before traveling.',
+  },
+  {
+    q: 'Is it safe to soak in natural hot springs?',
+    a: 'Natural thermal areas can have uncontrolled temperatures, unstable ground, microorganisms, and changing conditions. Consult a healthcare provider before soaking if you have heart conditions, are pregnant, or have compromised immune function. Assess conditions before entering and obey closures and posted warnings.',
+  },
+  {
+    q: 'What should I bring to a hot spring?',
+    a: 'Bring drinking water, suitable footwear, weather-appropriate clothing, and any supplies required by the operator or land manager. Plan for limited services at remote sites, follow Leave No Trace guidance, and pack out all waste.',
+  },
+  {
+    q: 'Are clothing requirements different at different hot springs?',
+    a: 'Yes. Clothing rules and local customs vary by facility and land manager. Check the current rules for the specific location and follow all posted requirements rather than relying on general assumptions.',
+  },
+];
+
 export default function Home() {
   const featured = locations.slice(0, 6);
   const statesWithData = Array.from(new Set(locations.map((l) => l.state))).length;
@@ -45,64 +76,23 @@ export default function Home() {
         '@context':'https://schema.org','@type':'WebSite',url:'https://soakusa.net',
         name:'Soak USA',
         dateModified:new Date().toISOString().substring(0,10),
-        potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:'https://soakusa.net/search?q={search_term_string}'},'query-input':'required name=search_term_string'},
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'Organization',
         name:'Soak USA',
         url:'https://soakusa.net',
         description:'Directory of hot springs and natural soaking spots across the United States',
-        dateModified:new Date().toISOString().substring(0,10),
-      }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'LocalBusiness',
-        name:'Soak USA Directory',
-        url:'https://soakusa.net',
-        description:'Find hot springs, natural pools, and soaking spots near you across the United States',
-        areaServed:'United States',
+        contactPoint:{'@type':'ContactPoint',contactType:'customer support',email:'contact@soakusa.net'},
         dateModified:new Date().toISOString().substring(0,10),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
         dateModified:new Date().toISOString().substring(0,10),
-        mainEntity:[
-          {
-            '@type':'Question',
-            name:'How do I find a hot spring near me?',
-            acceptedAnswer:{'@type':'Answer',text:'Use the Soak USA directory to search by state or region. Each listing includes the location address or GPS coordinates, water temperature, whether the spring is developed or primitive, access requirements, fees, and seasonal availability.'},
-          },
-          {
-            '@type':'Question',
-            name:'Are hot springs free to visit?',
-            acceptedAnswer:{'@type':'Answer',text:'Many primitive hot springs on public land are free to access, though some require a day-use parking fee of $5 to $10. Developed hot springs resorts charge admission ranging from $15 to $40 per person. Some remote springs require a hiking permit or overnight camping reservation to access. Check individual listings for current fee information.'},
-          },
-          {
-            '@type':'Question',
-            name:'Is it safe to soak in natural hot springs?',
-            acceptedAnswer:{'@type':'Answer',text:'Most natural hot springs are safe for healthy adults when water temperatures are comfortable ,  typically 95 to 104 degrees Fahrenheit. Avoid springs that are scalding hot, have strong sulfur odors indicating dangerous gas levels, or are posted with health warnings. Pregnant women, people with heart conditions, and young children should consult a doctor before soaking. Never soak alone in remote locations.'},
-          },
-          {
-            '@type':'Question',
-            name:'What should I bring to a hot spring?',
-            acceptedAnswer:{'@type':'Answer',text:'Bring water to stay hydrated ,  heat causes rapid dehydration. Pack a towel, sandals or water shoes for rocky terrain, sunscreen, and snacks for longer visits. Many primitive springs require a short hike, so bring appropriate footwear and a trail map. Leave no trace ,  pack out all trash.'},
-          },
-          {
-            '@type':'Question',
-            name:'Are clothing requirements different at different hot springs?',
-            acceptedAnswer:{'@type':'Answer',text:'Requirements vary significantly. Developed resort hot springs typically require swimwear. Many primitive hot springs on public land are clothing-optional by local custom. Always research the specific spring\'s customs and any posted regulations before visiting.'},
-          },
-        ],
-      }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Your Friendly Developer Editorial Team',
-        url: 'https://soakusa.net/editorial',
-        worksFor: {
-          '@type': 'Organization',
-          name: 'Soak USA',
-          url: 'https://soakusa.net',
-        },
+        mainEntity:FAQS.map(({q,a}) => ({
+          '@type':'Question',
+          name:q,
+          acceptedAnswer:{'@type':'Answer',text:a},
+        })),
       }) }} />
 
       {/* Hero */}
@@ -113,15 +103,13 @@ export default function Home() {
           <p className="anim-fade-up" style={{ display: 'inline-block', color: 'var(--sand)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.18em', marginBottom: '1rem', fontFamily: 'var(--font-body)', background: 'rgba(232,221,208,0.08)', padding: '0.4rem 1.2rem', borderRadius: '50px', border: '1px solid rgba(232,221,208,0.2)' }}>
             ♨️ Hot Springs Directory
           </p>
-          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5.5vw,4.2rem)', color: 'var(--sand)', fontWeight: 600, marginBottom: '0.5rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
-            Find Your Perfect
-          </h1>
-          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5.5vw,4.2rem)', color: 'var(--terra-lt)', fontWeight: 600, marginBottom: '1.25rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
-            Hot Spring
+          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5.5vw,4.2rem)', color: 'var(--sand)', fontWeight: 600, marginBottom: '1.25rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
+            <span style={{ display: 'block' }}>Find Your Perfect</span>
+            <span style={{ display: 'block', color: 'var(--terra-lt)' }}>Hot Spring</span>
           </h1>
           <div className="divider anim-fade-up anim-delay-2" style={{ maxWidth: '280px', margin: '0 auto 1.5rem' }}>♨</div>
           <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: 'rgba(232,221,208,0.7)', marginBottom: '2.75rem', maxWidth: '480px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
-            Natural hot springs, thermal pools &amp; geothermal soaking spots ,  {locations.length}+ locations across {statesWithData} states.
+            Natural hot springs, thermal pools &amp; geothermal soaking spots ,  {locations.length} mapped records across {statesWithData} states.
           </p>
           <div className="anim-fade-up anim-delay-3" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
             <a href="/colorado" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.95rem', background: 'var(--terra)', color: 'white', textDecoration: 'none', transition: 'background 0.2s' }}>Find Hot Springs →</a>
@@ -137,7 +125,7 @@ export default function Home() {
       <section style={{ background: 'var(--white)', borderBottom: '1px solid rgba(196,82,26,0.08)' }}>
         <div className="container stats-grid">
           {[
-            { n:`${locations.length}+`, l:'Hot Springs' },
+            { n:locations.length.toLocaleString(), l:'Mapped Records' },
             { n:`${statesWithData}`, l:'States Covered' },
             { n:'Thermal', l:'& Mineral Pools' },
             { n:'GPS', l:'Coordinates' },
@@ -185,7 +173,7 @@ export default function Home() {
           </div>
           <div className="grid-3">
             {[
-              { icon:'🗺️', title:'Find a Spring', desc:'Browse by state to discover every hot spring ,  with temperatures, access details, and GPS coordinates.' },
+              { icon:'🗺️', title:'Find a Spring', desc:'Browse available directory records by state, with source-provided temperatures, access notes, and GPS coordinates where present.' },
               { icon:'♨️', title:'Check Conditions', desc:'Review water temperature, access type (primitive vs. developed), permit requirements, and seasonal closures.' },
               { icon:'🌿', title:'Verify Before You Go', desc:'Check the current land-manager or operator page for access, closures, rules, fees, and water conditions.' },
             ].map(({icon,title,desc}) => (
@@ -216,13 +204,7 @@ export default function Home() {
             <p className="section-label">FAQ</p>
             <h2 className="section-title">Common Questions</h2>
           </div>
-          {[
-            { q:'Are hot springs free to visit?', a:'It depends on the location. Primitive hot springs on BLM land are typically free, though some require a day-use fee or parking pass. Developed hot springs at resorts or state parks usually charge admission. Always check current access details before visiting.' },
-            { q:'What should I bring to a hot spring?', a:'Bring water (you\'ll get dehydrated), a towel, sandals for rocky pools, sunscreen, and a change of clothes. A waterproof bag for electronics is useful. For primitive springs, bring a headlamp if visiting at dusk, and pack out all trash.' },
-            { q:'What\'s the ideal soaking temperature?', a:'Most people find 100–104°F most comfortable for extended soaking. Above 104°F can stress the cardiovascular system. Water above 112°F is generally unsafe for prolonged immersion. Many springs mix with cold stream water naturally, so you can find comfortable spots.' },
-            { q:'Are hot springs open year-round?', a:'Many primitive hot springs are accessible year-round, though roads may close in winter. Developed resorts typically operate year-round. Summer brings higher crowds; winter soaking in snowy landscapes is spectacular but requires careful road and weather assessment.' },
-            { q:'Can children use hot springs?', a:'Children can enjoy hot springs, but exercise extra caution. Keep young children in cooler, shallower areas. Never leave children unattended near hot water, and avoid springs where the temperature is difficult to control. Some developed facilities have age restrictions.' },
-          ].map(({q,a}) => (
+          {FAQS.map(({q,a}) => (
             <details key={q} className="faq-item">
               <summary>{q}</summary>
               <div className="faq-answer">{a}</div>
@@ -259,8 +241,8 @@ export default function Home() {
           <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>People with health concerns should ask a qualified healthcare professional whether hot-water exposure is appropriate for them. Follow the current rules and warnings published by the facility operator or land manager.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What is the difference between developed and primitive hot springs?</h2>
-          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Developed hot springs have constructed pools, changing facilities, and regulated water temperatures. Primitive springs are natural pools with no infrastructure ,  water temperatures and conditions vary naturally.</p>
-          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Developed resorts trade spontaneity for comfort and consistency ,  you know what temperature to expect and facilities will be clean and staffed. Primitive springs offer a more authentic connection to the landscape, but conditions change seasonally and after storms. Before visiting a primitive spring, check recent visitor reports for water quality, access road conditions, and any temporary closures ,  what was passable in September may be snowed in by November. The United States has more geothermal features than any other country, with Yellowstone National Park alone hosting over 10,000 hydrothermal features.</p>
+          <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Developed hot springs generally have constructed infrastructure and published operator rules. Primitive springs may have limited or no facilities, and their water and access conditions can change without notice.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '0.75rem' }}>Use current operator or land-manager information to compare access, services, closures, and hazards. A directory category does not guarantee that a site is staffed, maintained, open, or safe to enter.</p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--text)', marginTop: '3rem', marginBottom: '0.75rem' }}>What hot spring etiquette should I follow?</h2>
           <p style={{ fontWeight: 700, lineHeight: 1.75, marginBottom: '0.75rem' }}>Keep noise low, limit soak time to 20 to 30 minutes when others are waiting, pack out all trash, and leave the area exactly as you found it. Hot springs are shared natural resources.</p>
@@ -282,7 +264,7 @@ export default function Home() {
         <div className="container" style={{ maxWidth: '600px' }}>
           <p style={{ color: 'var(--terra-lt)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.18em', fontFamily: 'var(--font-body)', fontWeight: 700, marginBottom: '0.75rem' }}>♨️ The Water Awaits</p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: 'var(--sand)', marginBottom: '1rem' }}>Find Your Soak</h2>
-          <p style={{ color: 'rgba(232,221,208,0.6)', marginBottom: '2rem', lineHeight: 1.7 }}>{locations.length}+ hot springs across {statesWithData} states. Discover your next retreat.</p>
+          <p style={{ color: 'rgba(232,221,208,0.6)', marginBottom: '2rem', lineHeight: 1.7 }}>{locations.length} mapped records across {statesWithData} states. Verify current details before traveling.</p>
           <Link href="/browse-states" className="btn btn-terra" style={{ padding: '0.9rem 2.25rem' }}>Explore Springs →</Link>
         </div>
       </section>

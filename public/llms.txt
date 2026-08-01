@@ -5,18 +5,18 @@
 ## About
 - Domain: soakusa.net
 - Type: Location directory
-- Coverage: 14 US states with active listings, expanding nationwide, 360+ hot spring locations
-- Data: GPS coordinates, water temperatures, amenities, access requirements
+- Coverage: 359 mapped directory records across 14 US states
+- Data: Records may include GPS coordinates, water-temperature notes, amenities, and access information
 
 ## Key Pages
 - [Home](https://soakusa.net): Browse featured hot springs and search by state
-- [Editorial](https://soakusa.net/editorial): In-depth guides and safety information
-- [Privacy Policy](https://soakusa.net/privacy): MODPA/GDPR/CCPA compliant, honors GPC signals
+- [Browse by State](https://soakusa.net/browse-states): Browse the current directory coverage
+- [Privacy Policy](https://soakusa.net/privacy): Current privacy and tracking practices
 - [About](https://soakusa.net/about): Mission and editorial standards
 - [Contact](https://soakusa.net/contact): Get in touch
 
 ## Data Coverage
-Hot springs are listed with: name, state, city, GPS coordinates, description, water temperature, amenities (pool, changing rooms, camping, wheelchair accessible), access type (free/fee), and safety notes.
+Directory records show only the fields present in the underlying data. These may include name, state, city, GPS coordinates, description, temperature notes, amenities, access notes, and safety information. Conditions and access must be verified with the responsible operator or land manager.
 
 ## Safety Information
 This site includes safety guidance for hot spring visitors: temperature checking, hydration, health conditions, and Leave No Trace principles.

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Soak USA - Get in Touch",
+  title: "Contact",
   description:
     "Contact Soak USA with questions, suggestions, or feedback about our hot springs directory.",
+  alternates: { canonical: "https://soakusa.net/contact" },
 };
 
 export default function ContactPage() {
@@ -64,6 +65,7 @@ export default function ContactPage() {
 
   const inputStyles: React.CSSProperties = {
     width: "100%",
+    minHeight: "48px",
     padding: "0.75rem",
     border: "1px solid #ddd",
     borderRadius: "4px",
@@ -86,12 +88,13 @@ export default function ContactPage() {
     borderRadius: "4px",
     fontSize: "0.95rem",
     fontWeight: "600",
+    minHeight: "48px",
     cursor: "pointer",
     transition: "background-color 0.2s",
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Contact Soak USA</h1>
 
       <section style={sectionStyles}>
@@ -120,15 +123,21 @@ export default function ContactPage() {
           Send us a Message
         </h2>
         <p style={textStyles}>
-          Fill out the form below and we'll get back to you as soon as possible.
+          Fill out the form below to draft a message in your email application.
         </p>
 
-        <form style={formStyles} action="mailto:contact@soakusa.net" method="POST">
+        <p id="email-form-note" style={{ ...textStyles, fontSize: "0.875rem" }}>
+          This form does not upload your message to Soak USA. Submitting it opens your device&apos;s configured email application; if that does not work, use the email link above.
+        </p>
+
+        <form style={formStyles} action="mailto:contact@soakusa.net" method="POST" encType="text/plain" aria-describedby="email-form-note">
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Name</label>
+            <label htmlFor="contact-name" style={labelStyles}>Name</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
+              autoComplete="name"
               required
               style={inputStyles}
               placeholder="Your name"
@@ -136,10 +145,12 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Email</label>
+            <label htmlFor="contact-email" style={labelStyles}>Email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
+              autoComplete="email"
               required
               style={inputStyles}
               placeholder="your@email.com"
@@ -147,8 +158,9 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Subject</label>
+            <label htmlFor="contact-subject" style={labelStyles}>Subject</label>
             <input
+              id="contact-subject"
               type="text"
               name="subject"
               style={inputStyles}
@@ -157,8 +169,9 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Message</label>
+            <label htmlFor="contact-message" style={labelStyles}>Message</label>
             <textarea
+              id="contact-message"
               name="message"
               required
               style={textareaStyles}
@@ -190,6 +203,6 @@ export default function ContactPage() {
           <li>Any other relevant details</li>
         </ul>
       </section>
-    </>
+    </div>
   );
 }

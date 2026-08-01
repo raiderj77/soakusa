@@ -35,6 +35,26 @@ a { color: var(--terra); text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; }
 
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--terra);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text);
+  font-weight: 700;
+  transform: translateY(-180%);
+}
+.skip-link:focus { transform: translateY(0); }
+header nav a { display: inline-flex; align-items: center; min-height: 48px; }
+.content-page { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
+
 /* Animations */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes steam { 0%,100%{opacity:0.4;transform:translateY(0) scaleX(1)} 50%{opacity:0.8;transform:translateY(-8px) scaleX(1.05)} }
@@ -56,7 +76,7 @@ img { max-width: 100%; height: auto; }
 .card-meta { font-size: 0.85rem; color: var(--pebble); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: var(--radius-pill); font-weight: 600; font-size: 0.9rem; font-family: var(--font-body); cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; letter-spacing: 0.03em; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 48px; padding: 0.85rem 2rem; border-radius: var(--radius-pill); font-weight: 600; font-size: 0.9rem; font-family: var(--font-body); cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; letter-spacing: 0.03em; }
 .btn:hover { transform: translateY(-2px); text-decoration: none; }
 .btn-terra { background: var(--terra); color: var(--white); box-shadow: 0 4px 16px rgba(196,82,26,0.35); }
 .btn-terra:hover { background: var(--terra-lt); color: var(--white); }
@@ -78,7 +98,7 @@ img { max-width: 100%; height: auto; }
 .grid-states { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 0.6rem; }
 
 /* State links */
-.state-link { display: flex; align-items: center; justify-content: center; padding: 0.65rem 0.5rem; background: var(--white); border: 1.5px solid transparent; border-radius: var(--radius-sm); text-align: center; color: var(--text); font-weight: 600; font-size: 0.82rem; text-decoration: none; font-family: var(--font-body); box-shadow: 0 1px 5px rgba(42,32,26,0.07); transition: all 0.2s; }
+.state-link { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.65rem 0.5rem; background: var(--white); border: 1.5px solid transparent; border-radius: var(--radius-sm); text-align: center; color: var(--text); font-weight: 600; font-size: 0.82rem; text-decoration: none; font-family: var(--font-body); box-shadow: 0 1px 5px rgba(42,32,26,0.07); transition: all 0.2s; }
 .state-link:hover { border-color: var(--terra); background: var(--terra-pale); transform: translateY(-2px); text-decoration: none; }
 
 /* Browse-states page: active state cards */
@@ -123,8 +143,14 @@ img { max-width: 100%; height: auto; }
 /* Responsive */
 @media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) {
+  header .container { align-items: flex-start !important; flex-direction: column; }
+  header nav { gap: 0.5rem 1.25rem !important; }
   .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .search-wrap { border-radius: var(--radius); flex-direction: column; }
   .section-title { font-size: 1.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }

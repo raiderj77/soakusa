@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Soak USA",
+  title: "Privacy Policy",
   description: "Privacy policy for Soak USA hot springs directory.",
+  alternates: { canonical: "https://soakusa.net/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -34,7 +35,7 @@ export default function PrivacyPage() {
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Privacy Policy</h1>
       <div style={lastUpdatedStyles}>Last updated: July 13, 2026</div>
 
@@ -219,6 +220,6 @@ export default function PrivacyPage() {
           contact us.
         </p>
       </section>
-    </>
+    </div>
   );
 }

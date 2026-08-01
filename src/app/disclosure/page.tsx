@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclosure | Soak USA",
+  title: "Disclosure",
   description: "How Soak USA is supported: advertising, sponsored links, and possible affiliate links.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://soakusa.net/disclosure" },
 };
 
 export default function DisclosurePage() {
@@ -35,7 +36,7 @@ export default function DisclosurePage() {
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Disclosure</h1>
       <div style={lastUpdatedStyles}>Last updated: June 2026</div>
 
@@ -100,6 +101,6 @@ export default function DisclosurePage() {
           .
         </p>
       </section>
-    </>
+    </div>
   );
 }
