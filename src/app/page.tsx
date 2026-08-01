@@ -75,7 +75,6 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebSite',url:'https://soakusa.net',
         name:'Soak USA',
-        dateModified:new Date().toISOString().substring(0,10),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'Organization',
@@ -83,11 +82,9 @@ export default function Home() {
         url:'https://soakusa.net',
         description:'Directory of hot springs and natural soaking spots across the United States',
         contactPoint:{'@type':'ContactPoint',contactType:'customer support',email:'contact@soakusa.net'},
-        dateModified:new Date().toISOString().substring(0,10),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
-        dateModified:new Date().toISOString().substring(0,10),
         mainEntity:FAQS.map(({q,a}) => ({
           '@type':'Question',
           name:q,

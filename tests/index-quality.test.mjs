@@ -58,6 +58,7 @@ test("homepage metadata, headings, and schema match implemented features", () =>
   assert.ok("Hot Springs Directory Across the USA | Soak USA".length <= 60);
   assert.equal((homepage.match(/<h1\b/g) ?? []).length, 1);
   assert.doesNotMatch(homepage, /SearchAction|LocalBusiness|'@type':\s*'Person'/);
+  assert.doesNotMatch(homepage, /dateModified|new Date\(/);
   assert.match(homepage, /mainEntity:FAQS\.map/);
 });
 
