@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclosure | Soak USA",
-  description: "How Soak USA is supported: advertising, sponsored links, and possible affiliate links.",
+  title: "Disclosure",
+  description: "How Soak USA is supported, including its affiliated Etsy shop and current advertising status.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "https://soakusa.net/disclosure" },
 };
 
 export default function DisclosurePage() {
@@ -29,64 +30,62 @@ export default function DisclosurePage() {
 
   const lastUpdatedStyles: React.CSSProperties = {
     fontSize: "0.85rem",
-    color: "#999",
+    color: "#625b54",
     marginBottom: "2rem",
     fontStyle: "italic",
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Disclosure</h1>
-      <div style={lastUpdatedStyles}>Last updated: June 2026</div>
+      <div style={lastUpdatedStyles}>Last updated: August 2, 2026</div>
 
       <p style={textStyles}>
-        Soak USA is a free directory. To keep the site running, it is supported
-        by advertising and may contain sponsored or affiliate links. This page
-        explains each of those relationships plainly.
+        Soak USA is a free research publication. The site currently includes a clearly
+        labeled link to an affiliated Etsy shop. Advertising code is not
+        currently enabled. This page explains those relationships plainly.
       </p>
 
       <section>
         <h2 style={sectionTitleStyles}>Advertising</h2>
         <p style={textStyles}>
-          Soak USA displays ads through Google AdSense. Google may use cookies
-          and similar technologies to show ads based on your prior visits to
-          this or other websites. You can review Google&apos;s advertising
-          practices and opt-out options at{" "}
-          <a href="https://policies.google.com/technologies/ads" style={{ color: "#7d1a00" }}>
-            policies.google.com/technologies/ads
-          </a>
-          .
+          Soak USA does not currently load Google AdSense or other advertising
+          scripts. Its public ads.txt file authorizes the publisher account so
+          the domain can be verified, but that file does not mean ads are being
+          served. Before advertising is enabled, Soak USA will update its
+          disclosures and add any consent or opt-out controls required for the
+          deployed configuration.
         </p>
       </section>
 
       <section>
         <h2 style={sectionTitleStyles}>Sponsored Links</h2>
         <p style={textStyles}>
-          The site contains a sponsored link to an affiliated Etsy shop
-          (DevelopVault). This link is clearly labeled &ldquo;Sponsored&rdquo;
-          where it appears. Soak USA may receive compensation if you visit or
-          purchase through that link.
+          The site contains a link to an Etsy shop affiliated with Soak USA&apos;s
+          publisher. The relationship is labeled &ldquo;Affiliated shop&rdquo;
+          where the link appears. A purchase may produce revenue for the
+          publisher; simply viewing or clicking the link does not create a
+          charge for the visitor.
         </p>
       </section>
 
       <section>
         <h2 style={sectionTitleStyles}>Affiliate Links</h2>
         <p style={textStyles}>
-          Some links on Soak USA may be affiliate links, meaning Soak USA could
-          earn a small commission if you click through and make a purchase, at
-          no additional cost to you. Affiliate links are identified with a
-          &ldquo;sponsored&rdquo; or &ldquo;nofollow&rdquo; relationship
-          attribute.
+          Soak USA does not currently publish third-party affiliate offers.
+          If one is added later, the commercial relationship will be disclosed
+          next to the link and the link will use the appropriate sponsored
+          relationship attribute.
         </p>
       </section>
 
       <section>
         <h2 style={sectionTitleStyles}>Editorial Independence</h2>
         <p style={textStyles}>
-          Advertising, sponsored links, and any affiliate relationships do not
-          influence which hot springs and soaking locations are listed on Soak
-          USA, how they are described, or how they are ranked. All listings
-          reflect publicly available information about the locations themselves.
+          Commercial relationships do not determine which locations are
+          published. The legacy catalog is offline. Any future record must pass
+          the source, classification, and review requirements described in the
+          Editorial Standards before it can appear publicly.
         </p>
       </section>
 
@@ -100,6 +99,6 @@ export default function DisclosurePage() {
           .
         </p>
       </section>
-    </>
+    </div>
   );
 }

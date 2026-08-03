@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Soak USA - Get in Touch",
+  title: "Contact",
   description:
-    "Contact Soak USA with questions, suggestions, or feedback about our hot springs directory.",
+    "Contact Soak USA with an editorial correction, an authoritative source, or a question about the catalog rebuild.",
+  alternates: { canonical: "https://soakusa.net/contact" },
 };
 
 export default function ContactPage() {
@@ -64,6 +65,7 @@ export default function ContactPage() {
 
   const inputStyles: React.CSSProperties = {
     width: "100%",
+    minHeight: "48px",
     padding: "0.75rem",
     border: "1px solid #ddd",
     borderRadius: "4px",
@@ -86,18 +88,19 @@ export default function ContactPage() {
     borderRadius: "4px",
     fontSize: "0.95rem",
     fontWeight: "600",
+    minHeight: "48px",
     cursor: "pointer",
     transition: "background-color 0.2s",
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Contact Soak USA</h1>
 
       <section style={sectionStyles}>
         <p style={textStyles}>
-          Have questions about hot springs? Want to suggest a location? Looking
-          for more information? We'd love to hear from you!
+          Send an editorial correction, an authoritative source for a future
+          location record, or a question about Soak USA&apos;s publication standard.
         </p>
 
         <div style={contactInfoStyles}>
@@ -117,18 +120,24 @@ export default function ContactPage() {
 
       <section style={sectionStyles}>
         <h2 style={{ fontSize: "1.3rem", color: "#7d1a00", marginBottom: "1rem" }}>
-          Send us a Message
+          Send Us a Message
         </h2>
         <p style={textStyles}>
-          Fill out the form below and we'll get back to you as soon as possible.
+          Fill out the form below to draft a message in your email application.
         </p>
 
-        <form style={formStyles} action="mailto:contact@soakusa.net" method="POST">
+        <p id="email-form-note" style={{ ...textStyles, fontSize: "0.875rem" }}>
+          This form does not upload your message to Soak USA. Submitting it opens your device&apos;s configured email application; if that does not work, use the email link above.
+        </p>
+
+        <form style={formStyles} action="mailto:contact@soakusa.net" method="POST" encType="text/plain" aria-describedby="email-form-note">
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Name</label>
+            <label htmlFor="contact-name" style={labelStyles}>Name</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
+              autoComplete="name"
               required
               style={inputStyles}
               placeholder="Your name"
@@ -136,10 +145,12 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Email</label>
+            <label htmlFor="contact-email" style={labelStyles}>Email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
+              autoComplete="email"
               required
               style={inputStyles}
               placeholder="your@email.com"
@@ -147,8 +158,9 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Subject</label>
+            <label htmlFor="contact-subject" style={labelStyles}>Subject</label>
             <input
+              id="contact-subject"
               type="text"
               name="subject"
               style={inputStyles}
@@ -157,8 +169,9 @@ export default function ContactPage() {
           </div>
 
           <div style={formGroupStyles}>
-            <label style={labelStyles}>Message</label>
+            <label htmlFor="contact-message" style={labelStyles}>Message</label>
             <textarea
+              id="contact-message"
               name="message"
               required
               style={textareaStyles}
@@ -180,16 +193,16 @@ export default function ContactPage() {
           Suggestions & Feedback
         </h2>
         <p style={textStyles}>
-          Know of a hot spring we should feature? Have feedback about our
-          directory? We'd love to hear your suggestions! Send us an email with:
+          A location is considered only after its identity, geography, access,
+          classification, and safety claims can be reviewed. Send us:
         </p>
         <ul style={textStyles}>
-          <li>Name and location of the hot spring</li>
-          <li>State and city information</li>
-          <li>Description and key amenities</li>
-          <li>Any other relevant details</li>
+          <li>The location or thermal feature name</li>
+          <li>The responsible operator, park, land manager, tribe, or local authority</li>
+          <li>A current authoritative HTTPS source</li>
+          <li>The claim or correction that source supports</li>
         </ul>
       </section>
-    </>
+    </div>
   );
 }

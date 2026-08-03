@@ -1,25 +1,29 @@
-# Soak USA ,  LLM-Friendly Site Summary
+# Soak USA — LLM-Friendly Site Summary
 
-> Soak USA is a directory of hot springs, natural thermal pools, and geothermal soaking spots across the United States.
+> Soak USA is an authority-first hot-spring research and safety publication. It is not a live-conditions, emergency, land-management, or medical service.
 
-## About
+## Current Status
+
 - Domain: soakusa.net
-- Type: Location directory
-- Coverage: 14 US states with active listings, expanding nationwide, 360+ hot spring locations
-- Data: GPS coordinates, water temperatures, amenities, access requirements
+- Public location records: 0
+- The legacy location catalog was withdrawn after a data-quality audit found material geography and feature-classification errors.
+- Retired browse, state, and location URLs return a 404 response with catalog-reset guidance.
+- A future record requires a visible authoritative source, publisher, title, review date, supported-claim mapping, and human review.
 
 ## Key Pages
-- [Home](https://soakusa.net): Browse featured hot springs and search by state
-- [Editorial](https://soakusa.net/editorial): In-depth guides and safety information
-- [Privacy Policy](https://soakusa.net/privacy): MODPA/GDPR/CCPA compliant, honors GPC signals
-- [About](https://soakusa.net/about): Mission and editorial standards
-- [Contact](https://soakusa.net/contact): Get in touch
 
-## Data Coverage
-Hot springs are listed with: name, state, city, GPS coordinates, description, water temperature, amenities (pool, changing rooms, camping, wheelchair accessible), access type (free/fee), and safety notes.
+- [Home](https://soakusa.net): Current catalog status and official safety sources
+- [Editorial Standards](https://soakusa.net/editorial): Publication, classification, sourcing, and correction requirements
+- [About](https://soakusa.net/about): Mission, catalog reset, safety boundaries, and accountability
+- [Disclosure](https://soakusa.net/disclosure): Current advertising and affiliated-shop status
+- [Contact](https://soakusa.net/contact): Corrections and source submissions
+- [Privacy](https://soakusa.net/privacy): Current privacy and tracking practices
+- [Terms](https://soakusa.net/terms): Site terms and safety boundaries
 
-## Safety Information
-This site includes safety guidance for hot spring visitors: temperature checking, hydration, health conditions, and Leave No Trace principles.
+## Safety Boundary
+
+Managed hot tubs and uncontrolled natural thermal areas are not interchangeable. Readers must use the responsible authority for current permission, closures, access, hazards, and emergency information. Soak USA does not provide medical advice.
 
 ## Sitemap
+
 https://soakusa.net/sitemap.xml

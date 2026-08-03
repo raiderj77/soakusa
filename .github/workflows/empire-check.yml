@@ -24,10 +24,10 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install and build
+      - name: Install and run quality gates
         run: |
           npm ci
-          npm run build
+          npm run check
 
   # ────────────────────────────────────────────────────────────────
   # Job 2 — Empire compliance gates (no Node required)
@@ -116,33 +116,16 @@ jobs:
           fi
           echo "✓ IndexNow key file: $KEY_FILE"
 
-      # ── Check 6: Author byline policy (updated 2026-05-11) ─────
-      # Policy: "Jason Ramirez" + CADC-II credential is the canonical author
-      # entity across the entire Empire portfolio. One author = stronger EEAT
-      # and AI-citation signal than 11 anonymous publishers. This check now
-      # WARNS if the name is missing rather than failing if present.
-      - name: Author byline present (informational)
-        env:
-          REPO: ${{ github.repository }}
+      # Check 6: Soak USA uses role-based editorial accountability. Credentials
+      # from unrelated professional scopes must not be used as travel authority.
+      - name: Editorial accountability is present
         run: |
-          if [ "$REPO" != "raiderj77/mhsud" ]; then
-            echo "ℹ Non-YMYL site ($REPO) — byline check does not apply"
-            exit 0
-          fi
-
-          SEARCH_DIRS=()
-          for DIR in src app components lib hooks types config public content; do
-            [ -d "$DIR" ] && SEARCH_DIRS+=("$DIR")
-          done
-
-          if [ "${#SEARCH_DIRS[@]}" -eq 0 ]; then
-            echo "ℹ No standard source directories — skipping byline check"
-            exit 0
-          fi
-
-          MATCHES=$(grep -rl "Jason Ramirez" "${SEARCH_DIRS[@]}" 2>/dev/null | wc -l || echo 0)
-          if [ "$MATCHES" -eq 0 ]; then
-            echo "::warning::No 'Jason Ramirez' byline found. Per portfolio policy, author byline + CADC-II credential should appear on author pages and in post frontmatter for EEAT."
-          else
-            echo "✓ Author byline present in $MATCHES file(s) (portfolio policy: name + credential everywhere)"
-          fi
+          grep -qF "Soak USA editorial desk" src/app/editorial/page.tsx || {
+            echo "::error file=src/app/editorial/page.tsx::Missing accountable editorial reviewer."
+            exit 1
+          }
+          grep -qF "contact@soakusa.net" src/app/editorial/page.tsx || {
+            echo "::error file=src/app/editorial/page.tsx::Missing correction channel."
+            exit 1
+          }
+          echo "Editorial accountability and correction channel are present."

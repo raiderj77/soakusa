@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Soak USA",
-  description: "Privacy policy for Soak USA hot springs directory.",
+  title: "Privacy Policy",
+  description: "Privacy policy for the Soak USA hot-spring research and safety publication.",
+  alternates: { canonical: "https://soakusa.net/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -28,34 +29,34 @@ export default function PrivacyPage() {
 
   const lastUpdatedStyles: React.CSSProperties = {
     fontSize: "0.85rem",
-    color: "#999",
+    color: "#625b54",
     marginBottom: "2rem",
     fontStyle: "italic",
   };
 
   return (
-    <>
+    <div className="content-page">
       <h1 style={titleStyles}>Privacy Policy</h1>
-      <div style={lastUpdatedStyles}>Last updated: July 13, 2026</div>
+      <div style={lastUpdatedStyles}>Last updated: August 2, 2026</div>
 
       <section>
         <h2 style={sectionTitleStyles}>Introduction</h2>
         <p style={textStyles}>
-          Soak USA ("we", "us", "our", or "Company") operates the soakusa.net
-          website (the "Service").
+          Soak USA ("we", "us", or "our") operates the soakusa.net website
+          (the "Site").
         </p>
         <p style={textStyles}>
-          This page informs you of our policies regarding the collection, use,
-          and disclosure of personal data when you use our Service and the
-          choices you have associated with that data.
+          This policy explains the limited personal data that may be processed
+          when you visit the Site or contact us, the current status of optional
+          advertising and analytics, and how to submit a privacy request.
         </p>
       </section>
 
       <section>
         <h2 style={sectionTitleStyles}>Information Collection and Use</h2>
         <p style={textStyles}>
-          We collect several different types of information for various purposes
-          to provide and improve our Service to you.
+          The Site does not require an account. The following information may be
+          processed to deliver, secure, and support it.
         </p>
 
         <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
@@ -82,11 +83,11 @@ export default function PrivacyPage() {
       <section>
         <h2 style={sectionTitleStyles}>Use of Data</h2>
         <p style={textStyles}>
-          Soak USA uses the collected data for various purposes:
+          Soak USA may use the limited data described above for these purposes:
         </p>
         <ul style={textStyles}>
-          <li>To provide and maintain our Service</li>
-          <li>To notify you about changes to our Service</li>
+          <li>To deliver, maintain, and secure the Site</li>
+          <li>To publish material changes to the Site or this policy</li>
           <li>To provide customer support and respond to your inquiries</li>
           <li>To detect, prevent and address technical and security issues</li>
         </ul>
@@ -129,29 +130,37 @@ export default function PrivacyPage() {
       </section>
 
       <section>
-        <h2 style={sectionTitleStyles}>Your Privacy Rights (MODPA Compliance)</h2>
+        <h2 style={sectionTitleStyles}>Privacy Requests and Applicable Rights</h2>
         <p style={textStyles}>
-          As of April 1, 2026, Soak USA complies with the Maryland Online Data Privacy Act (MODPA) and recognizes your consumer privacy rights.
+          Depending on where you live and whether a privacy law applies to the
+          Site&apos;s processing, you may have rights concerning personal data.
+          Maryland&apos;s Online Data Privacy Act took effect October 1, 2025;
+          Maryland residents can review the Attorney General&apos;s official{" "}
+          <a href="https://oag.maryland.gov/resources-info/Pages/data-privacy.aspx" style={{ color: "#7d1a00" }}>
+            consumer privacy guidance
+          </a>
+          . This policy does not claim that every listed statutory duty or right
+          applies to every request.
         </p>
 
         <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
-          Your Consumer Rights:
+          Requests You May Submit:
         </h3>
         <ul style={textStyles}>
           <li>
-            <strong>Right to Access:</strong> You have the right to confirm whether we collect personal data about you and to access that data.
+            <strong>Access:</strong> Ask whether we hold personal data associated with you and request access where applicable.
           </li>
           <li>
-            <strong>Right to Correct:</strong> You have the right to correct any inaccurate personal data we hold about you.
+            <strong>Correction:</strong> Ask us to correct inaccurate personal data where applicable.
           </li>
           <li>
-            <strong>Right to Delete:</strong> You have the right to request deletion of your personal data, subject to certain exceptions.
+            <strong>Deletion:</strong> Ask us to delete personal data, subject to legal and operational exceptions.
           </li>
           <li>
-            <strong>Right to Opt-Out:</strong> You have the right to opt out of the sale or targeted advertising of your personal data.
+            <strong>Opt-out:</strong> Ask to opt out of covered sale, sharing, or targeted-advertising processing if it is introduced and the applicable law provides that right.
           </li>
           <li>
-            <strong>Right to Data Portability:</strong> You have the right to obtain a copy of your personal data in a portable format.
+            <strong>Portability:</strong> Request a portable copy where applicable and technically feasible.
           </li>
         </ul>
 
@@ -159,14 +168,14 @@ export default function PrivacyPage() {
           Global Privacy Control (GPC):
         </h3>
         <p style={textStyles}>
-          The Site does not currently sell personal data or run targeted advertising. If processing subject to an opt-out is introduced later, we will honor applicable Global Privacy Control signals.
+          The Site does not currently sell personal data, share it for cross-context behavioral advertising, or run targeted advertising. If covered opt-out processing is introduced later, the Site will implement and disclose the controls required for the deployed configuration, including recognition of applicable Global Privacy Control signals.
         </p>
 
         <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
           Data Sale Notice:
         </h3>
         <p style={textStyles}>
-          Soak USA does not sell or share personal data for monetary consideration. We do not participate in the sale of personal information as defined under privacy laws.
+          Soak USA does not currently sell personal data or share it for cross-context behavioral advertising. Links to third-party sites may allow those sites to receive ordinary request information when you choose to follow a link; their own privacy policies apply there.
         </p>
 
         <h3 style={{ fontSize: "1.1rem", color: "#333", marginTop: "1rem", marginBottom: "0.5rem" }}>
@@ -177,14 +186,17 @@ export default function PrivacyPage() {
           <a href="mailto:privacy@soakusa.net" style={{ color: "#7d1a00" }}>
             privacy@soakusa.net
           </a>
-          . We will respond to verified requests within 45 days of receipt. You may also designate an authorized agent to make requests on your behalf.
+          . We will verify and respond to requests within the period required by
+          applicable law. We may need information reasonably necessary to match
+          a request to data we hold and may deny or limit a request when the law
+          permits or requires it.
         </p>
       </section>
 
       <section>
         <h2 style={sectionTitleStyles}>Third-Party Services</h2>
         <p style={textStyles}>
-          Our Service may contain links to other websites and services that are
+          The Site may contain links to other websites and services that are
           not operated by us. This Privacy Policy does not apply to these
           third-party websites and services, and we are not responsible for
           their privacy practices.
@@ -205,20 +217,23 @@ export default function PrivacyPage() {
             <section>
         <h2 style={sectionTitleStyles}>Affiliate Relationships</h2>
         <p style={textStyles}>
-          Soak USA earns compensation from affiliate links on the site, including links to an affiliated Etsy shop. These relationships do not affect editorial content or hot spring listings. For more information, see our <a href="/disclosure" style={{ color: "#7d1a00" }}>Disclosure page</a>.
+          The Site links to an Etsy shop affiliated with Soak USA&apos;s publisher.
+          A purchase may produce revenue for the publisher. Soak USA does not
+          currently publish third-party affiliate offers. For more information,
+          see our <a href="/disclosure" style={{ color: "#7d1a00" }}>Disclosure page</a>.
         </p>
       </section>
 
 <section>
         <h2 style={sectionTitleStyles}>Children's Privacy</h2>
         <p style={textStyles}>
-          Our Service does not address anyone under the age of 13 ("Children").
+          The Site is not directed to children under the age of 13.
           We do not knowingly collect personally identifiable information from
           anyone under the age of 13. If you are a parent or guardian and you
           are aware that your Child has provided us with Personal Data, please
           contact us.
         </p>
       </section>
-    </>
+    </div>
   );
 }

@@ -2,16 +2,21 @@
   "name": "soakusa",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test:privacy": "node --test tests/privacy-security.test.mjs",
-    "test:index": "node --test tests/index-quality.test.mjs"
+    "test:index": "node --test tests/index-quality.test.mjs",
+    "test": "npm run test:privacy && npm run test:index",
+    "typecheck": "tsc --noEmit --incremental false",
+    "check": "npm run test && npm run typecheck && npm run build"
   },
   "dependencies": {
-    "marked": "^18.0.2",
-    "next": "15.5.20",
+    "next": "15.5.22",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -22,6 +27,7 @@
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "8.5.19"
+    "postcss": "8.5.19",
+    "sharp": "0.35.3"
   }
 }
