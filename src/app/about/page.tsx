@@ -1,139 +1,53 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about Soak USA's mission to help people discover hot springs and natural thermal pools across the United States.",
-  alternates: { canonical: "https://soakusa.net/about" },
+  title: 'About',
+  description: 'About Soak USA, its authority-first publication standard, catalog quality reset, safety boundaries, and commercial disclosures.',
+  alternates: { canonical: 'https://soakusa.net/about' },
 };
 
+const heading: React.CSSProperties = { fontSize: '1.3rem', color: '#7d1a00', marginTop: '1.75rem', marginBottom: '0.75rem' };
+const text: React.CSSProperties = { fontSize: '0.95rem', color: '#4f4a45', lineHeight: 1.75, marginBottom: '1rem' };
+
 export default function AboutPage() {
-  const titleStyles: React.CSSProperties = {
-    fontSize: "2rem",
-    color: "#7d1a00",
-    marginBottom: "1.5rem",
-  };
-
-  const sectionStyles: React.CSSProperties = {
-    marginBottom: "2rem",
-  };
-
-  const sectionTitleStyles: React.CSSProperties = {
-    fontSize: "1.3rem",
-    color: "#7d1a00",
-    marginTop: "1.5rem",
-    marginBottom: "1rem",
-  };
-
-  const textStyles: React.CSSProperties = {
-    fontSize: "0.95rem",
-    color: "#555",
-    lineHeight: "1.7",
-    marginBottom: "1rem",
-  };
-
   return (
     <div className="content-page">
-      <h1 style={titleStyles}>About Soak USA</h1>
+      <h1 style={{ fontSize: '2rem', color: '#7d1a00', marginBottom: '0.75rem' }}>About Soak USA</h1>
+      <p style={{ ...text, color: '#625b54', fontStyle: 'italic' }}>Last reviewed: August 2, 2026</p>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>Our Mission</h2>
-        <p style={textStyles}>
-          Soak USA is dedicated to helping people discover, explore, and safely
-          visit hot springs and natural thermal pools throughout the United
-          States. We believe that hot springs offer a unique connection to
-          nature and an opportunity for relaxation, wellness, and adventure.
-        </p>
-        <p style={textStyles}>
-          Our mission is to provide accurate, comprehensive information about
-          hot springs across the USA, making it easier for enthusiasts to plan
-          their next thermal adventure.
-        </p>
-      </section>
+      <h2 style={heading}>Mission</h2>
+      <p style={text}>
+        Soak USA is rebuilding as an authority-first hot-spring research publication. Its purpose is to help readers identify the responsible operator or land manager and find current rules, not to substitute for official access, closure, safety, or health information.
+      </p>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>What We Offer</h2>
-        <p style={textStyles}>
-          Soak USA maintains a comprehensive directory of hot springs throughout
-          the United States. Our directory includes:
-        </p>
-        <ul style={textStyles}>
-          <li>Detailed information about hot springs locations and access</li>
-          <li>Amenities and features of each hot spring</li>
-          <li>Safety information and best practices for soaking</li>
-          <li>Geothermal and geological information</li>
-          <li>Tips for visiting different types of hot springs</li>
-          <li>Health and wellness information about thermal soaking</li>
-        </ul>
-      </section>
+      <h2 style={heading}>Current Catalog Status</h2>
+      <p style={text}>
+        There are currently zero public location records. A data-quality audit found material state-assignment and feature-classification errors in the legacy catalog, including records that were not suitable soaking destinations. The catalog was removed from public navigation and search instead of being presented with disclaimers.
+      </p>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>Safety and Responsibility</h2>
-        <p style={textStyles}>
-          Safety is paramount when visiting hot springs. We emphasize the
-          importance of:
-        </p>
-        <ul style={textStyles}>
-          <li>Always checking water temperature before entering</li>
-          <li>Verifying water quality with local authorities</li>
-          <li>Following all posted warnings and advisories</li>
-          <li>
-            Avoiding soaking if you have health conditions affected by heat or
-            mineral water
-          </li>
-          <li>Never soaking alone in remote locations</li>
-          <li>Respecting private property and local regulations</li>
-        </ul>
-        <p style={textStyles}>
-          Visiting hot springs is at your own risk. Always verify current
-          conditions with local authorities before planning your trip.
-        </p>
-      </section>
+      <h2 style={heading}>What a Future Record Must Show</h2>
+      <ul style={text}>
+        <li>The responsible authority or facility operator</li>
+        <li>A visible authoritative HTTPS source with publisher and title</li>
+        <li>The exact claims supported by that source</li>
+        <li>A human review date and correction path</li>
+        <li>A clear distinction between managed soaking, natural thermal features, and prohibited areas</li>
+      </ul>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>Environmental Stewardship</h2>
-        <p style={textStyles}>
-          We encourage all visitors to hot springs to practice Leave No Trace
-          principles:
-        </p>
-        <ul style={textStyles}>
-          <li>Pack out all trash and belongings</li>
-          <li>Use biodegradable soap or avoid soap entirely</li>
-          <li>Respect wildlife and natural habitats</li>
-          <li>Stay on designated trails and areas</li>
-          <li>Minimize campfire impacts</li>
-          <li>Respect other visitors' experiences</li>
-        </ul>
-      </section>
+      <h2 style={heading}>Safety and Health Boundaries</h2>
+      <p style={text}>
+        Soak USA is not a live-conditions service, emergency service, land-management authority, or medical provider. Do not enter closed water or touch an uncontrolled thermal feature to test it. Follow current instructions from the responsible authority. People with questions about heat exposure or personal health conditions should ask a qualified healthcare professional.
+      </p>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>Disclaimer</h2>
-        <p style={textStyles}>
-          The information provided on Soak USA is for informational purposes
-          only. While we strive to provide accurate and up-to-date information,
-          conditions at hot springs can change. Always verify current conditions,
-          access information, and any advisories with local authorities before
-          visiting.
-        </p>
-        <p style={textStyles}>
-          Soaking in natural hot springs carries inherent risks. We recommend
-          consulting with healthcare providers if you have health conditions that
-          may be affected by heat or mineral-rich water.
-        </p>
-        <p style={textStyles}>
-          Soak USA is supported by advertising and may include sponsored or
-          affiliate links. These never influence which locations we list or how
-          we describe them.
-        </p>
-      </section>
+      <h2 style={heading}>Publisher and Corrections</h2>
+      <p style={text}>
+        Soak USA is an independent web publication. Editorial corrections and source submissions can be sent to <a href="mailto:contact@soakusa.net">contact@soakusa.net</a>. Include the relevant URL, responsible authority, and current primary source when possible.
+      </p>
 
-      <section style={sectionStyles}>
-        <h2 style={sectionTitleStyles}>Contact Us</h2>
-        <p style={textStyles}>
-          Have questions or suggestions? We'd love to hear from you. Visit our
-          contact page to get in touch.
-        </p>
-      </section>
+      <h2 style={heading}>How the Site Is Supported</h2>
+      <p style={text}>
+        Advertising and third-party analytics are not currently enabled. The site includes a clearly labeled link to an Etsy shop affiliated with the publisher; a purchase may produce revenue for the publisher. See the Disclosure page for the current commercial relationships.
+      </p>
     </div>
   );
 }

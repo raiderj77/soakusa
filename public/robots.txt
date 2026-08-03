@@ -26,7 +26,7 @@ User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
 
 User-agent: Amazonbot
 Allow: /
@@ -34,15 +34,15 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-# AI training crawlers (allow for maximum parametric knowledge)
+# AI training crawlers are blocked; AI search and user-request agents above remain allowed.
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 # Block aggressive/low-value crawlers
 User-agent: CCBot

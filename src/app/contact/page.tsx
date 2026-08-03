@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Soak USA with questions, suggestions, or feedback about our hot springs directory.",
+    "Contact Soak USA with an editorial correction, an authoritative source, or a question about the catalog rebuild.",
   alternates: { canonical: "https://soakusa.net/contact" },
 };
 
@@ -99,8 +99,8 @@ export default function ContactPage() {
 
       <section style={sectionStyles}>
         <p style={textStyles}>
-          Have questions about hot springs? Want to suggest a location? Looking
-          for more information? We'd love to hear from you!
+          Send an editorial correction, an authoritative source for a future
+          location record, or a question about Soak USA&apos;s publication standard.
         </p>
 
         <div style={contactInfoStyles}>
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
       <section style={sectionStyles}>
         <h2 style={{ fontSize: "1.3rem", color: "#7d1a00", marginBottom: "1rem" }}>
-          Send us a Message
+          Send Us a Message
         </h2>
         <p style={textStyles}>
           Fill out the form below to draft a message in your email application.
@@ -193,14 +193,14 @@ export default function ContactPage() {
           Suggestions & Feedback
         </h2>
         <p style={textStyles}>
-          Know of a hot spring we should feature? Have feedback about our
-          directory? We'd love to hear your suggestions! Send us an email with:
+          A location is considered only after its identity, geography, access,
+          classification, and safety claims can be reviewed. Send us:
         </p>
         <ul style={textStyles}>
-          <li>Name and location of the hot spring</li>
-          <li>State and city information</li>
-          <li>Description and key amenities</li>
-          <li>Any other relevant details</li>
+          <li>The location or thermal feature name</li>
+          <li>The responsible operator, park, land manager, tribe, or local authority</li>
+          <li>A current authoritative HTTPS source</li>
+          <li>The claim or correction that source supports</li>
         </ul>
       </section>
     </div>

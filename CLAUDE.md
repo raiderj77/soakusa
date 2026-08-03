@@ -1,83 +1,83 @@
-﻿# Soak USA ,  CLAUDE.md
+# Soak USA — Project Instructions
 
-> Source of truth for Claude Code on this project. Last updated: 2026-04-30
+> Source of truth for AI-assisted work on this repository. Last reviewed: 2026-08-02.
 
-## Project Identity
+## Current Product State
 
-- **Site**: Soak USA
-- **Domain**: soakusa.net
-- **Purpose**: Location finder for hot springs, soaking pools, and thermal baths across the United States
-- **Type**: utility-site (ad-supported location directory)
-- **Compliance Tier**: Standard ,  NOTE: Hot spring safety content requires extra care
+- Domain: `soakusa.net`
+- Framework: Next.js on Vercel
+- Product: authority-first hot-spring research and safety publication
+- Public location records: **0**
+- The legacy 359-record corpus was withdrawn after a data audit found material geography and feature-classification errors.
+- Legacy browse, state, and location URLs return a helpful 404 response.
 
-## Tech Stack
+Do not restore the legacy corpus, counts, state groupings, guides, maps, directions, amenity labels, or search pages.
 
-- **Framework**: Next.js | **Deployment**: Vercel | **Language**: TypeScript | **Styling**: Tailwind CSS | **Package Manager**: npm
+## Publication Gate for a Future Location
 
-## 1. AdSense & Monetization
+A location may be proposed only as a small, manually reviewed record. It must not be public, indexable, mapped, or added to the sitemap until it has a validated source record containing:
 
-- **Publisher ID**: `ca-pub-7171402107622932`
-- **ads.txt**: `google.com, pub-7171402107622932, DIRECT, f08c47fec0942fa0`
-- Amazon Associates (ytearnings-20) for relevant gear recs ,  use rel="nofollow sponsored"
+1. an authoritative HTTPS URL;
+2. publisher and page title;
+3. a human review date;
+4. the exact claims the source supports; and
+5. a visible public citation.
 
-## 2. SEO
+Preferred sources are the responsible facility operator, park, land manager, tribe, or local authority. Secondary sources cannot establish current permission, closures, fees, hazards, or emergency information.
 
-- SSR/SSG required
-- Each location page: name, address/GPS, water temp range, fee (if any), clothing optional status, hours, seasonal access, nearest town
-- Include "clothing optional" or "swimwear required" clearly ,  this affects search intent and content moderation
+Validate source objects structurally and by trust policy. A nonempty array, arbitrary URL, empty object, or generated prose is not verification. Add negative tests for malformed, stale, and untrusted sources before reintroducing any location route.
 
-## 3. Core Web Vitals
+Every public location must also be listed explicitly in `src/data/publication-manifest.json`. An empty manifest means there are zero publishable location records. Adding a data file, route, schema object, internal link, or sitemap entry without the same reviewed manifest change is a release blocker.
 
-- **LCP** ≤ 2.5s | **INP** ≤ 200ms | **CLS** ≤ 0.1
+## Classification and Safety
 
-## 4. E-E-A-T
+Never treat all thermal features as soakable hot springs. Keep these categories distinct:
 
-- Attribution: "Built by an experienced web developer" ,  no personal name
-- IMPORTANT: Hot springs carry real health risks (high temps, bacteria, unstable ground). Every location page must include: "Consult a healthcare provider before soaking if you have heart conditions, are pregnant, or have compromised immune function. Water temperatures and conditions vary ,  assess conditions before entering."
-- Never minimize safety considerations
+- managed soaking facility;
+- authority-permitted natural soaking area;
+- observation-only thermal feature; and
+- closed or prohibited area.
 
-## 5. Structured Data
+Do not infer permission from coordinates, names, photos, or third-party maps. Do not tell visitors to touch uncontrolled thermal water to test it. Distinguish CDC guidance for maintained hot tubs from rules for natural thermal areas. The responsible authority controls access, closures, and emergency information. Soak USA does not provide medical advice.
 
-- Organization, WebSite, LocalBusiness (for commercial/resort facilities), Place (for wild hot springs), BreadcrumbList
-- Include geo coordinates, temperature range in description
+## Content Integrity
 
-## 6. Mobile-First
+- No fabricated firsthand experience, health benefit, therapeutic, price, temperature, access, clothing, fee, or safety claims.
+- No automatic `dateModified`, fake review dates, or future-publication promises.
+- No thin programmatic pages, generated state guides, or reciprocal portfolio link rings.
+- No Person schema or credential used to imply expertise outside its real scope. The owner-approved public identity may remain where explicitly authorized and relevant; CADC-II credentials do not establish hot-spring, travel, or medical authority.
+- Use the Soak USA editorial desk and `contact@soakusa.net` for public accountability and corrections.
 
-- Touch targets 48px+, GPS prominent and copy-able, 16px+ body text
+## SEO, AEO, and GEO
 
-## 7. Bing Optimization
+- Indexed content must be accurate, original, useful, and consistent with the visible page.
+- Keep one H1, self-canonical metadata, visible primary sources, concise answers, and matching structured data.
+- `OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`, and `PerplexityBot` may access public pages.
+- Training-only crawlers remain blocked.
+- Do not put retired browse or location routes in `sitemap.xml` or `llms.txt`.
 
-- meta keywords, SSR mandatory, IndexNow on deploy
+## Privacy, Advertising, and Monetization
 
-## 8. GEO / AI
+- Google AdSense, other ad scripts, Google Analytics, and Microsoft Clarity are disabled.
+- `ads.txt` may retain the authorized seller record and `OWNERDOMAIN`; it must not claim a false `MANAGERDOMAIN`.
+- Do not enable advertising until the site has a meaningful body of authority-backed content, account approval, and all required consent controls.
+- The only current commercial link is the clearly labeled publisher-affiliated Etsy shop. Do not add Amazon or other affiliate claims without verified account approval and explicit authorization.
 
-- `/llms.txt` at root, standard AI crawler rules
-- Lead content with hot spring name, location, and temperature range
+## UX, Accessibility, and Security
 
-## 9. Privacy & Consent
+- WCAG AA contrast, keyboard access, visible focus, reduced-motion support, and 44–48px interactive targets.
+- Test at 320px/390px mobile and desktop with no horizontal overflow.
+- Maintain restrictive security headers and do not broaden CSP for disabled vendors.
 
-- `/privacy` and `/terms` required
+## Required Verification
 
-## 10. Accessibility (WCAG 2.1 AA)
+Run before proposing a merge:
 
-- Alt text on location photos, keyboard navigation, skip links
+```text
+npm ci
+npm run check
+npm audit --omit=dev
+git diff --check
+```
 
-## 11. Security Headers
-
-Standard Empire security headers
-
-## 12. Sitemaps & Metadata
-
-Sitemap via `app/sitemap.ts`, submit to GSC and Bing WMT
-
-## Cross-Site Links
-
-Footer: all sister sites (excluding self)
-
-## Deployment
-
-Vercel | main | `npm run build` | Env: AMAZON_ASSOCIATES_ID=ytearnings-20, INDEXNOW_API_KEY
-
-## Warnings
-
-Standard Empire warnings + NEVER minimize hot spring safety. Soaking in extreme temps without disclaimers is a liability risk. Health safety disclaimer required on every location page. Never present wild hot spring access as guaranteed ,  conditions and access change seasonally.
+Also verify the home, about, editorial, disclosure, privacy, terms, and contact pages in a real browser at mobile and desktop widths. Confirm retired catalog URLs return 404 and no advertising or analytics scripts load.

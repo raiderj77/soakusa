@@ -29,7 +29,7 @@ export default function TermsPage() {
 
   const lastUpdatedStyles: React.CSSProperties = {
     fontSize: "0.85rem",
-    color: "#999",
+    color: "#625b54",
     marginBottom: "2rem",
     fontStyle: "italic",
   };
@@ -48,15 +48,16 @@ export default function TermsPage() {
   return (
     <div className="content-page">
       <h1 style={titleStyles}>Terms of Service</h1>
-      <div style={lastUpdatedStyles}>Last updated: April 2026</div>
+      <div style={lastUpdatedStyles}>Last updated: August 2, 2026</div>
 
       <div style={disclaimerBoxStyles}>
         <strong>IMPORTANT SAFETY DISCLAIMER:</strong> Hot springs can be extremely
         hot and pose serious burn and safety risks. Always verify water
-        temperature before entering. Never soak if you are ill or have health
-        conditions affected by heat. Always check with local authorities for
-        current conditions, advisories, and any health warnings. Soaking in
-        natural hot springs is at your own risk.
+        temperature and current permission before entering. Do not enter closed
+        water or touch uncontrolled thermal features to test them. Follow the
+        responsible authority&apos;s current conditions, advisories, and health
+        warnings. Ask a qualified healthcare professional about personal health
+        concerns related to heat exposure.
       </div>
 
       <section>
@@ -114,14 +115,16 @@ export default function TermsPage() {
         <ul style={textStyles}>
           <li>
             <strong>Water Temperature Risk:</strong> Hot spring water can reach
-            dangerous temperatures that can cause severe burns in seconds. Always
-            test water temperature with your hand before entering.
+            dangerous temperatures that can cause severe burns. Do not touch an
+            uncontrolled thermal feature to test it. Enter only where soaking is
+            expressly permitted and follow the operator or land manager&apos;s current
+            instructions.
           </li>
           <li>
-            <strong>Health Risks:</strong> Do not soak if you are ill, pregnant,
-            or have conditions affected by heat (including but not limited to:
-            heart disease, high blood pressure, diabetes, or heat sensitivity).
-            Consult with a healthcare provider before soaking.
+            <strong>Health Risks:</strong> Stay out of managed hot tubs if sick with
+            diarrhea. People who are pregnant, have relevant health conditions,
+            or have questions about heat exposure should seek guidance from a
+            qualified healthcare professional before use.
           </li>
           <li>
             <strong>Water Quality:</strong> Some hot springs may contain minerals,
@@ -129,8 +132,9 @@ export default function TermsPage() {
             with local authorities for water quality information and advisories.
           </li>
           <li>
-            <strong>Dehydration:</strong> Soaking in warm water can cause rapid
-            dehydration. Drink plenty of water before, during, and after soaking.
+            <strong>Heat and alcohol:</strong> Follow posted time and temperature
+            limits, leave the water if you feel unwell, and do not drink alcohol
+            before or during hot-tub use.
           </li>
           <li>
             <strong>Current Conditions:</strong> Conditions at hot springs change
@@ -191,9 +195,8 @@ export default function TermsPage() {
       <section>
         <h2 style={sectionTitleStyles}>9. Governing Law</h2>
         <p style={textStyles}>
-          These terms and conditions are governed by and construed in accordance
-          with the laws of the United States, and you irrevocably submit to the
-          exclusive jurisdiction of the courts in that location.
+          Applicable law and venue depend on the parties and the dispute. Nothing
+          in these terms limits consumer rights that cannot legally be waived.
         </p>
       </section>
 
